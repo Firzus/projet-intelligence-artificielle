@@ -1,45 +1,37 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
-    public bool _canMove;
-    public int _speed = 1;
+    public bool _canMove = true;
+    public float _speed = 10.0f;
+
+    private float _horizontal;
+    private float _vertical;
+
+    [SerializeField] private Rigidbody2D _rb;
+
+
     void Start()
     {
-        _canMove = true;
+
     }
 
+    private void Update()
+    {
+        _horizontal = Input.GetAxisRaw("Horizontal");
+        _vertical = Input.GetAxisRaw("Vertical");
+    }
 
     void FixedUpdate()
     {
         if(_canMove == true)
         {
-
             OnMove(_speed);
         }
     }
 
     public void OnMove(float speed)
     {
-
-        Vector2 pos = transform.position;
-        if (Input.GetKey(KeyCode.Z))
-        {
-            Debug.Log("teste Z");
-            transform.position.Set(pos.x, pos.y + speed, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            transform.position.Set(pos.x, pos.y - speed, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.position.Set(pos.x - speed, pos.y, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.position.Set(pos.x + speed, pos.y, 0);
-        }
+        _rb.velocity = new Vector2(_horizontal * speed, _vertical * speed);
     }
 }
