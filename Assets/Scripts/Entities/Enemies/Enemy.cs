@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Entities
 {
-    public bool isInRange;
-    public bool playerIn;
-    public bool playerOut;
+    public bool _isInRange;
+    public bool _playerIn;
+    public bool _playerOut;
 
     public override void Destroy()
     {
-        if (hp <= 0)
+        if (_hp <= 0)
         {
             Destroy(gameObject);
         }

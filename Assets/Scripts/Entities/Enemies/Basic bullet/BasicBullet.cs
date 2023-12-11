@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicBullet : Enemy
 {
-    [SerializeField] new private int hp;
-    [SerializeField] new private float speed;
+    [SerializeField] new private int _hp;
+    [SerializeField] new private float _speed;
 
 }
