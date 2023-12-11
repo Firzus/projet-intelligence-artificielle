@@ -1,18 +1,21 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerMove : PlayerState
+public class PlayerMove : MonoBehaviour
 {
-
+    public bool _canMove;
+    public int _speed = 1;
     void Start()
     {
-        
+        _canMove = true;
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if(_canMove == true)
         {
+
             OnMove(_speed);
         }
     }
@@ -20,22 +23,23 @@ public class PlayerMove : PlayerState
     public void OnMove(float speed)
     {
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        Vector2 pos = transform.position;
+        if (Input.GetKey(KeyCode.Z))
         {
-            transform.position += new Vector3(0, speed, 0);
+            Debug.Log("teste Z");
+            transform.position.Set(pos.x, pos.y + speed, 0);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.position += new Vector3(0, -speed, 0);
+            transform.position.Set(pos.x, pos.y - speed, 0);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.position += new Vector3(-speed, 0, 0);
+            transform.position.Set(pos.x - speed, pos.y, 0);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            transform.position += new Vector3(speed, 0, 0);
+            transform.position.Set(pos.x + speed, pos.y, 0);
         }
-
     }
 }
