@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public PlayerState State;
+    private PlayerState _state;
 
     private float _horizontal;
     private float _vertical;
@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-
+        _state = GetComponent<PlayerState>();
     }
 
     private void Update()
@@ -23,9 +23,9 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(State._canMove == true)
+        if(_state._canMove)
         {
-            OnMove(State._speed);
+            OnMove(_state._speed);
         }
     }
 

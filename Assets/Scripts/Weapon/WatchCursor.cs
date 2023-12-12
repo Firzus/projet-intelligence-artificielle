@@ -9,12 +9,12 @@ public class WatchCursor : MonoBehaviour
     public bool _FlipRight = true;
     private SpriteRenderer _sp;
 
-    private void Start()
+    void Start()
     {
         _sp = GetComponent<SpriteRenderer>();
         if(_FlipRight == false)
         {
-            _sp.flipX = true;
+            _sp.flipY = true;
         }
     }
 
@@ -29,17 +29,16 @@ public class WatchCursor : MonoBehaviour
 
     private void Flip()
     {
-
-        if (_FlipRight && transform.rotation.z >= 90)// || _FlipRight && transform.rotation.z <= -90)
+        if (_FlipRight && transform.rotation.z >= 0.72f || _FlipRight && transform.rotation.z <= -0.72f)
         {
-            Debug.Log("true");
             _FlipRight = false;
-            _sp.flipX = true;
+            _sp.flipY = true;
         }
-        else
+        
+        else if (_FlipRight==false && transform.rotation.z <= 0.72f && transform.rotation.z >= -0.72f)
         {
             _FlipRight = true;
-            _sp.flipX = false;
+            _sp.flipY = false;
         }
 
     }
