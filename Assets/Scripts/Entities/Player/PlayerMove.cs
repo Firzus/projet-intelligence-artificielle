@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public bool _canMove = true;
-    public float _speed = 10.0f;
+    public PlayerState State;
 
     private float _horizontal;
     private float _vertical;
@@ -24,9 +23,9 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(_canMove == true)
+        if(State._canMove == true)
         {
-            OnMove(_speed);
+            OnMove(State._speed);
         }
     }
 
