@@ -1,25 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class BasicBullet : Enemy
+public class EliteBullet : Enemy
 {
 
+    // Start is called before the first frame update
     void Start()
     {
-        _hp = 10;
-        _speed = 1.0f;
+        _hp = 30;
+        _speed = 1.5f;
         AttackRange = gameObject.GetComponentInChildren<EnemyAttackRange>();
     }
 
-    void Update() 
+    // Update is called once per frame
+    void Update()
     {
-        Attack();
-        FollowPlayer();
-        Death();
+        
     }
-
 
     public override void Attack()
     {
@@ -28,8 +26,8 @@ public class BasicBullet : Enemy
             // Basic Attack
         }
 
-        if (AttackRange._isInRange && AttackRange._playerOut) 
-        { 
+        if (AttackRange._isInRange && AttackRange._playerOut)
+        {
             // Range Attack
         }
 
@@ -41,14 +39,6 @@ public class BasicBullet : Enemy
 
     public override void FollowPlayer()
     {
-        if (AttackRange._isInRange && AttackRange._playerOut)
-        {
-            // Follow the player
-        }
-    }
-
-    void Death()
-    {
-        Destroy();
+        // Follow the player
     }
 }
