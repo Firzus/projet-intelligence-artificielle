@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class Enemy : Entities
 {
-    public bool _isInRange;
-    public bool _playerIn;
-    public bool _playerOut;
+    public EnemyAttackRange AttackRange;
 
     public override void Destroy()
     {
         if (_hp <= 0)
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
+
+    public virtual void Attack() { }
+    public virtual void FollowPlayer() { }
+    public virtual void Patrol() { }
 }
