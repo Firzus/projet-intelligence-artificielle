@@ -17,10 +17,6 @@ public class StateManager : MonoBehaviour
     {
         currentState.UpdateState(this);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        currentState.OnTriggerEnter(this, other);
-    }
 
     public void SwitchState(BaseState state){
         currentState = state;
