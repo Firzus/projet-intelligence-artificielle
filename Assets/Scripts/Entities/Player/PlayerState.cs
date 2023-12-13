@@ -3,8 +3,10 @@
 public class PlayerState : Entities
 {
     private bool _isAlive;
-    public bool _canMove = true;
-    public bool _canShoot = true;
+    [SerializeField] bool _canMove = true;
+    //[SerializeField] bool _canShoot = true;
+
+    public bool CanMove { get => _canMove; set => _canMove = value; }
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class PlayerState : Entities
             _isAlive = false;
         }
 
-        if (_isAlive && _canMove)
+        if (_isAlive && CanMove)
         {
 
         }
