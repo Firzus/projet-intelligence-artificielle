@@ -3,8 +3,8 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     BaseState currentState;
-    State1 state1 = new State1();
-    State2 state2 = new State2();
+    public State1 state1 = new State1();
+    public  State2 state2 = new State2();
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,10 @@ public class StateManager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        currentState.OnTriggerEnter(this, other);
     }
 
     public void SwitchState(BaseState state){

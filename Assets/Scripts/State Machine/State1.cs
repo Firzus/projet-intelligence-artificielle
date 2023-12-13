@@ -4,7 +4,6 @@ public class State1 : BaseState // movement
 {
     public GameObject A, B;
     bool loop = false;
-    private float speed = 2.0f;
     public override void EnterState(StateManager stateObject)
     {
         //Debug.Log("Entering State 1 ");
@@ -26,8 +25,14 @@ public class State1 : BaseState // movement
         //stateObject.SwitchState(stateObject.state2);
     }
 
+    public override void OnTriggerEnter(StateManager stateObject, Collider other)
+    {
+        throw new System.NotImplementedException();
+    }
+
     private void PointA(StateManager stateObject)
     {
+        float speed = 2.0f;
         Vector3 destination = B.transform.position;
         Vector3 newPos = Vector3.MoveTowards(stateObject.transform.position, destination, speed * Time.deltaTime);
         stateObject.transform.position = newPos;
@@ -40,6 +45,7 @@ public class State1 : BaseState // movement
 
     private void PointB(StateManager stateObject)
     {
+        float speed = 2.0f;
         Vector3 destination = A.transform.position;
         Vector3 newPos = Vector3.MoveTowards(stateObject.transform.position, destination, speed * Time.deltaTime);
         stateObject.transform.position = newPos;
