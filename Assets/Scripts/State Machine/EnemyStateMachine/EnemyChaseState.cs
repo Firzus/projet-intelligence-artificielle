@@ -19,7 +19,7 @@ public class EnemyChaseState : EnemyBaseState
 
     private void Chase(EnemyStateManager enemy)
     {
-        float speed = 2.0f;
+        float speed = 4.0f;
         Vector3 MovingOntarget = Vector3.MoveTowards(enemy.transform.position, target.transform.position, speed * Time.deltaTime);
         enemy.transform.position = MovingOntarget;
     }
