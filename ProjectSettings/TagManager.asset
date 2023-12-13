@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cursor
   - Weapon
+  - Bullet
+  - Object
   layers:
   - Default
   - TransparentFX

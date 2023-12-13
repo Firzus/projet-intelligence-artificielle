@@ -17,6 +17,7 @@ public class WeaponInventory : MonoBehaviour
     public GameObject _playerWeapon;
 
     private Weapon _actualWeapon;
+    public Weapon ActualWeapon { get => _actualWeapon; set => _actualWeapon = value; }
     private Sprite _actualSprite;
     private string _actualType;
     private int _index;
@@ -26,6 +27,7 @@ public class WeaponInventory : MonoBehaviour
         _index = 1;
         _actualSprite = _list[_index].sp;
         _actualType = _list[_index].Type;
+        _actualWeapon = _list[_index];
         _playerWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
     }
 
