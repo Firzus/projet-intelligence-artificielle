@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3610534825959406877, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4266533248155402799, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_Enabled
@@ -370,7 +370,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 805178758}
+      addedObject: {fileID: 805178764}
     - targetCorrespondingSourceObject: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 805178757}
@@ -454,7 +454,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805178746}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -501,13 +501,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17574692, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
---- !u!114 &805178758
+--- !u!114 &805178764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
