@@ -3,10 +3,10 @@ using UnityEngine;
 public class WatchCursor : MonoBehaviour
 {
     public GameObject _target;
-    public float _speed;
-    public float _rotationModifier;
+    [SerializeField] float _speed;
+    [SerializeField] float _rotationModifier;
+    [SerializeField] bool _FlipRight = true;
 
-    public bool _FlipRight = true;
     private SpriteRenderer _sp;
 
     void Start()

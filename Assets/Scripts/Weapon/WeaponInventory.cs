@@ -9,12 +9,14 @@ public class WeaponInventory : MonoBehaviour
     [System.Serializable] public struct Weapon
     {
         public Sprite sp;
-        public string type;
+        [SerializeField] string type;
+        public string Type { get => type; set => type = value; }
     }
 
-    [SerializeField] public List<Weapon> _list;// = new List<Weapon>();
-    [HideInInspector] private Weapon _actualWeapon;
+    public List<Weapon> _list;// = new List<Weapon>();
     public GameObject _playerWeapon;
+
+    private Weapon _actualWeapon;
     private Sprite _actualSprite;
     private string _actualType;
     private int _index;
@@ -23,7 +25,7 @@ public class WeaponInventory : MonoBehaviour
     {
         _index = 1;
         _actualSprite = _list[_index].sp;
-        _actualType = _list[_index].type;
+        _actualType = _list[_index].Type;
         _playerWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
     }
 
@@ -48,13 +50,13 @@ public class WeaponInventory : MonoBehaviour
             {
                 _index = 0;
                 _actualSprite = _list[_index].sp;
-                _actualType = _list[_index].type;
+                _actualType = _list[_index].Type;
             }
             else
             {
                 _index += 1;
                 _actualSprite = _list[_index].sp;
-                _actualType = _list[_index].type;
+                _actualType = _list[_index].Type;
             }
 
             return true;
@@ -65,13 +67,13 @@ public class WeaponInventory : MonoBehaviour
             {
                 _index = _list.Count - 1;
                 _actualSprite = _list[_index].sp;
-                _actualType = _list[_index].type;
+                _actualType = _list[_index].Type;
             }
             else
             {
                 _index -= 1;
                 _actualSprite = _list[_index].sp;
-                _actualType = _list[_index].type;
+                _actualType = _list[_index].Type;
             }
             return true;
         }
@@ -81,7 +83,7 @@ public class WeaponInventory : MonoBehaviour
     private void UpdateWeapon()
     {
         _actualWeapon.sp = _actualSprite;
-        _actualWeapon.type = _actualType;
+        _actualWeapon.Type = _actualType;
         _playerWeapon.GetComponent<SpriteRenderer>().sprite = _actualWeapon.sp;
     }
 

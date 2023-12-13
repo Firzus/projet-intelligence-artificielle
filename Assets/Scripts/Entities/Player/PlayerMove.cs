@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private float _horizontal;
     private float _vertical;
 
-    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] Rigidbody2D _rb;
 
 
     void Start()
@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(_state._canMove)
+        if(_state.CanMove)
         {
             OnMove(_state._speed);
         }
