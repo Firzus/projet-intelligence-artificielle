@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public PlayerState State;
+    private PlayerState _state;
 
     private float _horizontal;
     private float _vertical;
 
-    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] Rigidbody2D _rb;
 
 
     void Start()
     {
-
+        _state = GetComponent<PlayerState>();
     }
 
     private void Update()
@@ -23,9 +23,9 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(State._canMove == true)
+        if(_state.CanMove)
         {
-            OnMove(State._speed);
+            OnMove(_state._speed);
         }
     }
 
