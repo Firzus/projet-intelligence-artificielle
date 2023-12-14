@@ -8,16 +8,6 @@ public class ShootBullet : MonoBehaviour
     public GameObject _target;
     private GameObject _bulletInst;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        //HandGunShooting(_bullet);
-    }
-
     public void HandGunShooting(GameObject bullet)
     {
 
