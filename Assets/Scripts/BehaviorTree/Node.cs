@@ -11,10 +11,12 @@ public abstract class Node : ScriptableObject
         Failure
     }
 
-    public State state = State.Running;
-    public bool started = false;
-    public string guid;
-    public Vector2 position;
+    [HideInInspector] public State state = State.Running;
+    [HideInInspector] public bool started = false;
+    [HideInInspector] public string guid;
+    [HideInInspector] public Vector2 position;
+    [HideInInspector] public BlackBoard blackBoard;
+    [HideInInspector] public Enemy agent;
 
     public State Update()
     {

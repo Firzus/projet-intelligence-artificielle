@@ -353,11 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d756c19237dd67c4b892229b65af9d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1326149811}
-  - {fileID: 1925249546}
-  - {fileID: 2140402202}
-  - {fileID: 1423382590}
 --- !u!114 &713578255 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5333098175674709991, guid: c0fb7c00a32920246b508272a17caf42, type: 3}
