@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class WeaponAim : MonoBehaviour
 {
-    [SerializeField] bool _FlipRight = true;
-
+    public GameObject _target;
+    private bool _FlipRight = true;
     private SpriteRenderer _sp;
-    private Vector3 _targetPosition;
-    private Vector2 _worldposition;
-    private Vector2 _direction;
-
     void Start()
     {
         _sp = GetComponent<SpriteRenderer>();
@@ -16,7 +12,6 @@ public class WeaponAim : MonoBehaviour
         {
             _sp.flipY = true;
         }
-
     }
 
     void Update()
@@ -27,9 +22,10 @@ public class WeaponAim : MonoBehaviour
 
     private void HandleGunRotation()
     {
-        _worldposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        _direction = (_worldposition - (Vector2)transform.position).normalized;
-        transform.right = _direction;
+        var dir = _target.transform.position - transform.position;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        Debug.Log(transform.rotation.z);
     }
 
     private void Flip()
