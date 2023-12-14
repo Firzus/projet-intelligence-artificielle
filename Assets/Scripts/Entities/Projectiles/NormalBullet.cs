@@ -6,8 +6,8 @@ public class NormalBullet : MonoBehaviour
 {
     void Start()
     {
-        int dmg = 5;
-        int speed = 5;
+        //int dmg = 5;
+        //int speed = 5;
     }
 
     void Update()
