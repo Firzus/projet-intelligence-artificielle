@@ -1,15 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMoveState : EnemyBaseState
 {
-    //public GameObject A, B;
+    public GameObject[] wp;
     bool loop = false;
     public override void EnterState(EnemyStateManager enemy)
     {
-        string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
-        GameObject waypoint = GameObject.Instantiate(prefab);
-        waypoint.name = "Waypoint";
+        InstantiateWaypoint();
+        //CreateRandomWaypoint(enemy);
     }
 
     public override void UpdateState(EnemyStateManager enemy)
@@ -52,7 +51,7 @@ public class EnemyMoveState : EnemyBaseState
 
     private void PointB(EnemyStateManager enemy)
     {
-       GameObject A = GameObject.Find("/Waypoint/A");
+        GameObject A = GameObject.Find("/Waypoint/A");
         float speed = 2.0f;
         Vector3 destination = A.transform.position;
         Vector3 newPos = Vector3.MoveTowards(enemy.transform.position, destination, speed * Time.deltaTime);
@@ -61,6 +60,28 @@ public class EnemyMoveState : EnemyBaseState
         if (distance == 0.0f)
         {
             loop = false;
+        }
+    }
+
+    private void InstantiateWaypoint()
+    {
+        string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
+        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
+        GameObject waypoint = GameObject.Instantiate(prefab);
+        waypoint.name = "Waypoint";
+    }
+
+    private void CreateRandomWaypoint(EnemyStateManager enemy)
+    {
+        int a = (int)Random.Range(2.0f, 4.0f);
+
+        for (int i = 0; i < a; i++)
+        {
+            float x = Random.Range(-10.0f, 5.0f), y = Random.Range(-10.0f, 5.0f), z = Random.Range(-10.0f, 5.0f);
+            string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
+            GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
+            GameObject waypoint = GameObject.Instantiate(prefab, new Vector3(x, y, z), prefab.transform.rotation);
+            waypoint.name = "Waypoint " + enemy.name + " " + i;
         }
     }
 }
