@@ -22,7 +22,6 @@ public class DestroyObject : MonoBehaviour
         {
             _renderer.sprite = _destroySprite;
             _boxCollider.isTrigger = true;
-            //Destroy(this.gameObject);
         }
     }
 }

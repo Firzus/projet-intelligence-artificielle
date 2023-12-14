@@ -37,7 +37,6 @@ public class AI_FollowPath : MonoBehaviour
             }
             else
             {
-                //Debug.Log(_point.Index);
                 MoveToPoint();
             }
         }

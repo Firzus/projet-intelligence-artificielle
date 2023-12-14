@@ -20,7 +20,6 @@ public class AI_PathPoint : MonoBehaviour
         {
             _indexList++;
         }
-        //Debug.Log(_indexList + " "+ _listPoint.Count);
         _nextPosition.position = _listPoint[_indexList].transform.position;
     }
 

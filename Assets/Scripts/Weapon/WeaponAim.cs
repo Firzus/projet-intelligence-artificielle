@@ -25,7 +25,6 @@ public class WeaponAim : MonoBehaviour
         var dir = _target.transform.position - transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        Debug.Log(transform.rotation.z);
     }
 
     private void Flip()
