@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyMoveState : EnemyBaseState
 {
-    public GameObject[] wp;
+    //private GameObject[] wp;
     bool loop = false;
     public override void EnterState(EnemyStateManager enemy)
     {
@@ -13,7 +13,7 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        if (loop == false)
+        if (!loop)
         {
             PointA(enemy);
         }
