@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SequencerNode : CompositeNode
 {
-    int current;
+    private int current;
 
     protected override void OnStart()
     {

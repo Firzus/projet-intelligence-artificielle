@@ -17,8 +17,8 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public NodeView(Node node) : base("Assets/Editor/NodeView.uxml")
     {
         this.node = node;
-        this.title = node.name;
-        this.viewDataKey = node.guid;
+        title = node.name;
+        viewDataKey = node.guid;
 
         style.left = node.position.x;
         style.top = node.position.y;

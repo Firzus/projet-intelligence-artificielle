@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WaitNode : ActionNode
 {
-    public float duration = 1;
-    float startTime;
+    private float duration = 1;
+    private float startTime;
 
     protected override void OnStart()
     {
