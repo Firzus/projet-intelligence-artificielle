@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,14 +16,16 @@ public class ShootStyle : MonoBehaviour
     {
         _shootBullet = GetComponent<ShootBullet>();
         _canShootCooldown = false;
-        _shootCooldown = 1f;
+        _shootCooldown = 0f;
     }
+
 
     void Update()
     {
         CooldownTime();
         Shoot();
     }
+
 
     private void CooldownTime()
     {
@@ -31,9 +34,9 @@ public class ShootStyle : MonoBehaviour
             _canShootCooldown = true;
         }
         _shootCooldown -= Time.deltaTime;
-        //Debug.Log(_shootCooldown);
-
     }
+
+
     private void Shoot()
     {
         if (_canShootCooldown==true && Input.GetMouseButtonDown(0))
@@ -46,8 +49,8 @@ public class ShootStyle : MonoBehaviour
                     break;
 
                 case "rafale":
-                    Rafale(3, 1f);
                     _shootCooldown = 1.2f;
+                    Rafale(3, 0.1f);
                     break;
 
                 case "lourd":
@@ -62,19 +65,21 @@ public class ShootStyle : MonoBehaviour
         }
     }
 
+
     private void Rafale(int number, float t)
     {
-        float temps = t;
-        while (number >= 0)
+        Coroutine c = StartCoroutine(CoolDown(number, t));
+    }
+
+
+    IEnumerator CoolDown(int number, float t)
+    {
+        for (int i = 0; i < number; i++)
         {
-            temps -= Time.deltaTime;
-            if (temps < 0)
-            {
-                Debug.Log(temps);
-                _shootBullet.HandGunShooting(_simpleBullet);
-                temps = t;
-                number--;
-            }
+            _shootBullet.HandGunShooting(_simpleBullet);
+            yield return new WaitForSeconds(t);
         }
+
+        yield return new WaitForSeconds(_shootCooldown);
     }
 }
