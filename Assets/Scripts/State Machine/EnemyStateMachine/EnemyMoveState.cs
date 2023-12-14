@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class EnemyMoveState : EnemyBaseState
 {
-   public GameObject A, B;
+    //public GameObject A, B;
     bool loop = false;
     public override void EnterState(EnemyStateManager enemy)
     {
-        //Debug.Log("Entering State 1 ");
-        A = GameObject.Find("/Waypoint/A");
-        B = GameObject.Find("/Waypoint/B");
+        string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
+        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
+        GameObject waypoint = GameObject.Instantiate(prefab);
+        waypoint.name = "Waypoint";
     }
 
     public override void UpdateState(EnemyStateManager enemy)
@@ -17,26 +18,27 @@ public class EnemyMoveState : EnemyBaseState
         {
             PointA(enemy);
         }
-        else 
-        { 
+        else
+        {
             PointB(enemy);
         }
-        //switch state 
-        //enemy.SwitchState(enemy.state2);
     }
 
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
         //switch state if trigger
-        Debug.Log("Trigger");
-        if(col.name == "enemy"){
+        Debug.Log("Trigger " + col.name);
+        if (col.name == "Player")
+        {
             enemy.SwitchState(enemy.chase);
         }
+        //get tag
     }
 
     //Local function
     private void PointA(EnemyStateManager enemy)
     {
+        GameObject B = GameObject.Find("/Waypoint/B");
         float speed = 2.0f;
         Vector3 destination = B.transform.position;
         Vector3 newPos = Vector3.MoveTowards(enemy.transform.position, destination, speed * Time.deltaTime);
@@ -50,6 +52,7 @@ public class EnemyMoveState : EnemyBaseState
 
     private void PointB(EnemyStateManager enemy)
     {
+       GameObject A = GameObject.Find("/Waypoint/A");
         float speed = 2.0f;
         Vector3 destination = A.transform.position;
         Vector3 newPos = Vector3.MoveTowards(enemy.transform.position, destination, speed * Time.deltaTime);

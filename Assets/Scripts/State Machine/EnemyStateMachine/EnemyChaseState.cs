@@ -6,7 +6,7 @@ public class EnemyChaseState : EnemyBaseState
     GameObject target;
     public override void EnterState(EnemyStateManager enemy)
     {
-        target = GameObject.Find("enemy");
+        target = GameObject.Find("Player");//player
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
@@ -20,7 +20,6 @@ public class EnemyChaseState : EnemyBaseState
     private void Chase(EnemyStateManager enemy)
     {
         float speed = 4.0f;
-        Vector3 MovingOntarget = Vector3.MoveTowards(enemy.transform.position, target.transform.position, speed * Time.deltaTime);
-        enemy.transform.position = MovingOntarget;
+        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target.transform.position, speed * Time.deltaTime);
     }
 }
