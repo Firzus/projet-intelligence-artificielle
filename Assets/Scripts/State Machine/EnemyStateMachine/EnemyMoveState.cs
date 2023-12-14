@@ -27,7 +27,7 @@ public class EnemyMoveState : EnemyBaseState
     {
         //switch state if trigger
         Debug.Log("Trigger " + col.name);
-        if (col.name == "Player")
+        if (col.name == "player")
         {
             enemy.SwitchState(enemy.chase);
         }

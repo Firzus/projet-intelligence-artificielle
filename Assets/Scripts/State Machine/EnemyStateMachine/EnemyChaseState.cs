@@ -6,7 +6,7 @@ public class EnemyChaseState : EnemyBaseState
     GameObject target;
     public override void EnterState(EnemyStateManager enemy)
     {
-        target = GameObject.Find("Player");//player
+        target = GameObject.Find("player");//player
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
