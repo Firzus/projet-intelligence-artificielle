@@ -353,17 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d756c19237dd67c4b892229b65af9d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &713578255 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5333098175674709991, guid: c0fb7c00a32920246b508272a17caf42, type: 3}
-  m_PrefabInstance: {fileID: 8506953809676818755}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &827822379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,11 +499,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2495129498101077330, guid: c0fb7c00a32920246b508272a17caf42, type: 3}
   m_PrefabInstance: {fileID: 4177776186112989102}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1566791991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3319900046867008351, guid: 1207829529b45fa4ab06f107f993bf4a, type: 3}
-  m_PrefabInstance: {fileID: 5784841334195079083}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1423382589
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +530,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 245791250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566791991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3319900046867008351, guid: 1207829529b45fa4ab06f107f993bf4a, type: 3}
+  m_PrefabInstance: {fileID: 5784841334195079083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1925249545
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +979,7 @@ PrefabInstance:
     - target: {fileID: 5104218705502178576, guid: c0fb7c00a32920246b508272a17caf42, type: 3}
       propertyPath: State
       value: 
-      objectReference: {fileID: 713578255}
+      objectReference: {fileID: 0}
     - target: {fileID: 5333098175674709991, guid: c0fb7c00a32920246b508272a17caf42, type: 3}
       propertyPath: _hp
       value: 3
@@ -999,6 +988,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6629701042547073334, guid: c0fb7c00a32920246b508272a17caf42, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 594644894}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1015,3 +1008,4 @@ SceneRoots:
   - {fileID: 2907409256148053877}
   - {fileID: 827822379}
   - {fileID: 245791250}
+  - {fileID: 8506953809676818755}
