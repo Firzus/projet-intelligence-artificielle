@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 8644466021187435880, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 1572878886}
   - component: {fileID: 1572878885}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
