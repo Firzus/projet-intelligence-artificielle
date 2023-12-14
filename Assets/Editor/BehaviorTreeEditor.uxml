@@ -5,9 +5,17 @@
     </uie:Toolbar>
     <SplitView>
         <ui:VisualElement name="left-panel" style="flex-grow: 1; width: 299px;">
-            <InspectorView style="height: 580px; width: 194px;">
-                <ui:Label tabindex="-1" text="Inspector" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-            </InspectorView>
+            <SplitView orientation="Vertical">
+                <ui:VisualElement name="inspector-container" style="flex-grow: 1;">
+                    <InspectorView style="height: 580px; width: 334px; flex-grow: 0;">
+                        <ui:Label tabindex="-1" text="Inspector" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    </InspectorView>
+                </ui:VisualElement>
+                <ui:VisualElement name="blackboard-container" style="flex-grow: 1; flex-shrink: 0;">
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(32, 32, 32);" />
+                    <ui:IMGUIContainer />
+                </ui:VisualElement>
+            </SplitView>
         </ui:VisualElement>
         <ui:VisualElement name="right-panel" style="flex-grow: 1;">
             <BehaviorTreeView focusable="true" style="flex-grow: 1;">
