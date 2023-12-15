@@ -107,7 +107,7 @@ public class BehaviorTree : ScriptableObject
             EditorUtility.SetDirty(composite);
         }
     }
-
+    #endif
     public List<Node> GetChildren(Node parent)
     {
         List<Node> children = new List<Node>();
@@ -131,8 +131,8 @@ public class BehaviorTree : ScriptableObject
         }
 
         return children;
+        
     }
-#endif
 
     public void Traverse(Node node, System.Action<Node> visiter)
     {
