@@ -1,13 +1,11 @@
-using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemyMoveState : EnemyBaseState
 {
     //private GameObject[] wp;
     bool loop = false;
     public override void EnterState(EnemyStateManager enemy)
     {
-        InstantiateWaypoint();
+        //InstantiateWaypoint();
         //CreateRandomWaypoint(enemy);
     }
 
@@ -63,25 +61,27 @@ public class EnemyMoveState : EnemyBaseState
         }
     }
 
-    private void InstantiateWaypoint()
-    {
-        string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
-        GameObject waypoint = GameObject.Instantiate(prefab);
-        waypoint.name = "Waypoint";
-    }
+    // private void InstantiateWaypoint()
+    // {
+    //     string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
+    //     GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
+    //     GameObject waypoint = GameObject.Instantiate(prefab);
+    //     waypoint.name = "Waypoint";
+    // }
 
-    private void CreateRandomWaypoint(EnemyStateManager enemy)
-    {
-        int a = (int)Random.Range(2.0f, 4.0f);
+    // private void CreateRandomWaypoint(EnemyStateManager enemy)
+    // {
+    //     int a = (int)Random.Range(2.0f, 4.0f);
 
-        for (int i = 0; i < a; i++)
-        {
-            float x = Random.Range(-10.0f, 5.0f), y = Random.Range(-10.0f, 5.0f), z = Random.Range(-10.0f, 5.0f);
-            string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
-            GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
-            GameObject waypoint = GameObject.Instantiate(prefab, new Vector3(x, y, z), prefab.transform.rotation);
-            waypoint.name = "Waypoint " + enemy.name + " " + i;
-        }
-    }
+    //     for (int i = 0; i < a; i++)
+    //     {
+    //         float x = Random.Range(-10.0f, 5.0f), y = Random.Range(-10.0f, 5.0f), z = Random.Range(-10.0f, 5.0f);
+    //         string WaypointPath = "Assets/Prefabs/EnemiesWaypoint/Simple Bullet/Simple Bullet Waypoint.prefab";
+    //         #if UNITY_EDITOR
+    //         GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(WaypointPath);
+    //         #endif
+    //         GameObject waypoint = GameObject.Instantiate(prefab, new Vector3(x, y, z), prefab.transform.rotation);
+    //         waypoint.name = "Waypoint " + enemy.name + " " + i;
+    //     }
+    // }
 }
