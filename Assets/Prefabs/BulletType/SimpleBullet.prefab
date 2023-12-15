@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 630814081721780595}
   - component: {fileID: -3312677958724193700}
   - component: {fileID: 3243035084217125877}
-  - component: {fileID: -3502435418953115059}
+  - component: {fileID: 3751138454943900664}
   m_Layer: 0
   m_Name: SimpleBullet
   m_TagString: Bullet
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: f03fcddbc3365eb45a3d408708600ac5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 15
   _lifeTime: 3
---- !u!82 &-3502435418953115059
+--- !u!82 &3751138454943900664
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2fb18038874e9a842962840e8dff0bd3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
