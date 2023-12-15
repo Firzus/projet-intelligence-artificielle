@@ -6,7 +6,7 @@ public class EnemyMovingAttackState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         Debug.Log("Enter to Moving State");
-        target = GameObject.Find("player");//player
+        target = GameObject.FindGameObjectWithTag("Player");//player
     }
 
     public override void UpdateState(EnemyStateManager enemy)
@@ -16,7 +16,6 @@ public class EnemyMovingAttackState : EnemyBaseState
 
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
-        throw new System.NotImplementedException();
     }
 
     private void Chase(EnemyStateManager enemy)

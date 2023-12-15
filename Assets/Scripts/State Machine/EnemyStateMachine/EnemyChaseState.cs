@@ -6,7 +6,7 @@ public class EnemyChaseState : EnemyBaseState
     GameObject target;
     public override void EnterState(EnemyStateManager enemy)
     {
-        target = GameObject.Find("player");//player
+        target = GameObject.FindGameObjectWithTag("Player");//player
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
@@ -15,12 +15,12 @@ public class EnemyChaseState : EnemyBaseState
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
         //switch state if trigger
-        Debug.Log("Trigger " + col.name);
-        if (col.name == "player" && enemy.name == "Simple Bullet")
+        Debug.Log("Trigger " + col.tag);
+        if (col.tag == "Player" && enemy.name == "Simple Bullet")
         {
             enemy.SwitchState(enemy.attack);
         }
-        else if(col.name == "player" && enemy.name == "Elite Bullet"){
+        else if(col.tag == "Player" && enemy.name == "Elite Bullet"){
             enemy.SwitchState(enemy.moving);
         }
     }
