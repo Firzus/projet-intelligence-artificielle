@@ -3,22 +3,25 @@ using UnityEngine;
 public class CreateWeapon : MonoBehaviour
 {
     GameObject _weaponManager;
-    GameObject weapon;
     private WeaponManageur.Weapon actualWeapon;
     // Start is called before the first frame update
     void Start()
     {
-        string weaponPath = "Assets/Prefabs/Weapons/weapon.prefab";
-        weapon = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(weaponPath);
         _weaponManager = GameObject.Find("WeaponManager");
         actualWeapon = _weaponManager.GetComponent<WeaponManageur>().ChooseWeapon();
     }
 
-    public void SetWeapon(EnemyStateManager enemy)
+    public void SetWeapon()
     {
-        GameObject spawn = Instantiate(weapon, enemy.transform.position, enemy.transform.rotation, enemy.transform);
-        spawn.GetComponent<SpriteRenderer>().sprite = actualWeapon.sp;
-        spawn.GetComponent<AudioSource>().clip = actualWeapon.audio;
-        spawn.name = actualWeapon.Type;
+        Debug.Log("Starting instantiate");
+        string weaponPath = "Assets/Prefabs/Weapons/weapon.prefab";
+        GameObject weapon = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(weaponPath);
+
+
+        GameObject spawn = Instantiate(weapon, weapon.transform.position, weapon.transform.rotation);
+        // spawn.GetComponent<SpriteRenderer>().sprite = actualWeapon.sp;
+        // spawn.GetComponent<AudioSource>().clip = actualWeapon.audio;
+         spawn.name = "weapon";
+        Debug.Log("weapon created");
     }
 }
