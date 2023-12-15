@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7196743329649599754}
   - component: {fileID: 7527503148546921376}
   - component: {fileID: 3655490280954650402}
+  - component: {fileID: 3177480210199153241}
   m_Layer: 0
   m_Name: ObjectWoodenBarel
   m_TagString: Object
@@ -143,5 +144,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108ef1ebace56be499cb620455660952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intactSprite: {fileID: 21300000, guid: a7b6fb47233256b4bbdd30624152d530, type: 3}
-  _destroySprite: {fileID: 21300000, guid: 6a3d738955fa69940bad6f277a521b3b, type: 3}
+  animator: {fileID: 3177480210199153241}
+  _boxCollider: {fileID: 7527503148546921376}
+--- !u!95 &3177480210199153241
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5828264980779309220}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4add4ae46bce41644997d2afb317dfd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
