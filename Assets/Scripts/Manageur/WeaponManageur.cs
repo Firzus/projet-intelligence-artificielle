@@ -8,6 +8,7 @@ public class WeaponManageur : MonoBehaviour
         public Sprite sp;
         [SerializeField] string type;
         public AudioClip audio;
+        public string Type{ get => type;}
         public Weapon addW(Sprite sprite, string wType, AudioClip wAudio)
         {
             sp = sprite;
@@ -26,7 +27,7 @@ public class WeaponManageur : MonoBehaviour
 
     public Weapon ChooseWeapon()
     {
-        int a = Random.Range(0, _weaponList.Count);
+        int a = Random.Range(0, _weaponList.Count-1);
         Weapon w = _weaponList[a];
         return w;
     }
