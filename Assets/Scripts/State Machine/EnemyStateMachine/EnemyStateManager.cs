@@ -4,7 +4,6 @@ public class EnemyStateManager : MonoBehaviour
 {
 
     EnemyBaseState currentState;
-    public EnemyMoveState move = new EnemyMoveState();
     public  EnemyChaseState chase = new EnemyChaseState();
     public EnemyAttackState attack = new EnemyAttackState();
     public EnemyMovingAttackState moving = new EnemyMovingAttackState();
