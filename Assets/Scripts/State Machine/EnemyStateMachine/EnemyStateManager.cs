@@ -4,6 +4,7 @@ public class EnemyStateManager : MonoBehaviour
 {
 
     EnemyBaseState currentState;
+    public EnemyLoadingState loading = new EnemyLoadingState();
     public  EnemyChaseState chase = new EnemyChaseState();
     public EnemyAttackState attack = new EnemyAttackState();
     public EnemyMovingAttackState moving = new EnemyMovingAttackState();
@@ -11,7 +12,7 @@ public class EnemyStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = chase;
+        currentState = loading;
         currentState.EnterState(this);
     }
 

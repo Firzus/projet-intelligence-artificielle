@@ -3,13 +3,7 @@ public class CreateWeapon : MonoBehaviour
 {
     GameObject _weaponManager;
     private WeaponManageur.Weapon actualWeapon;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _weaponManager = GameObject.Find("WeaponManager");
-        actualWeapon = _weaponManager.GetComponent<WeaponManageur>().ChooseWeapon();
-    }
-
+#if UNITY_EDITOR
     public void SetWeapon(EnemyStateManager enemy)
     {
         //Debug
@@ -30,14 +24,19 @@ public class CreateWeapon : MonoBehaviour
         //Debug
         Debug.Log("weapon created");
     }
-
+#endif
     private void SetTarget(GameObject gameObject){
         GameObject target = GameObject.FindGameObjectWithTag("Player");
 
         gameObject.GetComponent<WeaponAim>()._target = target;
     }
 
-    private void SetInventory(GameObject gameObject){
-
+    public void Init(){
+        _weaponManager = GameObject.Find("WeaponManager");
+        actualWeapon = _weaponManager.GetComponent<WeaponManageur>().ChooseWeapon();
     }
+
+    // private void SetInventory(GameObject gameObject){
+
+    // }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyChaseState : EnemyBaseState
 {
-   
+
     GameObject target;
     public override void EnterState(EnemyStateManager enemy)
     {
@@ -14,13 +14,14 @@ public class EnemyChaseState : EnemyBaseState
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
+        //Debug.Log("Trigger " + col.tag);
         //switch state if trigger
-        Debug.Log("Trigger " + col.tag);
-        if (col.tag == "Player" && enemy.name == "Simple Bullet")
+        if (col.CompareTag("Player") && enemy.name == "Simple Bullet")
         {
             enemy.SwitchState(enemy.attack);
         }
-        else if(col.tag == "Player" && enemy.name == "Elite Bullet"){
+        else if (col.CompareTag("Player") && enemy.name == "Elite Bullet")
+        {
             enemy.SwitchState(enemy.moving);
         }
     }
