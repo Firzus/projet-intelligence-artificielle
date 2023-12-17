@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] private PlayerMove playerMove;
-    [SerializeField] private Animator animator;
+    [SerializeField] PlayerMove playerMove;
+    [SerializeField] Animator animator;
 
     private string currentState;
     private string lastMovementDirection;
