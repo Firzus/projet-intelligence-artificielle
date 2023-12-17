@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 1518569223436385008}
   - component: {fileID: 698425739878137748}
   - component: {fileID: 191379424559252364}
+  - component: {fileID: 4486393034070545847}
   - component: {fileID: 1831499493578770419}
   - component: {fileID: 8378581114672704489}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,6 +192,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 1518569223436385008}
   _state: {fileID: 698425739878137748}
+--- !u!114 &4486393034070545847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246994648009750988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326935ef48d42f141963f01d32cc8d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8378581114672704489}
 --- !u!114 &1831499493578770419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +238,7 @@ Animator:
   m_GameObject: {fileID: 6246994648009750988}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e5453df898ff3ae488772380d4717077, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
