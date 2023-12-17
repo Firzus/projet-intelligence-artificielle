@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1518569223436385008}
   - component: {fileID: 698425739878137748}
   - component: {fileID: 191379424559252364}
-  - component: {fileID: 4486393034070545847}
+  - component: {fileID: 5507014074171994345}
   - component: {fileID: 1831499493578770419}
   - component: {fileID: 8378581114672704489}
   m_Layer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: ec43ccf1bb107ee4491930a1f156abab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b82d8020e468e4f4b97d86132d60d3f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6666667, y: 1.2777778}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.6666667, y: 1.2777778}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -190,9 +190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c42dbb803a581ce4681e4d6ac69ef1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 1518569223436385008}
-  _state: {fileID: 698425739878137748}
---- !u!114 &4486393034070545847
+  rb: {fileID: 1518569223436385008}
+  state: {fileID: 698425739878137748}
+--- !u!114 &5507014074171994345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326935ef48d42f141963f01d32cc8d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMove: {fileID: 191379424559252364}
   animator: {fileID: 8378581114672704489}
 --- !u!114 &1831499493578770419
 MonoBehaviour:
@@ -238,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 6246994648009750988}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88c67b6d4ff4bca4590154b19f04c61e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
