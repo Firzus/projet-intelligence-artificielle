@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6684777099809171399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ca2f2f3f1aae4cafbf7c482b5c26b, type: 3}
+  m_Name: MoveToPlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: cd5c1d830c362004cad246a9d7bcc9dd
+  position: {x: 10, y: 194.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  _target: {fileID: 0}
+  _enemy: {fileID: 0}
+  _enemyTransform: {fileID: 0}
 --- !u!114 &-1024956492862057076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,13 +39,35 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1e33e34391aba9342b807eda61621b7f
-  position: {x: 239, y: -82}
+  position: {x: 22.000078, y: -344.87683}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  child: {fileID: 0}
+  child: {fileID: 5520427779410736130}
+--- !u!114 &-910915430652243858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681bdab6de718dd479705fcc4295a7e8, type: 3}
+  m_Name: CheckPlayerInFoV
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3d6a06ec8ecb44d4eb90121dc0e52a42
+  position: {x: 10, y: -102}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 6658726176588260573}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +89,32 @@ MonoBehaviour:
   - {fileID: -1024956492862057076}
   - {fileID: 6658726176588260573}
   - {fileID: 5520427779410736130}
+  - {fileID: -6684777099809171399}
+  - {fileID: -910915430652243858}
+--- !u!114 &184863977899215549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ca2f2f3f1aae4cafbf7c482b5c26b, type: 3}
+  m_Name: MoveToPlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 58be7fd86b0a98046a7f7fda5df6ae3a
+  position: {x: 54, y: -20}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  _target: {fileID: 0}
+  _enemy: {fileID: 0}
+  _enemyTransform: {fileID: 0}
 --- !u!114 &5520427779410736130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,13 +130,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5b53807d2e6e1fc48885467538128b5e
-  position: {x: 447.2, y: -125}
+  position: {x: 22.000029, y: -229.64613}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  child: {fileID: 0}
+  child: {fileID: -910915430652243858}
 --- !u!114 &6658726176588260573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,10 +152,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: bf93d2bc559127c4c9baf56deb07934a
-  position: {x: 22.399994, y: -106}
+  position: {x: 20, y: 35}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  children: []
+  children:
+  - {fileID: -6684777099809171399}
