@@ -2,18 +2,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerState _state;
-
     private float _horizontal;
     private float _vertical;
 
     [SerializeField] Rigidbody2D _rb;
-
-
-    void Start()
-    {
-        _state = GetComponent<PlayerState>();
-    }
+    [SerializeField] PlayerState _state;
 
     private void Update()
     {
