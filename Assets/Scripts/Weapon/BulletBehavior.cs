@@ -37,15 +37,13 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(this.gameObject.name);
-        if (this.gameObject.name == "rocketBullet(Clone)")
-        {
-            Debug.Log("a");
-            Instantiate(_RpgExplosion, this.gameObject.transform.position, Quaternion.identity, GameObject.Find("BulletManager").transform);
-            Destroy(this.gameObject);
-        }
         if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Bullet")
         {
+            if (this.gameObject.name == "rocketBullet(Clone)")
+            {
+                Instantiate(_RpgExplosion, this.gameObject.transform.position, Quaternion.identity, GameObject.Find("BulletManager").transform);
+                Destroy(this.gameObject);
+            }
             Destroy(this.gameObject);
         }
     }
