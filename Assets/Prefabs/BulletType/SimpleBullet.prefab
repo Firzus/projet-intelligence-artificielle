@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 15
   _lifeTime: 3
+  _RpgExplosion: {fileID: 6564793865906054549, guid: ff6bdade6791bd446b7708716d7263d3, type: 3}
 --- !u!82 &3751138454943900664
 AudioSource:
   m_ObjectHideFlags: 0

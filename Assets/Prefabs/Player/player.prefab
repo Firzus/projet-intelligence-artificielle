@@ -160,7 +160,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &698425739878137748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,8 +204,11 @@ MonoBehaviour:
   _list:
   - sp: {fileID: 21300000, guid: 0b8102560a4c53846bb884aeb033317d, type: 3}
     type: fusil_d'assaut
+    audio: {fileID: 0}
   - sp: {fileID: 21300000, guid: 07adf1877ae24c745b6b1b665cb6d6fb, type: 3}
     type: pistolet
+    audio: {fileID: 0}
   - sp: {fileID: 21300000, guid: b4a899753aad01a47a1e84faf5d4a4cf, type: 3}
     type: lourd
-  _playerWeapon: {fileID: 0}
+    audio: {fileID: 0}
+  _EntitieWeapon: {fileID: 0}
