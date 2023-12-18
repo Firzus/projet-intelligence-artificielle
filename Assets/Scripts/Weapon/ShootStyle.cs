@@ -7,11 +7,11 @@ public class ShootStyle : MonoBehaviour
     [SerializeField] GameObject _simpleBullet;
     [SerializeField] GameObject _mediumBullet;
     [SerializeField] GameObject _rocketBullet;
-    [SerializeField] WeaponInventory _gunInv;
     [SerializeField] float _waitingMultiplicator = 1;
 
     public bool _waiting = false;
 
+    private WeaponInventory _gunInv;
     private ShootBullet _shootBullet;
     private bool _canShootCooldown;
     private float _shootCooldown;
@@ -20,6 +20,7 @@ public class ShootStyle : MonoBehaviour
     void Start()
     {
         _parent = this.gameObject.transform.parent;
+        _gunInv = _parent.GetComponent<WeaponInventory>();
         _shootBullet = GetComponent<ShootBullet>();
         _canShootCooldown = false;
         _shootCooldown = 0f;
