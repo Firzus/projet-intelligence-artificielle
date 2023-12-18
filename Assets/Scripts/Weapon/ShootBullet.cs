@@ -14,14 +14,6 @@ public class ShootBullet : MonoBehaviour
 
     public void HandGunShooting(GameObject bullet)
     {
-        GameObject manager = GameObject.Find("BulletManager");
-        if (manager != null)
-        {
-            _bulletInst = Instantiate(bullet, _bulletStartPoint.position, _weapon.transform.rotation, GameObject.Find("BulletManager").transform);
-        }
-        else
-        {
-            _bulletInst = Instantiate(bullet, _bulletStartPoint.position, _weapon.transform.rotation);
-        }
+        _bulletInst = Instantiate(bullet, _bulletStartPoint.position, _weapon.transform.rotation, this.gameObject.transform.parent.parent);     
     }
 }

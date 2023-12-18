@@ -1,17 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
-    private Rigidbody2D _rb;
+    [SerializeField] Rigidbody2D _rb;
     [SerializeField] float _speed = 15f;
     [SerializeField] float _lifeTime = 2;
     [SerializeField] GameObject _RpgExplosion;
+
+    private Transform _parentType;
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _parentType = gameObject.transform.parent;
         SetStraingVelocity();
     }
 
@@ -31,20 +31,35 @@ public class BulletBehavior : MonoBehaviour
     {
         if(_lifeTime < 0 )
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Bullet")
+        string entityShooter = _parentType.tag;
+        if (entityShooter == "PlayerManager")
         {
-            if (this.gameObject.name == "rocketBullet(Clone)")
+            if(!collision.gameObject.CompareTag("Player"))
             {
-                Instantiate(_RpgExplosion, this.gameObject.transform.position, Quaternion.identity, GameObject.Find("BulletManager").transform);
-                Destroy(this.gameObject);
+                BulletExplosion();
             }
-            Destroy(this.gameObject);
         }
+        else
+        {
+            if (!collision.gameObject.CompareTag("Enemy"))
+            {
+                BulletExplosion();
+            }
+        }
+    }
+
+    private void BulletExplosion()
+    {
+        if (gameObject.CompareTag("ExplosifBullet"))
+        {
+            Instantiate(_RpgExplosion, gameObject.transform.position, Quaternion.identity, _parentType);
+        }
+        Destroy(gameObject);       
     }
 }

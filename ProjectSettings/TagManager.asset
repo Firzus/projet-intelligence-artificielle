@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - Point
   - Explosion
+  - ExplosifBullet
+  - EnemyManager
+  - PlayerManager
   layers:
   - Default
   - TransparentFX

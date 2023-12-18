@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3199fc0afcdbc46a30595f778e1858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 630814081721780595}
   _speed: 15
   _lifeTime: 3
   _RpgExplosion: {fileID: 6564793865906054549, guid: ff6bdade6791bd446b7708716d7263d3, type: 3}
