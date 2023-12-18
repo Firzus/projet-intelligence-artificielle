@@ -1204,6 +1204,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2914808105692265661, guid: 1207829529b45fa4ab06f107f993bf4a, type: 3}
   m_PrefabInstance: {fileID: 5784841334195079083}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1408273231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408273234}
+  - component: {fileID: 1408273233}
+  - component: {fileID: 1408273232}
+  m_Layer: 0
+  m_Name: The Weapon Master
+  m_TagString: Boss
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1408273232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408273231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6b5ef3aa198ae42a9d5893bcf86bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _list:
+  - sp: {fileID: 0}
+    type: 
+    audio: {fileID: 0}
+  - sp: {fileID: 0}
+    type: 
+    audio: {fileID: 0}
+  _EntitieWeapon: {fileID: 0}
+--- !u!212 &1408273233
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408273231}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1408273234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408273231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.576597, y: 0.7264514, z: 0.89952904}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1483248609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7346301302169118634, guid: b304f0328947d4944bfb9e0d22ca92c0, type: 3}
@@ -1802,6 +1907,14 @@ PrefabInstance:
       value: weapon
       objectReference: {fileID: 0}
     - target: {fileID: 6821271441545390955, guid: 5b22c4cb3fdf09047a1eea3d363b192f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821271441545390955, guid: 5b22c4cb3fdf09047a1eea3d363b192f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821271441545390955, guid: 5b22c4cb3fdf09047a1eea3d363b192f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.03000021
       objectReference: {fileID: 0}
@@ -1886,12 +1999,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 654623244}
     - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.data[3].sp
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b7748f45cc64de419e8907c99e8ed94, type: 3}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.data[4].sp
+      value: 
+      objectReference: {fileID: 21300000, guid: 2948c732298eb814c9fa188c4b1d798f, type: 3}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
       propertyPath: _list.Array.data[0].type
       value: rafale
       objectReference: {fileID: 0}
     - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
       propertyPath: _list.Array.data[2].type
       value: rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.data[3].type
+      value: shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.data[4].type
+      value: minigun
       objectReference: {fileID: 0}
     - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
       propertyPath: _list.Array.data[0].audio
@@ -1905,6 +2038,14 @@ PrefabInstance:
       propertyPath: _list.Array.data[2].audio
       value: 
       objectReference: {fileID: 8300000, guid: ed1067acdca79504b946f15937ef9872, type: 3}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.data[3].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 10d3a5f659b58844eae47e6256ded2f7, type: 3}
+    - target: {fileID: 1831499493578770419, guid: 06f147cd559af114e8a3236653468379, type: 3}
+      propertyPath: _list.Array.data[4].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: cb8b65718c4f3a14e8925cfb61d0e404, type: 3}
     - target: {fileID: 2806524237601682379, guid: 06f147cd559af114e8a3236653468379, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2154,6 +2295,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.data[3].sp
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b7748f45cc64de419e8907c99e8ed94, type: 3}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.data[4].sp
+      value: 
+      objectReference: {fileID: 21300000, guid: 2948c732298eb814c9fa188c4b1d798f, type: 3}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.data[3].type
+      value: shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.data[4].type
+      value: minigun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.data[3].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 10d3a5f659b58844eae47e6256ded2f7, type: 3}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: _weaponList.Array.data[4].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: cb8b65718c4f3a14e8925cfb61d0e404, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2210,6 +2379,10 @@ PrefabInstance:
     - target: {fileID: 6138009970109609964, guid: 0060d20c2cf4f1149a836abff9e87872, type: 3}
       propertyPath: m_Name
       value: mediumBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695378349671939351, guid: 0060d20c2cf4f1149a836abff9e87872, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2391424113463741195, guid: 0060d20c2cf4f1149a836abff9e87872, type: 3}
@@ -2344,3 +2517,4 @@ SceneRoots:
   - {fileID: 655452042}
   - {fileID: 1100825847}
   - {fileID: 563967384}
+  - {fileID: 1408273234}

@@ -16,12 +16,13 @@ public class DestroyObject : MonoBehaviour
             animator = this.gameObject.GetComponent<Animator>();
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
             animator.SetBool("isDestroyed", true);
             _boxCollider.isTrigger = true;
+
         }
     }
 }

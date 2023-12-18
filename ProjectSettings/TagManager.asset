@@ -14,6 +14,7 @@ TagManager:
   - ExplosifBullet
   - EnemyManager
   - PlayerManager
+  - Boss
   layers:
   - Default
   - TransparentFX

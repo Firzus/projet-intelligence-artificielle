@@ -34,25 +34,25 @@ public class BulletBehavior : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         string entityShooter = _parentType.tag;
         if (entityShooter == "PlayerManager")
         {
-            if(!collision.gameObject.CompareTag("Player"))
+            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet"))
             {
                 BulletExplosion();
             }
         }
         else
         {
-            if (!collision.gameObject.CompareTag("Enemy"))
+            if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Bullet"))
             {
                 BulletExplosion();
             }
         }
     }
+
 
     private void BulletExplosion()
     {
