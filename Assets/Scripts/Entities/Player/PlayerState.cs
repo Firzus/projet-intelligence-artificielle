@@ -22,7 +22,7 @@ public class PlayerState : Entities
 
         if (_isAlive && CanMove)
         {
-
+            //
         }
     }
 

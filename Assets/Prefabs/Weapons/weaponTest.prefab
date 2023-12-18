@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5501303783524125635}
   - component: {fileID: 8712389478098958409}
   m_Layer: 0
-  m_Name: weaponTest
+  m_Name: WeaponTest
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1da0c58519d1dda4b96266da0a732888, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   _target: {fileID: 0}
 --- !u!114 &763384058592209841
 MonoBehaviour:
@@ -111,10 +111,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 546e106ad4ceb4543a3c40a983d659cd, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  _weapon: {fileID: 0}
-  _bulletStartPoint: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5501303783524125635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,12 +123,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d451317df713e747b9222d9d1b447da, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   _simpleBullet: {fileID: 5824602856664715808, guid: d036487acd9450a40b51e80b6b519793, type: 3}
   _mediumBullet: {fileID: 6138009970109609964, guid: 0060d20c2cf4f1149a836abff9e87872, type: 3}
   _rocketBullet: {fileID: 5581739771661749943, guid: d663f8e852e92f1448af5080b3bc4624, type: 3}
-  _gunInv: {fileID: 0}
   _waitingMultiplicator: 1
 --- !u!82 &8712389478098958409
 AudioSource:
