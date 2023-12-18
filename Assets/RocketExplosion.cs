@@ -1,21 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
-public class AnimationAndDestroy : MonoBehaviour
+public class RocketExplosion : MonoBehaviour
 {
-    //[SerializeField] Animator animator;
+    [SerializeField] Animator animator;
 
     private const float delay = 1.250f;
 
     void Start()
     {
-        Debug.Log("explosion start");
         StartCoroutine(PlayAnimationAndDestroy());
     }
 
     IEnumerator PlayAnimationAndDestroy()
     {
-        GetComponent<Animator>().Play("Rocket_Explosion");
+        animator.Play("Rocket_Explosion");
 
 
         // Attendre pendant un certain temps
