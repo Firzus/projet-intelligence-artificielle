@@ -8,8 +8,7 @@ public class VeteranBullet : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        EnemyStart();
-        SetValue(50, 5f);
+        EnemyStart(5, 1.5f);
     }
 
     // Update is called once per frame

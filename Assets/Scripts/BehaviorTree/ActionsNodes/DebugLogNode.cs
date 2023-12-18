@@ -21,6 +21,4 @@ public class DebugLogNode : ActionNode
         Debug.Log($"OnUpdate{message}");
         return State.Success;
     }
-
-    
 }

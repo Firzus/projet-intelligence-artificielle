@@ -15,15 +15,58 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: cd5c1d830c362004cad246a9d7bcc9dd
-  position: {x: 10, y: 194.00002}
+  position: {x: 370.93604, y: 246.99991}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  _target: {fileID: 0}
-  _enemy: {fileID: 0}
-  _enemyTransform: {fileID: 0}
+--- !u!114 &-5663045574530122860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716c8d5df9f02e84e84e742c0062db87, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f18537d61febf6b4ca769100e15f6de8
+  position: {x: -465.58145, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  duration: 1
+  startTime: 0
+--- !u!114 &-1208167346299489562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4176de695207e7e4a9e85198cd5027f3
+  position: {x: 341, y: -238.99994}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children: []
+  current: 0
 --- !u!114 &-1024956492862057076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,35 +82,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1e33e34391aba9342b807eda61621b7f
-  position: {x: 22.000078, y: -344.87683}
+  position: {x: -84.00004, y: -338.06085}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
   child: {fileID: 5520427779410736130}
---- !u!114 &-910915430652243858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681bdab6de718dd479705fcc4295a7e8, type: 3}
-  m_Name: CheckPlayerInFoV
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 3d6a06ec8ecb44d4eb90121dc0e52a42
-  position: {x: 10, y: -102}
-  blackBoard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    movetoObject: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  child: {fileID: 6658726176588260573}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,10 +108,17 @@ MonoBehaviour:
     movetoObject: {fileID: 0}
   nodes:
   - {fileID: -1024956492862057076}
-  - {fileID: 6658726176588260573}
   - {fileID: 5520427779410736130}
   - {fileID: -6684777099809171399}
-  - {fileID: -910915430652243858}
+  - {fileID: -1208167346299489562}
+  - {fileID: 7827920890252244000}
+  - {fileID: -5663045574530122860}
+  - {fileID: 2036765024824801589}
+  - {fileID: 6470514375787912226}
+  - {fileID: 2813049233085929614}
+  - {fileID: 7357065215327073564}
+  - {fileID: 3827571793062157232}
+  - {fileID: 5115655011124187218}
 --- !u!114 &184863977899215549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,9 +140,100 @@ MonoBehaviour:
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  _target: {fileID: 0}
-  _enemy: {fileID: 0}
-  _enemyTransform: {fileID: 0}
+--- !u!114 &2036765024824801589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716c8d5df9f02e84e84e742c0062db87, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2c1601f140f15654b85128bb1a154c9a
+  position: {x: 191, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  duration: 1
+  startTime: 0
+--- !u!114 &2813049233085929614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29605d4b727c141ab85bbe5fc3df82, type: 3}
+  m_Name: CheckPlayerOutRange
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: dcaf5490727d62249ac815391f0dda25
+  position: {x: -36.500027, y: 247.00006}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &3827571793062157232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4a92229401a407c44a5c02b6975722c8
+  position: {x: -84, y: -98.3225}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 7357065215327073564}
+  - {fileID: 5115655011124187218}
+  current: 0
+--- !u!114 &5115655011124187218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e22ea6d5a2781e47af522ee896731d5, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 48d839deab5f5fe4d988e8ae98d31f7d
+  position: {x: 170.99998, y: 34.00001}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 2813049233085929614}
+  - {fileID: 2036765024824801589}
+  - {fileID: -6684777099809171399}
 --- !u!114 &5520427779410736130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,14 +249,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5b53807d2e6e1fc48885467538128b5e
-  position: {x: 22.000029, y: -229.64613}
+  position: {x: -84.00004, y: -223.06082}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  child: {fileID: -910915430652243858}
---- !u!114 &6658726176588260573
+  child: {fileID: 3827571793062157232}
+--- !u!114 &6470514375787912226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,17 +265,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
-  m_Name: SequencerNode
+  m_Script: {fileID: 11500000, guid: f08dfda7c9c61bc429e6cf49d7dea995, type: 3}
+  m_Name: CheckPlayerInRange
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: bf93d2bc559127c4c9baf56deb07934a
-  position: {x: 20, y: 35}
+  guid: 3beb0deee82145a4c87f847908469fcf
+  position: {x: -683.93634, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &7357065215327073564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e22ea6d5a2781e47af522ee896731d5, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9aebd195bea575c44b9a87b3a719fe6e
+  position: {x: -369.00003, y: 33.74503}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
   children:
-  - {fileID: -6684777099809171399}
+  - {fileID: 6470514375787912226}
+  - {fileID: -5663045574530122860}
+  - {fileID: 7827920890252244000}
+--- !u!114 &7827920890252244000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278854b12bbd1724cb87167b001c90b1, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fc232c77a24c6b3469021250d87d8ff8
+  position: {x: -293.99994, y: 247}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  message: I'M DOING THINGS

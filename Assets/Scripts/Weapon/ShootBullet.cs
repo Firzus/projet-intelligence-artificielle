@@ -8,6 +8,6 @@ public class ShootBullet : MonoBehaviour
 
     public void HandGunShooting(GameObject bullet)
     {
-        _bulletInst = Instantiate( bullet, _bulletStartPoint.position, _weapon.transform.rotation);
+        _bulletInst = Instantiate(bullet, _bulletStartPoint.position, _weapon.transform.rotation);
     }
 }

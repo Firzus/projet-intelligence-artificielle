@@ -8,8 +8,7 @@ public class EliteBullet : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        EnemyStart();
-        SetValue(10, 6f);
+        EnemyStart(5, 1.5f);
     }
 
     // Update is called once per frame

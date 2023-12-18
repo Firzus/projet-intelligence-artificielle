@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveToPlayerNode : ActionNode
 {
-    public GameObject _target;
-    public GameObject _enemy;
-    [HideInInspector] public Transform _enemyTransform;
+    [HideInInspector] private GameObject _target;
+    [HideInInspector] private GameObject _enemy;
+    [HideInInspector] private Transform _enemyTransform;
 
     protected override void OnStart()
     {
