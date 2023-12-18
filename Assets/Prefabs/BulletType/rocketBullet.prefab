@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5014813407334208568}
   - component: {fileID: 1516860618772528468}
   m_Layer: 0
-  m_Name: rocketBullet
+  m_Name: RocketBullet
   m_TagString: ExplosifBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

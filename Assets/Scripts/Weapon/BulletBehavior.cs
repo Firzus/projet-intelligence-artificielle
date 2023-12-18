@@ -1,11 +1,10 @@
-using System.Collections;
 using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] Rigidbody2D _rb;
     [SerializeField] float _speed = 15f;
-    [SerializeField] float _lifeTime = 2;
+    [SerializeField] float _lifeTime = 2f;
     [SerializeField] GameObject _RpgExplosion;
 
     private Transform _parentType;
