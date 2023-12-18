@@ -8,6 +8,7 @@ public class BulletBehavior : MonoBehaviour
     private Rigidbody2D _rb;
     [SerializeField] float _speed = 15f;
     [SerializeField] float _lifeTime = 2;
+    [SerializeField] GameObject _RpgExplosion;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -36,8 +37,13 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Bullet")
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Bullet")
         {
+            if (this.gameObject.name == "rocketBullet(Clone)")
+            {
+                Instantiate(_RpgExplosion, this.gameObject.transform.position, Quaternion.identity, GameObject.Find("BulletManager").transform);
+                Destroy(this.gameObject);
+            }
             Destroy(this.gameObject);
         }
     }
