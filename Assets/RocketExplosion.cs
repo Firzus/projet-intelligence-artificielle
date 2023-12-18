@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AnimationAndDestroy : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    //[SerializeField] Animator animator;
 
     private const float delay = 1.250f;
 
@@ -15,7 +15,8 @@ public class AnimationAndDestroy : MonoBehaviour
 
     IEnumerator PlayAnimationAndDestroy()
     {
-        animator.Play("Rocket_Explosion");
+        GetComponent<Animator>().Play("Rocket_Explosion");
+
 
         // Attendre pendant un certain temps
         yield return new WaitForSeconds(delay);
