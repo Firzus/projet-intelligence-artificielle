@@ -11,6 +11,7 @@ public class DestroyObject : MonoBehaviour
         {
             animator.SetBool("isDestroyed", true);
             _boxCollider.isTrigger = true;
+
         }
     }
 }

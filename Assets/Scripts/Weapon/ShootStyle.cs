@@ -75,7 +75,7 @@ public class ShootStyle : MonoBehaviour
 
                 case "rafale":
                     _shootCooldown = 1.2f;
-                    Rafale(3, 0.1f);
+                    StartCoroutine(Rafale(3, 0.1f));
                     break;
 
                 case "rocket":
@@ -84,6 +84,15 @@ public class ShootStyle : MonoBehaviour
                     _shootCooldown = 3f;
                     break;
 
+                case "shotgun":
+                    StartCoroutine(Shotgun());
+                    _shootCooldown = 2f;
+                    break;
+
+                case "minigun":
+                    StartCoroutine(Minigun());
+                    _shootCooldown = 10f;
+                    break;
                 default:
                     break;
 
@@ -91,15 +100,7 @@ public class ShootStyle : MonoBehaviour
             _canShootCooldown = false;
         }
     }
-
-
-    private void Rafale(int number, float t)
-    {
-        Coroutine c = StartCoroutine(CoolDown(number, t));
-    }
-
-
-    IEnumerator CoolDown(int number, float t)
+    IEnumerator Rafale(int number, float t)
     {
         for (int i = 0; i < number; i++)
         {
@@ -109,5 +110,25 @@ public class ShootStyle : MonoBehaviour
         }
 
         yield return new WaitForSeconds(_shootCooldown);
+    }
+    IEnumerator Shotgun()
+    {
+        _audioSource.Play();
+        yield return new WaitForSeconds(1f);
+        _shootBullet.HandGunShooting(_mediumBullet, 0.1f);
+        _shootBullet.HandGunShooting(_mediumBullet, 0f);
+        _shootBullet.HandGunShooting(_mediumBullet, -0.1f);
+    }
+
+    IEnumerator Minigun()
+    {
+        _audioSource.Play();
+        yield return new WaitForSeconds(1f);
+        for (int i = 0;i < 65;i++)
+        {
+            yield return new WaitForSeconds(0.05f);
+            _shootBullet.HandGunShooting(_simpleBullet);
+        }
+        
     }
 }
