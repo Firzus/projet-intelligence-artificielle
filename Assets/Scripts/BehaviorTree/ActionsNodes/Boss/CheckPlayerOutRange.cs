@@ -26,9 +26,11 @@ public class CheckPlayerOutRange : ActionNode
             Debug.Log($"Out of Range. {dist}");
             return State.Success;
         }
-        else
+        else if (dist <= fovRange)
         {
             return State.Failure;
         }
+
+        return State.Running;
     }
 }

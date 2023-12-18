@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class CheckPlayerInRange : ActionNode
 {
-    [SerializeField] private ShootBullet shoot;
-    [SerializeField] private GameObject bullet;
     [HideInInspector] private GameObject _target;
     private float fovRange;
     protected override void OnStart()
     {
-        shoot = agent.gameObject.GetComponentInChildren<ShootBullet>();
         _target = GameObject.FindWithTag("Player");
         fovRange = agent.fovRange;
     }
@@ -26,14 +23,14 @@ public class CheckPlayerInRange : ActionNode
 
         if (dist <= fovRange)
         {
-            shoot.HandGunShooting(bullet);
             Debug.Log($"Within Range. {dist}");
             return State.Success;
         }
-
-        else
+        else if (dist >= fovRange)
         {
             return State.Failure;
         }
+
+        return State.Running;
     }
 }
