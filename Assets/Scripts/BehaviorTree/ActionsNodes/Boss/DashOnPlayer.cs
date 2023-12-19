@@ -16,7 +16,6 @@ public class DashOnPlayer : ActionNode
         _enemy = agent.gameObject;
         _enemyTransform = _enemy.transform;
         _boss = agent.GetComponent<Boss>();
-        _boss.canDash = true;
         jumpPos = _target.transform.position;
     }
 
