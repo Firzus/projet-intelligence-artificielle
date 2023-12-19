@@ -1,6 +1,6 @@
  using UnityEngine;
 
-public class PlayerState : Entities
+public class EntityState : Entities
 {
     private bool _isAlive;
     [SerializeField] bool _canMove = true;
