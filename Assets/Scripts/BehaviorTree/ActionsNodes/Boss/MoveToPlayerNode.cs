@@ -22,15 +22,21 @@ public class MoveToPlayerNode : ActionNode
 
     protected override State OnUpdate()
     {
-        if (this._enemyTransform.position != _target.transform.position )
+        float dist = Vector3.Distance(_enemyTransform.position, _target.transform.position);
+
+        if (dist >= agent.fovRange)
         {
-            _enemyTransform.position =Vector3.MoveTowards(
+            _enemyTransform.position =Vector2.MoveTowards(
             _enemyTransform.position, 
             _target.transform.position, 
-            5f * Time.deltaTime);
+            agent._speed * Time.deltaTime);
             Debug.Log($"Moving from {_enemyTransform.position} to {_target.transform.position}");
 
             return State.Success;
+        }
+        else if (dist <= agent.fovRange) 
+        { 
+            return State.Failure;
         }
         return State.Running;
     }

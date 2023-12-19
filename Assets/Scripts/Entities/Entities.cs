@@ -2,7 +2,8 @@ using UnityEngine;
 
 public abstract class Entities : MonoBehaviour
 {
-    [SerializeField][HideInInspector] public int _hp;
+    [SerializeField][HideInInspector] public float _maxHp;
+    [SerializeField][HideInInspector] public float _currentHp;
     [SerializeField][HideInInspector] public float _speed;
     [SerializeField][HideInInspector] public Transform enemyTransform;
     [SerializeField][HideInInspector] public float fovRange;

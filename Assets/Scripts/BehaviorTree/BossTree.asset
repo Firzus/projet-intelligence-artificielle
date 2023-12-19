@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 19f015dca835a8e418f357fd495d72ea
-  position: {x: -84.00004, y: -89.73163}
+  position: {x: -84, y: -109.479996}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -24,27 +24,6 @@ MonoBehaviour:
   children:
   - {fileID: -5154330731822196375}
   - {fileID: 2855245302597851252}
---- !u!114 &-6684777099809171399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ca2f2f3f1aae4cafbf7c482b5c26b, type: 3}
-  m_Name: MoveToPlayerNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: cd5c1d830c362004cad246a9d7bcc9dd
-  position: {x: 280.48892, y: 246.99998}
-  blackBoard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    movetoObject: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
 --- !u!114 &-5154330731822196375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +39,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 0bfe0ebf35065844d974f802d136c3dc
-  position: {x: -379, y: 28.000017}
+  position: {x: -85.99997, y: 28.000015}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -101,7 +80,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5811bbf01d51c64498a3e90020f92581, type: 3}
-  m_Name: BehaviorTree
+  m_Name: BossTree
   m_EditorClassIdentifier: 
   rootNode: {fileID: -1024956492862057076}
   treeState: 0
@@ -111,12 +90,13 @@ MonoBehaviour:
   nodes:
   - {fileID: -1024956492862057076}
   - {fileID: 5520427779410736130}
-  - {fileID: -6684777099809171399}
   - {fileID: 6470514375787912226}
   - {fileID: 2813049233085929614}
   - {fileID: 2855245302597851252}
   - {fileID: -5154330731822196375}
   - {fileID: -8243516593488714797}
+  - {fileID: 4271147372737181273}
+  - {fileID: 4105362834322752645}
 --- !u!114 &184863977899215549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,12 +133,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: dcaf5490727d62249ac815391f0dda25
-  position: {x: 0.20438766, y: 246.99998}
+  position: {x: 165.30002, y: 247.00002}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
+  dist: 0
 --- !u!114 &2855245302597851252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +155,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2cfdc627214f3bd419c4ef135dcfca26
-  position: {x: 153.8549, y: 28.000017}
+  position: {x: 373.99997, y: 28.00001}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -182,8 +163,52 @@ MonoBehaviour:
   description: 
   children:
   - {fileID: 2813049233085929614}
-  - {fileID: -6684777099809171399}
+  - {fileID: 4105362834322752645}
+  - {fileID: 4271147372737181273}
   current: 0
+--- !u!114 &4105362834322752645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ca2f2f3f1aae4cafbf7c482b5c26b, type: 3}
+  m_Name: MoveToPlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 21e32d6396a69a14ea678e3a7989c1dd
+  position: {x: 374.00006, y: 247.50003}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &4271147372737181273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab8d2e6cc8026c4fa3fa2153f5ba0c7, type: 3}
+  m_Name: DashOnPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2fed31814aea0904a9b216ed6891b532
+  position: {x: 558.00006, y: 248}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  jumpPos: {x: 0, y: 0}
 --- !u!114 &5520427779410736130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,11 +246,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3beb0deee82145a4c87f847908469fcf
-  position: {x: -669.0502, y: 247}
+  position: {x: -112.361694, y: 247.00003}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  shoot: {fileID: 0}
-  bullet: {fileID: 0}

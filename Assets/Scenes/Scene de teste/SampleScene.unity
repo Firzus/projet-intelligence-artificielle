@@ -1154,17 +1154,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271178178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8436851e14c0584e98ba3d01c9c1baa, type: 3}
+  m_Script: {fileID: 11500000, guid: ffbf81be161642745af8a88a9554c670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 0
   _speed: 0
   enemyTransform: {fileID: 0}
-  fovRange: 6
+  fovRange: 0
   _capsuleCollider2D: {fileID: 0}
   _boxCollider2D: {fileID: 0}
   _circleCollider2D: {fileID: 0}
-  fovRange: 6
+  isDashing: 0
+  canDash: 0
+  isDashHandler: 0
+  jumpPos: {x: 0, y: 0}
 --- !u!4 &1288240380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914808105692265661, guid: 1207829529b45fa4ab06f107f993bf4a, type: 3}

@@ -6,6 +6,7 @@ public class CheckPlayerOutRange : ActionNode
 {
     [HideInInspector] private GameObject _target;
     private float fovRange;
+    [SerializeField] public float dist;
     protected override void OnStart()
     {
         _target = GameObject.FindWithTag("Player");
@@ -19,7 +20,7 @@ public class CheckPlayerOutRange : ActionNode
 
     protected override State OnUpdate()
     {
-        float dist = Vector2.Distance(agent.transform.position, _target.transform.position);
+        dist = Vector2.Distance(agent.transform.position, _target.transform.position);
 
         if (dist >= fovRange)
         {

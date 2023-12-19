@@ -5,15 +5,15 @@ public class Enemy : Entities
 
     public override void Destroy()
     {
-        if (_hp <= 0)
+        if (_currentHp <= 0)
         {
             Destroy(this);
         }
     }
 
-    public virtual void EnemyStart(int hp, float speed)
+    public virtual void EnemyStart(int maxHp, float speed)
     {
-        _hp = hp;
+        _maxHp = maxHp;
         _speed = speed;
     }
 
