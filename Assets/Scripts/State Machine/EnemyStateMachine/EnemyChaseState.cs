@@ -33,14 +33,14 @@ public class EnemyChaseState : EnemyBaseState
 
     private void RayCast(EnemyStateManager enemy)
     {
-        Vector2 origin = enemy.transform.GetChild(0).transform.position;
-        Vector2 destination = enemy.player.transform.position - enemy.transform.position;
-        Vector2 direction = Vector2.right * 5;
+        Vector3 origin = enemy.GetComponent<CircleCollider2D>().bounds.center + new Vector3(enemy.GetComponent<CircleCollider2D>().bounds.extents.x + 0.5f, 0f, 0f);
+        Vector2 destination = enemy.player.transform.position - origin;
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, direction.x);
-        Debug.DrawRay(origin, direction, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(origin, destination);
+        Debug.DrawRay(origin, destination , Color.red);
 
-        if(hit.collider != null){
+        if (hit.collider != null)
+        {
             Debug.Log(hit.collider.name);
         }
     }
