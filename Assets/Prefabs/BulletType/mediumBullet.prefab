@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7695378349671939351}
   - component: {fileID: 8484922219201389340}
   m_Layer: 0
-  m_Name: mediumBullet
+  m_Name: MediumBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.003058672}
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3199fc0afcdbc46a30595f778e1858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 5822794603665262761}
   _speed: 20
   _lifeTime: 2
   _RpgExplosion: {fileID: 6564793865906054549, guid: ff6bdade6791bd446b7708716d7263d3, type: 3}
