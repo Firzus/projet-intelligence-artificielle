@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5229402071700917531, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_Name
       value: Simple Bullet
@@ -393,7 +397,7 @@ GameObject:
   - component: {fileID: 146949490}
   - component: {fileID: 146949489}
   - component: {fileID: 146949488}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +644,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2
 --- !u!114 &805178764
 MonoBehaviour:
   m_ObjectHideFlags: 0

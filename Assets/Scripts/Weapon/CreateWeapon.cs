@@ -27,7 +27,6 @@ public class CreateWeapon : MonoBehaviour
 #endif
     private void SetTarget(GameObject gameObject){
         GameObject target = GameObject.FindGameObjectWithTag("Player");
-
         gameObject.GetComponent<WeaponAim>()._target = target;
     }
 

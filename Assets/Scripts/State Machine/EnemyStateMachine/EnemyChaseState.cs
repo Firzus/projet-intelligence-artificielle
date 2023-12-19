@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyChaseState : EnemyBaseState
 {
-
+    //LayerMask IgnoreLayer = LayerMask.GetMask("Default");
     public override void EnterState(EnemyStateManager enemy)
     {
     }
@@ -33,16 +33,15 @@ public class EnemyChaseState : EnemyBaseState
 
     private void RayCast(EnemyStateManager enemy)
     {
-        Vector3 origin = enemy.transform.position;
-        Vector3 destination = enemy.player.transform.position - enemy.transform.position;
-        float rayLenght = 1;
-        Debug.DrawRay(enemy.transform.position, destination, Color.red);
+        Vector2 origin = enemy.transform.GetChild(0).transform.position;
+        Vector2 destination = enemy.player.transform.position - enemy.transform.position;
+        Vector2 direction = Vector2.right * 5;
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, destination, rayLenght);
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, direction.x);
+        Debug.DrawRay(origin, direction, Color.red);
 
-        if(hit.collider){
+        if(hit.collider != null){
             Debug.Log(hit.collider.name);
-            destination = hit.point;
         }
     }
 }
