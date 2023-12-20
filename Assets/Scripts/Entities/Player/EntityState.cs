@@ -26,7 +26,7 @@ public class EntityState : Entities
 
     void Update()
     {
-        if(_hp <= 0)
+        if(_currentHp <= 0)
         {
             Dead();
         }
@@ -42,10 +42,5 @@ public class EntityState : Entities
             
         }
         Destroy(gameObject);
-    }
-
-    public override void Destroy()
-    {
-
     }
 }

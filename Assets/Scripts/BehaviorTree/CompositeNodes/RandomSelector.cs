@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RootNode : Node
+public class RandomSelector : CompositeNode
 {
-    [SerializeField] public Node child;
+    protected int current;
 
     protected override void OnStart()
     {
+        current = Random.Range(0, children.Count);
     }
 
     protected override void OnStop()
@@ -16,13 +17,7 @@ public class RootNode : Node
 
     protected override State OnUpdate()
     {
+        var child = children[current];
         return child.Update();
-    }
-
-    public override Node Clone()
-    {
-        RootNode node = Instantiate(this);
-        node.child = child.Clone();
-        return node;
     }
 }
