@@ -12,16 +12,10 @@ public class ShootBullet : MonoBehaviour
         _bulletStartPoint = this.gameObject.transform.GetChild(0);
     }
 
-    public void HandGunShooting(GameObject bullet)
+    public void HandGunShooting(GameObject bullet, float a = 0f)
     {
-        GameObject manager = GameObject.Find("BulletManager");
-        if (manager != null)
-        {
-            _bulletInst = Instantiate(bullet, _bulletStartPoint.position, _weapon.transform.rotation, GameObject.Find("BulletManager").transform);
-        }
-        else
-        {
-            _bulletInst = Instantiate(bullet, _bulletStartPoint.position, _weapon.transform.rotation);
-        }
+        Quaternion rotation = _weapon.transform.rotation;
+        rotation.z += a;
+        _bulletInst = Instantiate(bullet, _bulletStartPoint.position, rotation, this.gameObject.transform.parent.parent);     
     }
 }

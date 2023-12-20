@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class AnimationAndDestroy : MonoBehaviour
+public class RocketExplosion : MonoBehaviour
 {
     [SerializeField] Animator animator;
 
@@ -9,13 +9,13 @@ public class AnimationAndDestroy : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("explosion start");
         StartCoroutine(PlayAnimationAndDestroy());
     }
 
     IEnumerator PlayAnimationAndDestroy()
     {
         animator.Play("Rocket_Explosion");
+
 
         // Attendre pendant un certain temps
         yield return new WaitForSeconds(delay);

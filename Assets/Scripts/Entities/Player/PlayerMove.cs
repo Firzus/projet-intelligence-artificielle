@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] PlayerState state;
+    [SerializeField] EntityState state;
 
     private Vector2 movementInput;
     public Vector2 MovementInput { get => movementInput; }
