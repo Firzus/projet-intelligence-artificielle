@@ -8,6 +8,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyChaseState chase = new EnemyChaseState();
     public EnemyAttackState attack = new EnemyAttackState();
     public EnemyMovingAttackState moving = new EnemyMovingAttackState();
+    public EnemyDeathState death = new EnemyDeathState();
 
 
     public GameObject player;

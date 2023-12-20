@@ -10,7 +10,7 @@ public class EnemyChaseState : EnemyBaseState
     {
         Chase(enemy);
         RayCast(enemy);
-        Debug.Log(RayCast(enemy));
+        //Debug.Log(RayCast(enemy));
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
@@ -20,9 +20,9 @@ public class EnemyChaseState : EnemyBaseState
         {
             enemy.SwitchState(enemy.attack);
         }
-        else if (col.CompareTag("Player") && enemy.name == "Elite Bullet")
+        else if (col.CompareTag("Player") && enemy.name == "Kamikaze")
         {
-            enemy.SwitchState(enemy.moving);
+            enemy.SwitchState(enemy.death);
         }
     }
 
