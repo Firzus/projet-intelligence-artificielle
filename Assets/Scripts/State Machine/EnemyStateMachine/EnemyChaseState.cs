@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyChaseState : EnemyBaseState
 {
-    //LayerMask IgnoreLayer = LayerMask.GetMask("Default");
     public override void EnterState(EnemyStateManager enemy)
     {
+        enemy.player = GameObject.FindGameObjectWithTag("Player");
+        enemy.agent = enemy.GetComponent<NavMeshAgent>();
+        enemy.agent.updateRotation = false;
+        enemy.agent.updateUpAxis = false;
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
@@ -32,8 +36,10 @@ public class EnemyChaseState : EnemyBaseState
 
     private void Chase(EnemyStateManager enemy)
     {
-        float speed = 2.0f;
-        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, enemy.player.transform.position, speed * Time.deltaTime);
+        // float speed = 2.0f;
+        // enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, enemy.player.transform.position, speed * Time.deltaTime);
+
+        enemy.agent.SetDestination(enemy.player.transform.position);
     }
 
     private bool RayCast(EnemyStateManager enemy)

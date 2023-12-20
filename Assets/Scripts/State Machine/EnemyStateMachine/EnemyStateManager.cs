@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyStateManager : MonoBehaviour
 {
@@ -10,12 +11,11 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyMovingAttackState moving = new EnemyMovingAttackState();
     public EnemyDeathState death = new EnemyDeathState();
 
-
     public GameObject player;
+    public NavMeshAgent agent;
     // Start is called before the first frame update
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         currentState = loading;
         currentState.EnterState(this);
     }

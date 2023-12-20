@@ -7,7 +7,7 @@ public class EnemyLoadingState : EnemyBaseState
         Debug.Log("Enter Loading mode");
         if (BoolCreateWeapon(enemy))
             enemy.SwitchState(enemy.chase);
-        
+
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
@@ -24,8 +24,11 @@ public class EnemyLoadingState : EnemyBaseState
         CreateWeapon weapon = enemy.GetComponent<CreateWeapon>();
         if (weapon != null)
         {
-            weapon.Init();
-            weapon.SetWeapon(enemy);
+            if (enemy.name != "Kamikaze")
+            {
+                weapon.Init();
+                weapon.SetWeapon(enemy);
+            }
             return true;
         }
         else
