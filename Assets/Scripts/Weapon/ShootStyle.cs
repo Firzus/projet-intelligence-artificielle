@@ -9,7 +9,7 @@ public class ShootStyle : MonoBehaviour
     [SerializeField] GameObject _rocketBullet;
     [SerializeField] float _waitingMultiplicator = 1;
 
-    public bool _waiting = false;
+    private bool _waiting = false;
 
     private WeaponInventory _gunInv;
     private ShootBullet _shootBullet;

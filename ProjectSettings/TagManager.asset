@@ -15,6 +15,7 @@ TagManager:
   - EnemyManager
   - PlayerManager
   - Boss
+  - DeathIcon
   - UI
   layers:
   - Default
