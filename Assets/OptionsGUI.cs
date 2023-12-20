@@ -14,6 +14,8 @@ public class OptionsGUI : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             TooglePanel();
+
+            GameManager.instance.PauseGame();
         }
     }
 

@@ -4,6 +4,6 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        GameManager.instance.LoadScene("NormalLevel");
+        GameManager.instance.LoadScene("Level");
     }
 }
