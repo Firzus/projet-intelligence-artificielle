@@ -26,8 +26,6 @@ public class ShootStyle : MonoBehaviour
         _shootCooldown = 0f;
         _audioSource = GetComponent<AudioSource>();
     }
-
-
     void Update()
     {
 
@@ -55,7 +53,6 @@ public class ShootStyle : MonoBehaviour
         }
 
     }
-
     public IEnumerator CooldownTime()
     {
         _waiting = true;
@@ -63,9 +60,6 @@ public class ShootStyle : MonoBehaviour
         _waiting = false;
         _canShootCooldown = true;
     }
-
-
-
     public void Shoot()
     {
         if (_canShootCooldown==true)

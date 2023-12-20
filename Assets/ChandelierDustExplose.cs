@@ -4,7 +4,6 @@ using UnityEngine;
 public class ChandelierDustExplose : MonoBehaviour
 {
     private const float delay = 0.667f;
-
     void Start()
     {
         StartCoroutine(PlayAnimationAndDestroy());
