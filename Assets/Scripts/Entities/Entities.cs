@@ -10,7 +10,4 @@ public abstract class Entities : MonoBehaviour
     [SerializeField][HideInInspector] public CapsuleCollider2D _capsuleCollider2D;
     [SerializeField][HideInInspector] public BoxCollider2D _boxCollider2D;
     [SerializeField][HideInInspector] public CircleCollider2D _circleCollider2D;
-
-    public abstract void Destroy();
-    
 }

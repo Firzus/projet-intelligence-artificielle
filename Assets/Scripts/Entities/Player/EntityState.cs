@@ -25,9 +25,4 @@ public class EntityState : Entities
             //
         }
     }
-
-    public override void Destroy()
-    {
-
-    }
 }

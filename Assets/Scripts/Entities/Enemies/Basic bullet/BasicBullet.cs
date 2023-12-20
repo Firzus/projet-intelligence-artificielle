@@ -20,6 +20,6 @@ public class BasicBullet : Enemy
 
     void Death()
     {
-        Destroy();
+       
     }
 }
