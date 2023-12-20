@@ -26,6 +26,10 @@ public class EnemyChaseState : EnemyBaseState
         }
     }
 
+    public override void OnTriggerExit2D(EnemyStateManager enemy, Collider2D col)
+    {
+    }
+
     private void Chase(EnemyStateManager enemy)
     {
         float speed = 2.0f;
@@ -34,11 +38,15 @@ public class EnemyChaseState : EnemyBaseState
 
     private bool RayCast(EnemyStateManager enemy)
     {
-        Vector3 origin = enemy.GetComponent<CircleCollider2D>().bounds.center + new Vector3(enemy.GetComponent<CircleCollider2D>().bounds.extents.x + 0.5f, 0f, 0f);
-        Vector2 destination = enemy.player.transform.position - origin;
+        Vector3 orbitCenter = enemy.GetComponent<CircleCollider2D>().bounds.center;
+        Vector3 destination = enemy.player.transform.position;
 
-        RaycastHit2D hit = Physics2D.Raycast(origin, destination);
-        Debug.DrawRay(origin, destination, Color.red);
+        Vector3 normal = (destination - orbitCenter).normalized;
+
+        Vector3 origin = orbitCenter + normal * (enemy.GetComponent<CircleCollider2D>().radius + 0.1f);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, destination - origin);
+        Debug.DrawRay(origin, destination - origin, Color.red);
 
         if (hit.collider.tag == "Player")
         {
@@ -46,7 +54,6 @@ public class EnemyChaseState : EnemyBaseState
         }
         else
         {
-
             return false;
         }
     }
