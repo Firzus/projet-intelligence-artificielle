@@ -36,17 +36,25 @@ public class BulletBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string entityShooter = _parentType.tag;
-        if (entityShooter == "PlayerManager")
+        if (entityShooter == "EnemyManager")
         {
-            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet"))
+            if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Bullet"))
             {
+                if(collision.CompareTag("Player"))
+                {
+                    collision.GetComponent<EntityState>().Gethit();
+                }
                 BulletExplosion();
             }
         }
         else
         {
-            if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Bullet"))
+            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet"))
             {
+                if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
+                {
+                    collision.GetComponent<EntityState>().Gethit();
+                }
                 BulletExplosion();
             }
         }

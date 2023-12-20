@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RootNode : Node
 {
-    public Node child;
+    [SerializeField] public Node child;
 
     protected override void OnStart()
     {

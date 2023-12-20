@@ -9,12 +9,13 @@ public class ShootStyle : MonoBehaviour
     [SerializeField] GameObject _rocketBullet;
     [SerializeField] float _waitingMultiplicator = 1;
 
+    private bool _waiting = false;
+
     private WeaponInventory _gunInv;
     private ShootBullet _shootBullet;
     private bool _canShootCooldown;
     private float _shootCooldown;
     private Transform _parent;
-    private bool _waiting = false;
     private AudioSource _audioSource;
     void Start()
     {
@@ -55,7 +56,7 @@ public class ShootStyle : MonoBehaviour
 
     }
 
-    IEnumerator CooldownTime()
+    public IEnumerator CooldownTime()
     {
         _waiting = true;
         yield return new WaitForSeconds(_shootCooldown * _waitingMultiplicator);
@@ -65,7 +66,7 @@ public class ShootStyle : MonoBehaviour
 
 
 
-    private void Shoot()
+    public void Shoot()
     {
         if (_canShootCooldown==true)
         {

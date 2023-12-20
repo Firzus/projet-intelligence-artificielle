@@ -15,10 +15,6 @@ public class PlayerMove : MonoBehaviour
         {
             movementInput.Normalize();
         }
-    }
-
-    public void FixedUpdate()
-    {
         if (state.CanMove)
         {
             MovePlayer(state._speed);

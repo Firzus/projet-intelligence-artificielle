@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class OptionsGUI : MonoBehaviour
+{
+    [SerializeField] GameObject panel;
+
+    private void Start()
+    {
+        panel.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            TooglePanel();
+        }
+    }
+
+    public void TooglePanel()
+    {
+        if (panel.activeSelf)
+        {
+            panel.SetActive(false);
+        }
+        else
+        {
+            panel.SetActive(true);
+        }
+    }
+}

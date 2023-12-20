@@ -8,7 +8,6 @@ public class DestroyObject : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("a");
         if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Explosion"))
         {
             animator.SetBool("isDestroyed", true);
