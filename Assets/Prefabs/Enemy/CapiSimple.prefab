@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2998787941371993289}
   - component: {fileID: 1780239265424081929}
   - component: {fileID: 4735835498275166241}
+  - component: {fileID: 2432533804391385851}
+  - component: {fileID: 1979380110433904487}
   m_Layer: 0
   m_Name: CapiSimple
   m_TagString: Enemy
@@ -114,3 +116,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listPoint:
   - {fileID: 0}
+--- !u!114 &2432533804391385851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980521056002630093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6b5ef3aa198ae42a9d5893bcf86bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _list: []
+  _EntitieWeapon: {fileID: 0}
+--- !u!114 &1979380110433904487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980521056002630093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 3
+  _speed: 5
+  _canMove: 1
+  _playerState: {fileID: 698425739878137748, guid: 06f147cd559af114e8a3236653468379, type: 3}
