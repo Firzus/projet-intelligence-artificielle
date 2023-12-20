@@ -6,7 +6,7 @@ public class AI_FollowPath : MonoBehaviour
     public AI_PathPoint _point;
     [SerializeField] bool _followPath = true;
     [SerializeField] Animator _animator;
-    private float _speed = 5f;
+    [SerializeField] EntityState _entityState;
     private bool _wainting;
     private bool _isMoving;
 
@@ -69,7 +69,7 @@ public class AI_FollowPath : MonoBehaviour
     }
     private void MoveToPoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _point.Next.position, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _point.Next.position, _entityState._speed * Time.deltaTime);
     }
 
     IEnumerator NextPointCooldown()

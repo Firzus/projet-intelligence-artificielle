@@ -150,6 +150,7 @@ MonoBehaviour:
   _point: {fileID: 4735835498275166241}
   _followPath: 1
   _animator: {fileID: 2477910387984852508}
+  _entityState: {fileID: 1979380110433904487}
 --- !u!114 &4735835498275166241
 MonoBehaviour:
   m_ObjectHideFlags: 0
