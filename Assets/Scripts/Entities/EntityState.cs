@@ -34,6 +34,12 @@ public class EntityState : Entities
         }
     }
 
+    public virtual void EnemyStart(int maxHp, float speed)
+    {
+        _maxHp = maxHp;
+        _speed = speed;
+    }
+
     private void Dead()
     {
         Debug.Log("dead");

@@ -50,6 +50,7 @@ public class Minigun : ActionNode
             _actualSprite = _bossInv._list[_index].sp;
             _actualType = _bossInv._list[_index].Type;
             _actualAudio = _bossInv._list[_index].audio;
+            _bossInv.UpdateWeapon();
             return State.Failure;
         }
         return State.Running;

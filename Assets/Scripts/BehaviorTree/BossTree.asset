@@ -87,7 +87,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 0afb1fc162f1bcc46ae2948e1c2a8cd7
-  position: {x: 442.31415, y: 14.000002}
+  position: {x: 506.00006, y: 14.000015}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   children:
   - {fileID: 5920164788474862457}
   - {fileID: 9212439233648148306}
+  - {fileID: 2083886595720731197}
   current: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -196,7 +197,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fcc43d08cbcc72e41afaf0c533aa5cb7
-  position: {x: 519, y: 335.44}
+  position: {x: 669, y: 383}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -217,13 +218,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 16c1415caac0c9c4e9d18878f26f2390
-  position: {x: 0, y: 0}
+  position: {x: 669, y: 247}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  children: []
+  children:
+  - {fileID: 1776560035607605247}
 --- !u!114 &2813049233085929614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +472,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 384520ebc11ac034c83b3227ce791dcb
-  position: {x: 508, y: 247}
+  position: {x: 508.0002, y: 247}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}

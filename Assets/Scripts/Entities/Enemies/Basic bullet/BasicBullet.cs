@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BasicBullet : Enemy
+public class BasicBullet : EntityState
 {
     new public float fovRange;
 

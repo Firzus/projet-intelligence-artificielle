@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Entities : MonoBehaviour
 {
     [SerializeField] float MaxHp;
-    [SerializeField][HideInInspector] float CurrentHp;
+    [SerializeField] float CurrentHp;
     [SerializeField] float Speed;
     [SerializeField][HideInInspector] Transform EnemyTransform;
     [SerializeField][HideInInspector] float FovRange;

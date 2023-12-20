@@ -23,6 +23,10 @@ public class RageMode : ActionNode
             agent._speed = agent._speed * 1.2f;
             return State.Success;
         }
+        else if (_currentBossHp > (_currentBossHp/agent._maxHp) * 100) 
+        {
+            return State.Failure;
+        }
         return State.Running;
     }
 }

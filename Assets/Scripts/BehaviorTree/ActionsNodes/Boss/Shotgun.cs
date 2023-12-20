@@ -37,22 +37,19 @@ public class Shotgun : ActionNode
 
         if (dist <= fovRange)
         {
-            _index = 0;
+            if (_index == _bossInv._list.Count - 1)
+            {
+                _index = 0;
+                _actualSprite = _bossInv._list[_index].sp;
+                _actualType = _bossInv._list[_index].Type;
+                _actualAudio = _bossInv._list[_index].audio;
+                _bossInv.UpdateWeapon();
+            }
             
-            _actualSprite = _bossInv._list[_index].sp;
-            _actualType = _bossInv._list[_index].Type;
-            _actualAudio = _bossInv._list[_index].audio;
-            _bossInv.UpdateWeapon();
             return State.Success;
         }
         else if (dist >= fovRange)
         {
-            _index = 1;
-
-            _actualSprite = _bossInv._list[_index].sp;
-            _actualType = _bossInv._list[_index].Type;
-            _actualAudio = _bossInv._list[_index].audio;
-            _bossInv.UpdateWeapon();
             return State.Failure;
         }
         return State.Running;

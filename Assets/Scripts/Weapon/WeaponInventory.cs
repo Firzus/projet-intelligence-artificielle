@@ -44,7 +44,7 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
-    public bool ChangeWeapon()
+    private bool ChangeWeapon()
     {
         if(_list[_index].sp == null)
         {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : Enemy
+public class Boss : EntityState
 {
     [SerializeField] public bool isDashing;
     [SerializeField] public bool canDash;
@@ -11,6 +11,7 @@ public class Boss : Enemy
     [SerializeField] public bool canShield;
     [SerializeField] public bool shieldOn;
     [SerializeField] public bool isShieldHandler;
+    [SerializeField] public GameObject _shield;
 
     [SerializeField] private Vector2 jumpPos;
 
@@ -20,7 +21,8 @@ public class Boss : Enemy
         canShield = true;
         canDash = true;
         fovRange = 3f;
-        EnemyStart(200, 1.5f);
+        EnemyStart(100, 1.5f);
+        _currentHp = _maxHp;
     }
 
     // Update is called once per frame
