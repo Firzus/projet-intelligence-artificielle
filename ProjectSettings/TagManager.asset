@@ -16,6 +16,7 @@ TagManager:
   - PlayerManager
   - Boss
   - DeathIcon
+  - UI
   layers:
   - Default
   - TransparentFX
