@@ -1,7 +1,7 @@
 using UnityEngine;
 public class CreateWeapon : MonoBehaviour
 {
-    GameObject _weaponManager;
+    private  GameObject _weaponManager;
     private WeaponManageur.Weapon actualWeapon;
 #if UNITY_EDITOR
     public void SetWeapon(EnemyStateManager enemy)
