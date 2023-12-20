@@ -14,12 +14,10 @@ public class EnemyChaseState : EnemyBaseState
     {
         Chase(enemy);
         RayCast(enemy);
-        //Debug.Log(RayCast(enemy));
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
-        //Debug.Log("Trigger " + col.tag);
-        //switch state if trigger
+
         if (col.CompareTag("Player") && enemy.name == "Simple Bullet")
         {
             enemy.SwitchState(enemy.attack);
