@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 
 public class EntityState : Entities
 {
@@ -15,7 +15,7 @@ public class EntityState : Entities
 
     void Update()
     {
-        if(_hp <= 0)
+        if (_currentHp <= 0)
         {
             _isAlive = false;
             _hp = 0;
@@ -26,10 +26,5 @@ public class EntityState : Entities
         {
             //
         }
-    }
-
-    public override void Destroy()
-    {
-        // desapear
     }
 }

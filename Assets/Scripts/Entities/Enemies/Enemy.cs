@@ -2,17 +2,9 @@ using UnityEngine;
 
 public class Enemy : Entities
 {
-    public EnemyAttackRange AttackRange;
-
-    public override void Destroy()
+    public virtual void EnemyStart(int maxHp, float speed)
     {
-        if (_hp <= 0)
-        {
-            Destroy(this);
-        }
+        _maxHp = maxHp;
+        _speed = speed;
     }
-
-    public virtual void Attack() { }
-    public virtual void FollowPlayer() { }
-    public virtual void Patrol() { }
 }

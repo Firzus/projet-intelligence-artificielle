@@ -7,10 +7,10 @@ using Unity.VisualScripting;
 [CreateAssetMenu()]
 public class BehaviorTree : ScriptableObject
 {
-    public Node rootNode;
-    public Node.State treeState = Node.State.Running;
-    public BlackBoard blackboard = new BlackBoard();
-    public List<Node> nodes = new List<Node>();
+    [SerializeField] public Node rootNode;
+    [SerializeField] public Node.State treeState = Node.State.Running;
+    [SerializeField] public BlackBoard blackboard = new BlackBoard();
+    [SerializeField] public List<Node> nodes = new List<Node>();
 
     public Node.State Update()
     {
