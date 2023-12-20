@@ -28,6 +28,10 @@ public class EnemyStateManager : MonoBehaviour
     {
         currentState.OnTriggerEnter2D(this, col);
     }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        currentState.OnTriggerExit2D(this, col);
+    }
 
     public void SwitchState(EnemyBaseState state)
     {

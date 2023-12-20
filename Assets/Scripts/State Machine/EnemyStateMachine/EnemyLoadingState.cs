@@ -14,6 +14,9 @@ public class EnemyLoadingState : EnemyBaseState
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
     }
+    public override void OnTriggerExit2D(EnemyStateManager enemy, Collider2D col)
+    {
+    }
 
     private bool BoolCreateWeapon(EnemyStateManager enemy)
     {

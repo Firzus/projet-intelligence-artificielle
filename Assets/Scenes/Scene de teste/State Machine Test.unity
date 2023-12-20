@@ -332,13 +332,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Simple Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8644466021187435880, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -8.68
       objectReference: {fileID: 0}
     - target: {fileID: 8644466021187435880, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.94
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 8644466021187435880, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -515,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 146949487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4712, y: 1.7806, z: -0.08167893}
+  m_LocalPosition: {x: -2.35, y: 1.78, z: -0.08167893}
   m_LocalScale: {x: 2.4176, y: 1.7811, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -603,7 +607,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -791,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5229402071700917531, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_Name
@@ -799,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
       propertyPath: m_TagString
@@ -847,7 +851,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1983897185540959518, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5229402071700917531, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5280040461023343313, guid: b96645b4f59d5564d9ef7909f8f034f6, type: 3}
