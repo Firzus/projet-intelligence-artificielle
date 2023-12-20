@@ -30,7 +30,7 @@ public class MoveToPlayerNode : ActionNode
             _enemyTransform.position, 
             _target.transform.position, 
             agent._speed * Time.deltaTime);
-            Debug.Log($"Moving from {_enemyTransform.position} to {_target.transform.position}");
+            //Debug.Log($"Moving from {_enemyTransform.position} to {_target.transform.position}");
 
             return State.Success;
         }

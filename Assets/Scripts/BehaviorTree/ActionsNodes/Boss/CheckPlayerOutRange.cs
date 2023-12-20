@@ -6,7 +6,9 @@ public class CheckPlayerOutRange : ActionNode
 {
     [HideInInspector] private GameObject _target;
     private float fovRange;
-    [SerializeField] public float dist;
+    [SerializeField] private float dist;
+
+    public bool outRange;
     protected override void OnStart()
     {
         _target = GameObject.FindWithTag("Player");
@@ -24,11 +26,13 @@ public class CheckPlayerOutRange : ActionNode
 
         if (dist >= fovRange)
         {
-            Debug.Log($"Out of Range. {dist}");
+            //Debug.Log($"Out of Range. {dist}");
+            outRange = true;
             return State.Success;
         }
         else if (dist <= fovRange)
         {
+            outRange = false;
             return State.Failure;
         }
 

@@ -6,6 +6,8 @@ public class CheckPlayerInRange : ActionNode
 {
     [HideInInspector] private GameObject _target;
     private float fovRange;
+    public bool inRange;
+
     protected override void OnStart()
     {
         _target = GameObject.FindWithTag("Player");
@@ -23,11 +25,13 @@ public class CheckPlayerInRange : ActionNode
 
         if (dist <= fovRange)
         {
-            Debug.Log($"Within Range. {dist}");
+            //Debug.Log($"Within Range. {dist}");
+            inRange = true;
             return State.Success;
         }
         else if (dist >= fovRange)
         {
+            inRange = false;
             return State.Failure;
         }
 
