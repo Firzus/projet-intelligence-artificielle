@@ -10,6 +10,7 @@ public class EnemyChaseState : EnemyBaseState
     {
         Chase(enemy);
         RayCast(enemy);
+        Debug.Log(RayCast(enemy));
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
@@ -31,17 +32,22 @@ public class EnemyChaseState : EnemyBaseState
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, enemy.player.transform.position, speed * Time.deltaTime);
     }
 
-    private void RayCast(EnemyStateManager enemy)
+    private bool RayCast(EnemyStateManager enemy)
     {
         Vector3 origin = enemy.GetComponent<CircleCollider2D>().bounds.center + new Vector3(enemy.GetComponent<CircleCollider2D>().bounds.extents.x + 0.5f, 0f, 0f);
         Vector2 destination = enemy.player.transform.position - origin;
 
         RaycastHit2D hit = Physics2D.Raycast(origin, destination);
-        Debug.DrawRay(origin, destination , Color.red);
+        Debug.DrawRay(origin, destination, Color.red);
 
-        if (hit.collider != null)
+        if (hit.collider.tag == "Player")
         {
-            Debug.Log(hit.collider.name);
+            return true;
+        }
+        else
+        {
+
+            return false;
         }
     }
 }
