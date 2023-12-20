@@ -18,7 +18,6 @@ public class EntityState : Entities
         if (_currentHp <= 0)
         {
             _isAlive = false;
-            _hp = 0;
             Debug.Log("Player Dead");
         }
 
