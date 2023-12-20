@@ -48,6 +48,11 @@ public class ShootStyle : MonoBehaviour
             }
         }
 
+        else if (_parent.tag == "Boss")
+        {
+            //Paterne du boss
+        }
+
     }
 
     IEnumerator CooldownTime()

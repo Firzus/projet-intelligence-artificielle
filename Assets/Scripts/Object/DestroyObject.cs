@@ -3,15 +3,17 @@ using UnityEngine;
 public class DestroyObject : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] BoxCollider2D _boxCollider;
+    [SerializeField] BoxCollider2D _boxIsTrigger;
+    [SerializeField] GameObject _childCollider;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        Debug.Log("a");
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Explosion"))
         {
             animator.SetBool("isDestroyed", true);
-            _boxCollider.isTrigger = true;
-
+            _boxIsTrigger.enabled = false;
+            Destroy(_childCollider);
         }
     }
 }
