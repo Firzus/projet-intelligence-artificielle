@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - DeathIcon
   - UI
+  - Door
   layers:
   - Default
   - TransparentFX
