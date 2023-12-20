@@ -15,7 +15,7 @@ public class PlayerState : Entities
 
     void Update()
     {
-        if(_hp <= 0)
+        if(_currentHp <= 0)
         {
             _isAlive = false;
         }
