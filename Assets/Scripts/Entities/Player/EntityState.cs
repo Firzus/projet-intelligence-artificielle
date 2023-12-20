@@ -18,6 +18,8 @@ public class EntityState : Entities
         if(_hp <= 0)
         {
             _isAlive = false;
+            _hp = 0;
+            Debug.Log("Player Dead");
         }
 
         if (_isAlive && CanMove)
@@ -28,6 +30,6 @@ public class EntityState : Entities
 
     public override void Destroy()
     {
-
+        // desapear
     }
 }
