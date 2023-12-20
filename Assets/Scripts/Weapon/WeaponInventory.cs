@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class WeaponInventory : MonoBehaviour
 {
-
     [System.Serializable] public struct Weapon
     {
         public Sprite sp;
