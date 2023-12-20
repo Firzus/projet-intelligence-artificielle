@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5734806571961367835}
   - component: {fileID: 8694185057625001588}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: weapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da0c58519d1dda4b96266da0a732888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
+  _target: {fileID: 6246994648009750988, guid: 06f147cd559af114e8a3236653468379, type: 3}
 --- !u!114 &3307491124992487838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7966939113976506524}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d451317df713e747b9222d9d1b447da, type: 3}
   m_Name: 
@@ -248,11 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8223187778266081275, guid: 110b952daba0b824fabaefb2e0c050d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.121
+      value: 0.655
       objectReference: {fileID: 0}
     - target: {fileID: 8223187778266081275, guid: 110b952daba0b824fabaefb2e0c050d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.021
+      value: 0.066
       objectReference: {fileID: 0}
     - target: {fileID: 8223187778266081275, guid: 110b952daba0b824fabaefb2e0c050d1, type: 3}
       propertyPath: m_LocalPosition.z
