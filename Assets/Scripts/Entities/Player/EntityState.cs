@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 
 public class EntityState : Entities
 {
@@ -15,9 +15,11 @@ public class EntityState : Entities
 
     void Update()
     {
-        if(_currentHp <= 0)
+        if (_currentHp <= 0)
         {
             _isAlive = false;
+            _hp = 0;
+            Debug.Log("Player Dead");
         }
 
         if (_isAlive && CanMove)
