@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &698425739878137748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,9 +175,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 3
-  _speed: 8
+  MaxHp: 3
+  CurrentHp: 0
+  Speed: 0
+  EnemyTransform: {fileID: 0}
+  FovRange: 0
+  CapsuleCollider2D: {fileID: 0}
+  BoxCollider2D: {fileID: 0}
+  CircleCollider2D: {fileID: 0}
   _canMove: 1
+  _playerState: {fileID: 0}
 --- !u!114 &191379424559252364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,13 +227,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _list:
   - sp: {fileID: 21300000, guid: 0b8102560a4c53846bb884aeb033317d, type: 3}
-    type: fusil_d'assaut
+    type: rafale
     audio: {fileID: 0}
   - sp: {fileID: 21300000, guid: 07adf1877ae24c745b6b1b665cb6d6fb, type: 3}
     type: pistolet
     audio: {fileID: 0}
   - sp: {fileID: 21300000, guid: b4a899753aad01a47a1e84faf5d4a4cf, type: 3}
-    type: lourd
+    type: rocket
     audio: {fileID: 0}
   _EntitieWeapon: {fileID: 0}
 --- !u!95 &8378581114672704489

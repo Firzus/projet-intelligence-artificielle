@@ -18,16 +18,18 @@ public class EntityState : Entities
             GameObject p = GameObject.Find("Player");
             _playerState = p.GetComponent<EntityState>();
         }
-        if(_hp == 0)
+        if(_maxHp == 0)
         {
-            _hp = 1;
+            _maxHp = 1;
         }
+        _currentHp = _maxHp;
     }
 
     void Update()
     {
         if(_currentHp <= 0)
         {
+            _canMove = false;
             Dead();
         }
     }
@@ -39,8 +41,18 @@ public class EntityState : Entities
         {
             _playerState.KillCount++;
             Debug.Log(_playerState.KillCount);
-            
+            Destroy(gameObject);
+
         }
-        Destroy(gameObject);
+        if(gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+    public void Gethit()
+    {
+        _currentHp--;
     }
 }

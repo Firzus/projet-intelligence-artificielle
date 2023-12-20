@@ -15,6 +15,7 @@ TagManager:
   - EnemyManager
   - PlayerManager
   - Boss
+  - DeathIcon
   layers:
   - Default
   - TransparentFX
