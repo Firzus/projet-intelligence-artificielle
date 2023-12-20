@@ -1,0 +1,349 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8243516593488714797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e22ea6d5a2781e47af522ee896731d5, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 19f015dca835a8e418f357fd495d72ea
+  position: {x: -84, y: -109.479996}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: -5154330731822196375}
+  - {fileID: 2855245302597851252}
+  - {fileID: -733183618133243506}
+--- !u!114 &-5154330731822196375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0bfe0ebf35065844d974f802d136c3dc
+  position: {x: -621.5209, y: 14.000002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: If the player is near the boss
+  children:
+  - {fileID: 6470514375787912226}
+  current: 0
+--- !u!114 &-1024956492862057076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9e805ab343fd543990099b421efe11, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1e33e34391aba9342b807eda61621b7f
+  position: {x: -84.00004, y: -338.06085}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: 5520427779410736130}
+--- !u!114 &-733183618133243506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0afb1fc162f1bcc46ae2948e1c2a8cd7
+  position: {x: 442.31415, y: 14.000002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: If boss hp is under 50%
+  children:
+  - {fileID: 5920164788474862457}
+  current: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5811bbf01d51c64498a3e90020f92581, type: 3}
+  m_Name: BossTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -1024956492862057076}
+  treeState: 0
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  nodes:
+  - {fileID: -1024956492862057076}
+  - {fileID: 5520427779410736130}
+  - {fileID: 6470514375787912226}
+  - {fileID: 2813049233085929614}
+  - {fileID: 2855245302597851252}
+  - {fileID: -5154330731822196375}
+  - {fileID: -8243516593488714797}
+  - {fileID: 4271147372737181273}
+  - {fileID: 4105362834322752645}
+  - {fileID: 7136914294651563874}
+  - {fileID: -733183618133243506}
+  - {fileID: 5920164788474862457}
+  - {fileID: 7215586892888733767}
+--- !u!114 &184863977899215549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ca2f2f3f1aae4cafbf7c482b5c26b, type: 3}
+  m_Name: MoveToPlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 58be7fd86b0a98046a7f7fda5df6ae3a
+  position: {x: 54, y: -20}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &2813049233085929614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29605d4b727c141ab85bbe5fc3df82, type: 3}
+  m_Name: CheckPlayerOutRange
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: dcaf5490727d62249ac815391f0dda25
+  position: {x: -343.96008, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  dist: 0
+--- !u!114 &2855245302597851252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2cfdc627214f3bd419c4ef135dcfca26
+  position: {x: -83.99999, y: 14.000008}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: If the player is far
+  children:
+  - {fileID: 2813049233085929614}
+  - {fileID: 4105362834322752645}
+  - {fileID: 7136914294651563874}
+  current: 0
+--- !u!114 &4105362834322752645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ca2f2f3f1aae4cafbf7c482b5c26b, type: 3}
+  m_Name: MoveToPlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 21e32d6396a69a14ea678e3a7989c1dd
+  position: {x: -134.99998, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &4271147372737181273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab8d2e6cc8026c4fa3fa2153f5ba0c7, type: 3}
+  m_Name: DashOnPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2fed31814aea0904a9b216ed6891b532
+  position: {x: -134.99988, y: 383.00006}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  jumpPos: {x: 0, y: 0}
+--- !u!114 &5520427779410736130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7875a510ea5b2aa4f85cf8829b585faf, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5b53807d2e6e1fc48885467538128b5e
+  position: {x: -84.00004, y: -223.06082}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  child: {fileID: -8243516593488714797}
+--- !u!114 &5920164788474862457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722aefccadebe564bb31c772d9921d18, type: 3}
+  m_Name: CheckHp
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fb31536aca068b54b859afc6e4502b4d
+  position: {x: 339.20676, y: 247.00006}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &6470514375787912226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08dfda7c9c61bc429e6cf49d7dea995, type: 3}
+  m_Name: CheckPlayerInRange
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3beb0deee82145a4c87f847908469fcf
+  position: {x: -821, y: 247}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+--- !u!114 &7136914294651563874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798203ccb1d080142a4d056c5414fa7b, type: 3}
+  m_Name: RandomSelector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 42c8e834f18641b4caa88f1a520b1c1b
+  position: {x: 49.000076, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 4271147372737181273}
+--- !u!114 &7215586892888733767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798203ccb1d080142a4d056c5414fa7b, type: 3}
+  m_Name: RandomSelector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4aa0df4ad06a0434e9e5aa5a4a7fdc86
+  position: {x: -627.9998, y: 247.00002}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children: []

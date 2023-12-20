@@ -15,7 +15,7 @@ public class EntityState : Entities
 
     void Update()
     {
-        if(_hp <= 0)
+        if(_currentHp <= 0)
         {
             _isAlive = false;
         }
@@ -24,10 +24,5 @@ public class EntityState : Entities
         {
             //
         }
-    }
-
-    public override void Destroy()
-    {
-
     }
 }
