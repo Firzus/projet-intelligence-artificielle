@@ -16272,6 +16272,10 @@ PrefabInstance:
       propertyPath: _list.Array.data[0].audio
       value: 
       objectReference: {fileID: 8300000, guid: 2fb18038874e9a842962840e8dff0bd3, type: 3}
+    - target: {fileID: 2477910387984852508, guid: 9e094ac0c48976b4d9ab7c63ccb4716f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 029468b6a6a3bbd42aabe35ad6904bc3, type: 2}
     - target: {fileID: 2980521056002630093, guid: 9e094ac0c48976b4d9ab7c63ccb4716f, type: 3}
       propertyPath: m_Name
       value: CapiSimple
@@ -17057,9 +17061,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0007199424
+    x: 0
     y: 0
-    width: 0.9983201
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000

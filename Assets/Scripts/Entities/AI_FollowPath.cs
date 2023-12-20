@@ -5,10 +5,19 @@ public class AI_FollowPath : MonoBehaviour
 {
     public AI_PathPoint _point;
     [SerializeField] bool _followPath = true;
+    [SerializeField] Animator _animator;
     private float _speed = 5f;
     private bool _wainting;
+    private bool _isMoving;
+
+    private const string RUN_LEFT = "Enemy_Run_Left";
+    private const string RUN_RIGHT = "Enemy_Run_Right";
+    private const string IDLE_LEFT = "Enemy_Idle_Left";
+    private const string IDLE_RIGHT = "Enemy_Idle_Right";
     void Start()
     {
+        _animator.Play(IDLE_LEFT);
+        _isMoving = false;
         if (_point == null)
         {
             _followPath = false;
@@ -37,11 +46,27 @@ public class AI_FollowPath : MonoBehaviour
             }
             else
             {
+                if(_isMoving == false)
+                {
+                    MovingDirection();
+                    _isMoving = true;
+                }
                 MoveToPoint();
             }
         }
     }
 
+    private void MovingDirection()
+    {
+        if(gameObject.transform.position.y > _point.Next.position.y)
+        {
+            _animator.Play(RUN_RIGHT);
+        }
+        else
+        {
+            _animator.Play(RUN_LEFT);
+        }
+    }
     private void MoveToPoint()
     {
         transform.position = Vector3.MoveTowards(transform.position, _point.Next.position, _speed * Time.deltaTime);
@@ -49,9 +74,11 @@ public class AI_FollowPath : MonoBehaviour
 
     IEnumerator NextPointCooldown()
     {
+        _animator.Play(IDLE_LEFT);
         yield return new WaitForSeconds(2f);
         _point.ChangePoint();
         MoveToPoint();
         _wainting = false;
+        _isMoving = false;
     }
 }
