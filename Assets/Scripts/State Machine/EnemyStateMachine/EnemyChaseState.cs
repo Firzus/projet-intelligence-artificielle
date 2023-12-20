@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyChaseState : EnemyBaseState
 {
+    public bool? CheckrayCast = null;
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.player = GameObject.FindGameObjectWithTag("Player");
@@ -40,7 +41,7 @@ public class EnemyChaseState : EnemyBaseState
         enemy.agent.SetDestination(enemy.player.transform.position);
     }
 
-    private bool RayCast(EnemyStateManager enemy)
+    private void RayCast(EnemyStateManager enemy)
     {
         Vector3 orbitCenter = enemy.GetComponent<CircleCollider2D>().bounds.center;
         Vector3 destination = enemy.player.transform.position;
@@ -54,11 +55,11 @@ public class EnemyChaseState : EnemyBaseState
 
         if (hit.collider.tag == "Player")
         {
-            return true;
+            CheckrayCast = true;
         }
         else
         {
-            return false;
+            CheckrayCast = false;
         }
     }
 }
