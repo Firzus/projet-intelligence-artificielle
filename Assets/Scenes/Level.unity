@@ -3009,16 +3009,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2968352719824973285, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968352719824973285, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419172867977258363, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140789865367965003, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6140789865367965003, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140789865367965003, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0025024414
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140789865367965003, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000051498413
       objectReference: {fileID: 0}
     - target: {fileID: 6807393794672844193, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 9065041419264861256, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065041419264861256, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065041419264861256, guid: 4767597d7bbcc9d4496fe0b6761b2f89, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3177,9 +3209,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.22817765
-    width: 0.22997417
-    height: 0.22999617
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
