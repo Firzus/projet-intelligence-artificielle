@@ -8,6 +8,7 @@ public class ShootStyle : MonoBehaviour
     [SerializeField] GameObject _mediumBullet;
     [SerializeField] GameObject _rocketBullet;
     [SerializeField] float _waitingMultiplicator = 1;
+    [SerializeField] RayCastTeste _viewTest;
 
     private bool _waiting = false;
 
@@ -28,22 +29,32 @@ public class ShootStyle : MonoBehaviour
     }
     void Update()
     {
-        //if (_parent.tag == "Enemy")
-          //  Debug.Log(RangeShoot);
-        if (_parent.tag == "Player" && Input.GetMouseButtonDown(0))
+
+        if(_parent.tag == "Player" && Input.GetMouseButtonDown(0))
         {
-            if (_waiting == false)
+            if(_waiting == false)
             {
                 Shoot();
                 StartCoroutine(CooldownTime());
             }
         }
 
-        else if (_parent.tag == "Enemy")
+        else if(_viewTest != null)
+        {
+            if (_parent.tag == "Enemy" && _viewTest.RayCast())
+            {
+                if (_waiting == false)
+                {
+                    Shoot();
+                    StartCoroutine(CooldownTime());
+                }
+            }
+        }
+
+        else if (_viewTest == null && _parent.tag == "Enemy")
         {
             if (_waiting == false)
             {
-                Debug.Log("shoot");
                 Shoot();
                 StartCoroutine(CooldownTime());
             }
@@ -70,25 +81,21 @@ public class ShootStyle : MonoBehaviour
 
         if (_canShootCooldown == true)
         {
-            Debug.Log(_gunInv.ActualWeapon.Type);
             _audioSource.clip = _gunInv.ActualWeapon.audio;
             switch (_gunInv.ActualWeapon.Type)
             {
                 case "pistolet":
-                    Debug.Log("a");
                     _shootBullet.HandGunShooting(_mediumBullet);
                     _audioSource.Play();
                     _shootCooldown = 0.6f;
                     break;
 
                 case "rafale":
-                    Debug.Log("b");
                     _shootCooldown = 1.2f;
                     StartCoroutine(Rafale(3, 0.1f));
                     break;
 
                 case "rocket":
-                    Debug.Log("c");
                     _shootBullet.HandGunShooting(_rocketBullet);
                     _audioSource.Play();
                     _shootCooldown = 3f;
