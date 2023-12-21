@@ -37,7 +37,6 @@ public class WeaponInventory : MonoBehaviour
         if(_list == null)
         {
             _index = 0;
-            Debug.Log("g mal");
             _actualSprite = _list[_index].sp;
             _actualType = _list[_index].Type;
             _actualAudio = _list[_index].audio;
@@ -48,7 +47,6 @@ public class WeaponInventory : MonoBehaviour
         else
         {
             _index = 0;
-            Debug.Log("g mal");
             _actualSprite = _list[_index].sp;
             _actualType = _list[_index].Type;
             _actualAudio = _list[_index].audio;

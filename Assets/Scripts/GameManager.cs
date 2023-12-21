@@ -25,9 +25,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = isGamePaused ? 0 : 1;
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadMenu()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("Level");
     }
 
     public void QuitGame()
