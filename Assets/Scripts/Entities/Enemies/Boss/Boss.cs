@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Boss : EntityState
@@ -13,6 +14,12 @@ public class Boss : EntityState
     [SerializeField] public bool isShieldHandler;
     [SerializeField] public GameObject _shield;
 
+    private const string IDLE_LEFT = "Boss_Idle_Left";
+    private const string IDLE_RIGHT = "Boss_Idle_Right";
+    private const string IDLE_TOP = "Boss_Idle_Back";
+    private const string IDLE_BOTTOM = "Boss_Idle_Front";
+    private const string DIE = "Boss_Die_Front";
+
     [SerializeField] private Vector2 jumpPos;
 
     // Start is called before the first frame update
@@ -21,14 +28,42 @@ public class Boss : EntityState
         canShield = true;
         canDash = true;
         FovRange = 5f;
-        EnemyStart(100, 1f);
+        EnemyStart(10, 1f);
         CurrentHp = MaxHp;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (CurrentHp <= 0)
+        {
+            gameObject.GetComponent<Animator>().Play(DIE);
+            Dead();
+        }
+    }
+
+    public void LookDirection(EntityState _target)
+    {
+        float x = _target.transform.position.x;
+        float y = _target.transform.position.y;
+
+        if (x >= gameObject.transform.position.x)
+        {
+            gameObject.GetComponent<Animator>().Play(IDLE_RIGHT);
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().Play(IDLE_LEFT);
+        }
+
+        if (y >= gameObject.transform.position.y)
+        {
+            gameObject.GetComponent<Animator>().Play(IDLE_TOP);
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().Play(IDLE_BOTTOM);
+        }
     }
 
     public IEnumerator ShieldHandler()

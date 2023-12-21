@@ -5,11 +5,10 @@ using UnityEngine;
 public class Shield : ActionNode
 {
     [HideInInspector] private Boss _boss;
-    [HideInInspector] private bool isCreated;
+    private GameObject shieldClone;
 
     protected override void OnStart()
     {
-        isCreated = false;
         _boss = agent.GetComponent<Boss>();
     }
 
@@ -28,12 +27,13 @@ public class Shield : ActionNode
             }
             if (_boss.shieldOn) 
             {
-                if (!isCreated)
+                if (shieldClone == null)
                 {
-                    Instantiate(_boss._shield, agent.transform.position, Quaternion.identity, agent.transform);
-                    isCreated = true;
+                    shieldClone = Instantiate(_boss._shield, agent.transform.position, Quaternion.identity, agent.transform);
                 }
-               
+
+                Destroy(shieldClone, 3f);
+
                 return State.Success;
             }
         }

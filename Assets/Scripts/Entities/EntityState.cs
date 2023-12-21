@@ -42,7 +42,7 @@ public class EntityState : Entities
         Speed = speed;
     }
 
-    private void Dead()
+    public void Dead()
     {
         _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
