@@ -10,7 +10,7 @@ public class BTRunner : MonoBehaviour
     void Start()
     {
         tree = tree.Clone();
-        tree.Bind(GetComponent<Enemy>());
+        tree.Bind(GetComponent<EntityState>());
     }
 
     // Update is called once per frame

@@ -69,7 +69,7 @@ public class AI_FollowPath : MonoBehaviour
     }
     private void MoveToPoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _point.Next.position, _entityState._speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _point.Next.position, _entityState.Speed * Time.deltaTime);
     }
 
     IEnumerator NextPointCooldown()

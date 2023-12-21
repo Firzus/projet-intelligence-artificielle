@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class RageMode : ActionNode
 {
+    [SerializeField] private float _currentBossHp;
+
     protected override void OnStart()
     {
-        
+        _currentBossHp = agent.CurrentHp;
     }
 
     protected override void OnStop()
@@ -16,6 +18,15 @@ public class RageMode : ActionNode
 
     protected override State OnUpdate()
     {
-        throw new System.NotImplementedException();
+        if (_currentBossHp < (_currentBossHp/agent.MaxHp) * 100) 
+        {
+            agent.Speed = 2f;
+            return State.Success;
+        }
+        else if (_currentBossHp > (_currentBossHp/agent.MaxHp) * 100) 
+        {
+            return State.Failure;
+        }
+        return State.Running;
     }
 }

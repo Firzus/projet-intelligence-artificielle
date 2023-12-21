@@ -14,7 +14,7 @@ public abstract class Node : ScriptableObject
     [HideInInspector] public string guid;
     [HideInInspector] public Vector2 position;
     [HideInInspector] public BlackBoard blackBoard;
-    [HideInInspector] public Enemy agent;
+    [HideInInspector] public EntityState agent;
     [TextArea] public string description;
 
     public State Update()
