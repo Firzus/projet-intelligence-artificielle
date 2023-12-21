@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c0cfe393a057a6f46860f6938736aee0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8888889, y: 1.2222222}
+    oldSize: {x: 0.8, y: 1.1}
     newSize: {x: 0.41, y: 0.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5373450509308755796}
   _explosion: {fileID: 1526244220169667755, guid: 40780d4fbc7d64e4ea5bbf61935acd24, type: 3}
+  _explosionSong: {fileID: 4210603780542914380, guid: fee1945b07ad90f42b6e2998d94ce2cc, type: 3}
 --- !u!95 &5373450509308755796
 Animator:
   serializedVersion: 5
@@ -232,7 +233,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004676223, y: 0}
+  m_Offset: {x: 0.004676223, y: -0.10652906}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -243,5 +244,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.903358, y: 1.2369289}
+  m_Size: {x: 0.903358, y: 1.0238708}
   m_EdgeRadius: 0
