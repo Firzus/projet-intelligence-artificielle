@@ -12,14 +12,14 @@ public class EnemyLoadingState : EnemyBaseState
         enemy.agent = enemy.GetComponent<NavMeshAgent>();
         enemy.agent.updateRotation = false;
         enemy.agent.updateUpAxis = false;
-        enemy.agent.velocity = new Vector2(enemy.entity.Speed, enemy.entity.Speed);
+        enemy.agent.speed = enemy.entity.Speed;
 
         enemy.animator = enemy.GetComponent<Animator>();
 
-        if (BoolCreateWeapon(enemy)){
+        if (BoolCreateWeapon(enemy))
+        {
             enemy.SwitchState(enemy.chase);
         }
-
     }
     public override void UpdateState(EnemyStateManager enemy)
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
-    private const string IDLE_LEFT = "Man_Bandana_Idle_Left";
+
     public override void EnterState(EnemyStateManager enemy)
     {
         Debug.Log("Attack Mode");

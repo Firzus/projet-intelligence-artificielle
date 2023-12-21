@@ -4,10 +4,6 @@ using UnityEngine;
 public class EnemyChaseState : EnemyBaseState
 {
     public bool? CheckrayCast = null;
-    private const string RUN_LEFT = "Man_Bandana_Run_Left";
-    private const string RUN_RIGHT = "Man_Bandana_Run_Right";
-    private const string IDLE_LEFT = "Man_Bandana_Idle_Left";
-    private const string IDLE_RIGHT = "Man_Bandana_Idle_Right";
     public override void EnterState(EnemyStateManager enemy)
     {
 
@@ -23,7 +19,6 @@ public class EnemyChaseState : EnemyBaseState
     {
         if (col.CompareTag("Player"))
         {
-            enemy.animator.Play(IDLE_LEFT);
             enemy.SwitchState(enemy.attack);
         }
         // else if (col.CompareTag("Player") && enemy.name == "Elite Bullet")
@@ -66,13 +61,20 @@ public class EnemyChaseState : EnemyBaseState
     private void TestDirection(EnemyStateManager enemy)
     {
         float x = enemy.player.transform.position.x;
-        if(x > enemy.transform.position.x)
+        if (x > enemy.transform.position.x)
         {
-            enemy.animator.Play(RUN_RIGHT);
+            enemy.animator.Play(ChooseAnimation(enemy, "Run", "Right"));
         }
         else
         {
-            enemy.animator.Play(RUN_LEFT);
+            enemy.animator.Play(ChooseAnimation(enemy, "Run", "Left"));
         }
+    }
+
+    private string ChooseAnimation(EnemyStateManager enemy, string action, string side)
+    {
+        string name = enemy.name + "_" + action + "_" + side;
+
+        return name;
     }
 }
