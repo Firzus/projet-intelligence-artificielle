@@ -12,15 +12,14 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(ChangeValueOverTime(0, 80, duration));
 
         AudioManager.Instance.PlayMusic("MenuTheme");
-        AudioManager.Instance.PlaycSFX("Torch");
+        AudioManager.Instance.PlaySFX("Torch");
     }
 
     public void StartGame()
     {
-        GameManager.instance.LoadLevel();
-
-        AudioManager.Instance.PlaycSFX("ClicSimple");
+        AudioManager.Instance.PlaySFX("ClicSimple");
         AudioManager.Instance.musicSource.Stop();
+        GameManager.instance.LoadLevel();
     }
 
     public IEnumerator ChangeValueOverTime(float startValue, float endValue, float duration)

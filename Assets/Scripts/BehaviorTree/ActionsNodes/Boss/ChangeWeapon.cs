@@ -14,7 +14,6 @@ public class ChangeWeapon : ActionNode
     private WeaponInventory _bossInv;
     private WeaponInventory.Weapon _weaponInv;
 
-
     protected override void OnStart()
     {
         _fovRange = agent.FovRange;
@@ -49,8 +48,6 @@ public class ChangeWeapon : ActionNode
 
             _bossInv._EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _bossInv.ActualWeapon.sp;
 
-            Debug.Log(_bossInv._list[_index].Type);
-
             return State.Success;
         }
         else // Shotgun
@@ -66,8 +63,6 @@ public class ChangeWeapon : ActionNode
             _weaponInv.audio = _actualAudio;
 
             _bossInv._EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _bossInv.ActualWeapon.sp;
-
-            Debug.Log(_bossInv._list[_index].Type);
 
             return State.Failure;
         }
