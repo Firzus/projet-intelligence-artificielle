@@ -18,6 +18,7 @@ public class EnemyStateManager : MonoBehaviour
     public Animator animator;
     public bool CheckDeath = false;
     // Start is called before the first frame update
+
     private void Start()
     {
         currentState = loading;

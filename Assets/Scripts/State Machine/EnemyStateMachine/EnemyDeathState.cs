@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyDeathState : EnemyBaseState
 {
-
     public override void EnterState(EnemyStateManager enemy)
     {
         Debug.Log("Death mode");

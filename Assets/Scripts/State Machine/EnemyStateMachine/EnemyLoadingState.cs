@@ -16,10 +16,10 @@ public class EnemyLoadingState : EnemyBaseState
 
         enemy.animator = enemy.GetComponent<Animator>();
 
-        if (BoolCreateWeapon(enemy)){
+        if (BoolCreateWeapon(enemy))
+        {
             enemy.SwitchState(enemy.chase);
         }
-
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
