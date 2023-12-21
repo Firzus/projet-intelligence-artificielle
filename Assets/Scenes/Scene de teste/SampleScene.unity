@@ -572,12 +572,15 @@ MonoBehaviour:
   CapsuleCollider2D: {fileID: 0}
   BoxCollider2D: {fileID: 0}
   CircleCollider2D: {fileID: 0}
+  _canMove: 1
+  _playerState: {fileID: 0}
   isDashing: 0
   canDash: 0
   isDashHandler: 0
   canShield: 0
   shieldOn: 0
   isShieldHandler: 0
+  _shield: {fileID: 6223443481956042368, guid: 8281cbb1bef0ff349a05c55234cee8bf, type: 3}
   jumpPos: {x: 0, y: 0}
 --- !u!4 &512376528 stripped
 Transform:

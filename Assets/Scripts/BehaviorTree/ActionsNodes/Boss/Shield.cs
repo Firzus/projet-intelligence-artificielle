@@ -5,9 +5,11 @@ using UnityEngine;
 public class Shield : ActionNode
 {
     [HideInInspector] private Boss _boss;
+    [HideInInspector] private bool isCreated;
 
     protected override void OnStart()
     {
+        isCreated = false;
         _boss = agent.GetComponent<Boss>();
     }
 
@@ -26,7 +28,12 @@ public class Shield : ActionNode
             }
             if (_boss.shieldOn) 
             {
-                Instantiate(_boss._shield, agent.transform.position, Quaternion.identity);
+                if (!isCreated)
+                {
+                    Instantiate(_boss._shield, agent.transform.position, Quaternion.identity, agent.transform);
+                    isCreated = true;
+                }
+               
                 return State.Success;
             }
         }
