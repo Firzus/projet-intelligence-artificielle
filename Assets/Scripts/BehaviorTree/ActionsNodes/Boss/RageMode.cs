@@ -8,7 +8,7 @@ public class RageMode : ActionNode
 
     protected override void OnStart()
     {
-        _currentBossHp = agent._currentHp;
+        _currentBossHp = agent.CurrentHp;
     }
 
     protected override void OnStop()
@@ -18,12 +18,12 @@ public class RageMode : ActionNode
 
     protected override State OnUpdate()
     {
-        if (_currentBossHp < (_currentBossHp/agent._maxHp) * 100) 
+        if (_currentBossHp < (_currentBossHp/agent.MaxHp) * 100) 
         {
-            agent._speed = agent._speed * 1.2f;
+            agent.Speed = 2f;
             return State.Success;
         }
-        else if (_currentBossHp > (_currentBossHp/agent._maxHp) * 100) 
+        else if (_currentBossHp > (_currentBossHp/agent.MaxHp) * 100) 
         {
             return State.Failure;
         }

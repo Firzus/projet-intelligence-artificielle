@@ -28,7 +28,7 @@ public class DashOnPlayer : ActionNode
     {
         float dist = Vector2.Distance(_enemyTransform.position, _target.transform.position);
 
-        if (dist >= agent.fovRange && _boss.canDash == true)
+        if (dist >= agent.FovRange && _boss.canDash == true)
         {
             if (!_boss.isDashHandler)
             {
@@ -36,11 +36,11 @@ public class DashOnPlayer : ActionNode
             }
             if (_boss.isDashing) 
             {
-                _enemyTransform.position = Vector2.MoveTowards(_enemyTransform.position, jumpPos, Time.deltaTime * agent._speed * 10);
+                _enemyTransform.position = Vector2.MoveTowards(_enemyTransform.position, jumpPos, Time.deltaTime * agent.Speed * 8);
                 return State.Success;
             }
         }
-        else if (dist <= agent.fovRange || _boss.canDash == false)
+        else if (dist <= agent.FovRange || _boss.canDash == false)
         {
             return State.Failure;
         }

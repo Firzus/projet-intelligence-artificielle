@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class BasicBullet : EntityState
 {
-    new public float fovRange;
+    new public float FovRange;
 
     void Start()
     {
-        fovRange = 6f;
+        FovRange = 6f;
         EnemyStart(5, 1.5f);
     }
 

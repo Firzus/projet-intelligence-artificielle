@@ -2,22 +2,25 @@ using UnityEngine;
 
 public abstract class Entities : MonoBehaviour
 {
-    [SerializeField] float MaxHp;
-    [SerializeField] float CurrentHp;
-    [SerializeField] float Speed;
-    [SerializeField][HideInInspector] Transform EnemyTransform;
-    [SerializeField][HideInInspector] float FovRange;
-    [SerializeField][HideInInspector] CapsuleCollider2D CapsuleCollider2D;
-    [SerializeField][HideInInspector] BoxCollider2D BoxCollider2D;
-    [SerializeField][HideInInspector] CircleCollider2D CircleCollider2D;
+    [SerializeField] float _maxHp;
+    [SerializeField] float _currentHp;
+    [SerializeField] float _speed;
+    [SerializeField] float _maxXp;
+    [SerializeField] float _currentXp;
+    [SerializeField][HideInInspector] float _fovRange;
+    [SerializeField][HideInInspector] Transform _enemyTransform;
+    [SerializeField][HideInInspector] CapsuleCollider2D _capsuleCollider2D;
+    [SerializeField][HideInInspector] BoxCollider2D _boxCollider2D;
+    [SerializeField][HideInInspector] CircleCollider2D _circleCollider2D;
 
-    public float _maxHp { get => MaxHp; set => MaxHp = value; }
-    public float _currentHp { get => CurrentHp; set => CurrentHp = value; }
-    public float _speed { get => Speed; set => Speed = value; }
-    public Transform enemyTransform { get => EnemyTransform; set => EnemyTransform = value; }
-    public float fovRange { get => FovRange; set => FovRange = value; }
-    public CapsuleCollider2D _capsuleCollider2D { get => CapsuleCollider2D; set => CapsuleCollider2D = value; }
-    public BoxCollider2D _boxCollider2D { get => BoxCollider2D; set => BoxCollider2D = value; }
-    public CircleCollider2D _circleCollider2D { get => CircleCollider2D; set => CircleCollider2D = value; }
-
+    public float MaxHp { get => _maxHp; set => _maxHp = value; }
+    public float CurrentHp { get => _currentHp; set => _currentHp = value; }
+    public float Speed { get => _speed; set => _speed = value; }
+    public Transform EnemyTransform { get => _enemyTransform; set => _enemyTransform = value; }
+    public float FovRange { get => _fovRange; set => _fovRange = value; }
+    public CapsuleCollider2D CapsuleCollider2D { get => _capsuleCollider2D; set => _capsuleCollider2D = value; }
+    public BoxCollider2D BoxCollider2D { get => _boxCollider2D; set => _boxCollider2D = value; }
+    public CircleCollider2D CircleCollider2D { get => _circleCollider2D; set => _circleCollider2D = value; }
+    public float MaxXp { get => _maxXp; set => _maxXp = value; }
+    public float CurrentXp { get => _currentXp; set => _currentXp = value; }
 }

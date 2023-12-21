@@ -4,19 +4,26 @@ using UnityEngine.UI;
 public class XPManager : MonoBehaviour
 {
     [SerializeField] Slider xpSlider;
-    private int currentXP = 0;
-    private readonly int maxXP = 100;
+    [SerializeField] GameObject player;
+    private EntityState playerState;
 
     void Start()
     {
-        xpSlider.maxValue = maxXP;
-        xpSlider.value = currentXP;
+        if (player != null)
+        {
+            playerState = player.GetComponent<EntityState>();
+
+            xpSlider.maxValue = playerState.MaxXp;
+            xpSlider.value = playerState.CurrentXp;
+        }
+        else
+        {
+            Debug.Log("Player GameObject Not Assigned");
+        }
     }
 
-    public void AddXP(int amount)
+    private void Update()
     {
-        currentXP += amount;
-        currentXP = Mathf.Min(currentXP, maxXP);
-        xpSlider.value = currentXP;
+        xpSlider.value = playerState.CurrentXp;
     }
 }

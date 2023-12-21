@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shield : ActionNode
 {
+    private GameObject shieldClone;
     [HideInInspector] private Boss _boss;
     [HideInInspector] private bool isCreated;
 
@@ -20,7 +21,7 @@ public class Shield : ActionNode
 
     protected override State OnUpdate()
     {
-        if (agent._currentHp <= (agent._currentHp/agent._maxHp) * 100) 
+        if (agent.CurrentHp <= (agent.CurrentHp/agent.MaxHp) * 100 && _boss.canShield == true) 
         {
             if (!_boss.isShieldHandler)
             {
@@ -30,14 +31,20 @@ public class Shield : ActionNode
             {
                 if (!isCreated)
                 {
-                    Instantiate(_boss._shield, agent.transform.position, Quaternion.identity, agent.transform);
+                    shieldClone = Instantiate(_boss._shield, agent.transform.position, Quaternion.identity, agent.transform);
                     isCreated = true;
                 }
-               
+
+                if (isCreated) 
+                {
+                    Destroy(shieldClone, 3f);
+                    isCreated = false;
+                }
+
                 return State.Success;
             }
         }
-        else if (agent._currentHp >= (agent._currentHp / agent._maxHp) * 100)
+        else if (agent.CurrentHp >= (agent.CurrentHp / agent.MaxHp) * 100)
         {
             return State.Failure;
         }

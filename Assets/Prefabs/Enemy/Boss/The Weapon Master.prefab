@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 5228814642653393199}
   - component: {fileID: 8833533821021643821}
   - component: {fileID: 172948765738031254}
+  - component: {fileID: -6598998770764718048}
+  - component: {fileID: 7924450469286568983}
+  - component: {fileID: 5494886777493949403}
   m_Layer: 0
   m_Name: The Weapon Master
   m_TagString: Boss
@@ -77,15 +80,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 807fd5f2b728b8c4a84f49a66c24748d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.21875, y: 2.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5228814642653393199
@@ -150,10 +153,10 @@ BoxCollider2D:
   m_Offset: {x: 0.0069015026, y: -0.0069012046}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.21875, y: 2.125}
+    newSize: {x: 2.21875, y: 2.125}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -180,6 +183,73 @@ MonoBehaviour:
     type: minigun
     audio: {fileID: 8300000, guid: cb8b65718c4f3a14e8925cfb61d0e404, type: 3}
   _EntitieWeapon: {fileID: 523234698644652637}
+--- !u!114 &-6598998770764718048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077407692986967613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c83a4ae0a756b4684f14fb73526c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 478ca6264e3129a42a18c643af32e94e, type: 2}
+--- !u!114 &7924450469286568983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077407692986967613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbf81be161642745af8a88a9554c670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 0
+  _currentHp: 0
+  _speed: 0
+  _maxXp: 0
+  _currentXp: 0
+  _fovRange: 0
+  _enemyTransform: {fileID: 0}
+  _capsuleCollider2D: {fileID: 0}
+  _boxCollider2D: {fileID: 0}
+  _circleCollider2D: {fileID: 0}
+  _canMove: 1
+  _playerState: {fileID: 0}
+  _hitParticle: {fileID: 3666008273831958437, guid: 1bbef9d3fcb731b4ea6e9035a470ac26, type: 3}
+  isDashing: 0
+  canDash: 0
+  isDashHandler: 0
+  canShield: 0
+  shieldOn: 0
+  isShieldHandler: 0
+  _shield: {fileID: 6223443481956042368, guid: 8281cbb1bef0ff349a05c55234cee8bf, type: 3}
+  jumpPos: {x: 0, y: 0}
+--- !u!95 &5494886777493949403
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077407692986967613}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0aecc151a70ac9f419b9bb331dd6ee03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &7625341589839391425
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,13 +5,13 @@ using UnityEngine;
 public class CheckPlayerInRange : ActionNode
 {
     [HideInInspector] private GameObject _target;
-    private float fovRange;
+    private float _fovRange;
     public bool inRange;
 
     protected override void OnStart()
     {
         _target = GameObject.FindWithTag("Player");
-        fovRange = agent.fovRange;
+        _fovRange = agent.FovRange;
     }
 
     protected override void OnStop()
@@ -23,13 +23,13 @@ public class CheckPlayerInRange : ActionNode
     {
         float dist = Vector2.Distance(agent.transform.position, _target.transform.position);
 
-        if (dist <= fovRange)
+        if (dist <= _fovRange)
         {
             //Debug.Log($"Within Range. {dist}");
             inRange = true;
             return State.Success;
         }
-        else if (dist >= fovRange)
+        else if (dist >= _fovRange)
         {
             inRange = false;
             return State.Failure;

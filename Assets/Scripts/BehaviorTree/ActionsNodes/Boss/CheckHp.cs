@@ -16,9 +16,8 @@ public class CheckHp : ActionNode
 
     protected override State OnUpdate()
     {
-        if (agent._currentHp < (agent._currentHp/agent._maxHp) * 100)
+        if (agent.CurrentHp < (agent.CurrentHp / agent.MaxHp) * 100)
         {
-            //Rage mode
             return State.Success;
         }
         return State.Failure;

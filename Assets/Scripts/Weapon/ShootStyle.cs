@@ -17,8 +17,11 @@ public class ShootStyle : MonoBehaviour
     private float _shootCooldown;
     private Transform _parent;
     private AudioSource _audioSource;
+    private bool _rangeShoot;
+    public bool RangeShoot{get => _rangeShoot; set => _rangeShoot = value; }
     void Start()
     {
+        _rangeShoot = true;
         _parent = this.gameObject.transform.parent;
         _gunInv = _parent.GetComponent<WeaponInventory>();
         _shootBullet = GetComponent<ShootBullet>();
@@ -38,7 +41,7 @@ public class ShootStyle : MonoBehaviour
             }
         }
 
-        else if(_parent.tag == "Enemy")
+        else if(_parent.tag == "Enemy" && _rangeShoot)
         {
             if (_waiting == false)
             {

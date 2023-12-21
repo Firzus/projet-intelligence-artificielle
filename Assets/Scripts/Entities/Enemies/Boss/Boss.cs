@@ -20,9 +20,9 @@ public class Boss : EntityState
     {
         canShield = true;
         canDash = true;
-        fovRange = 3f;
-        EnemyStart(100, 1.5f);
-        _currentHp = _maxHp;
+        FovRange = 5f;
+        EnemyStart(100, 1f);
+        CurrentHp = MaxHp;
     }
 
     // Update is called once per frame
