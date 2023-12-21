@@ -18,7 +18,6 @@ public class CheckHp : ActionNode
     {
         if (agent.CurrentHp < (agent.CurrentHp / agent.MaxHp) * 100)
         {
-            //Rage mode
             return State.Success;
         }
         return State.Failure;
