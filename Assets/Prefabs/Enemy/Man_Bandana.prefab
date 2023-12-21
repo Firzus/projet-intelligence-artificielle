@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3062877803847226158}
   - component: {fileID: 6772783493141912102}
   m_Layer: 0
-  m_Name: ManBandana
+  m_Name: Man_Bandana
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
