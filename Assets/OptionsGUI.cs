@@ -30,4 +30,9 @@ public class OptionsGUI : MonoBehaviour
             panel.SetActive(true);
         }
     }
+
+    public void ReturnMenu()
+    {
+        GameManager.instance.LoadMenu();
+    }
 }

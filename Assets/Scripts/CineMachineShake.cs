@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -16,7 +14,6 @@ public class CineMachineShake : MonoBehaviour
     {
         Instance = this;
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        Debug.Log(virtualCamera);
     }
 
     public void ShakeCamera(float intensity, float time)

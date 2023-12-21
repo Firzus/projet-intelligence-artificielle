@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class EntityState : Entities
 {
-
     [SerializeField] bool _canMove = true;
     [SerializeField] EntityState _playerState;
     [SerializeField] ParticleSystem _hitParticle;
@@ -16,6 +15,7 @@ public class EntityState : Entities
     void Start()
     {
         _killCount = 0;
+
         if (_playerState != null)
         {
             _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
@@ -44,15 +44,25 @@ public class EntityState : Entities
 
     private void Dead()
     {
-        Debug.Log("dead");
-        if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
-        {
-            _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
-            _playerState.KillCount++;
-            Destroy(gameObject);
+        _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
+        if (gameObject.CompareTag("Enemy"))
+        {
+            if (_playerState != null)
+            {
+                _playerState.KillCount++;
+            }
+            Destroy(gameObject);
         }
-        if (gameObject.CompareTag("Player"))
+        else if (gameObject.CompareTag("Boss"))
+        {
+            if (_playerState != null)
+            {
+                _playerState.KillCount++;
+            }
+            Destroy(gameObject);
+        }
+        else if (gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("GameOver");
         }
