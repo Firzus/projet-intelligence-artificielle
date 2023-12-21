@@ -177,14 +177,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 3
-  CurrentHp: 0
-  Speed: 5
-  EnemyTransform: {fileID: 0}
-  FovRange: 0
-  CapsuleCollider2D: {fileID: 0}
-  BoxCollider2D: {fileID: 0}
-  CircleCollider2D: {fileID: 0}
+  _maxHp: 0
+  _currentHp: 0
+  _speed: 0
+  _fovRange: 0
+  _enemyTransform: {fileID: 0}
+  _capsuleCollider2D: {fileID: 0}
+  _boxCollider2D: {fileID: 0}
+  _circleCollider2D: {fileID: 0}
   _canMove: 1
   _playerState: {fileID: 698425739878137748, guid: 06f147cd559af114e8a3236653468379, type: 3}
 --- !u!114 &2432533804391385851
