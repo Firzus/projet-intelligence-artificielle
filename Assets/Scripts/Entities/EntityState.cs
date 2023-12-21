@@ -12,9 +12,8 @@ public class EntityState : Entities
 
     void Start()
     {
-        Debug.Log("max xp : " + MaxXp);
-
         _killCount = 0;
+
         if (_playerState != null)
         {
             _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
@@ -47,8 +46,6 @@ public class EntityState : Entities
 
         if (gameObject.CompareTag("Enemy"))
         {
-            AddXP(200);
-
             if (_playerState != null)
             {
                 _playerState.KillCount++;
@@ -57,8 +54,6 @@ public class EntityState : Entities
         }
         else if (gameObject.CompareTag("Boss"))
         {
-            //AddXP(500);
-
             if (_playerState != null)
             {
                 _playerState.KillCount++;
@@ -74,16 +69,5 @@ public class EntityState : Entities
     public void Gethit()
     {
         CurrentHp--;
-    }
-
-    public void AddXP(int amount)
-    {
-        CurrentXp += amount;
-        if (CurrentXp > MaxXp)
-        {
-            CurrentXp = MaxXp;
-        }
-
-        //Debug.Log($"Current XP: {CurrentXp} / Max XP: {MaxXp}");
     }
 }
