@@ -3,10 +3,10 @@ using UnityEngine;
 public abstract class Entities : MonoBehaviour
 {
     [SerializeField] float _maxHp;
-    [SerializeField] float _currentHp;
+    private float _currentHp;
     [SerializeField] float _speed;
-    [SerializeField] float _maxXp;
-    [SerializeField] float _currentXp;
+    private float _maxXp;
+    private float _currentXp;
     [SerializeField][HideInInspector] float _fovRange;
     [SerializeField][HideInInspector] Transform _enemyTransform;
     [SerializeField][HideInInspector] CapsuleCollider2D _capsuleCollider2D;

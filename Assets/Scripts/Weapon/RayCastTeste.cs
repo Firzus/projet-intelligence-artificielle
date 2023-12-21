@@ -23,12 +23,10 @@ public class RayCastTeste : MonoBehaviour
         
         if (hit.collider.CompareTag("Player"))
         {
-            Debug.Log("true");
             return true;
         }
         else
         {
-            Debug.Log("false");
             return false;
         }
     }

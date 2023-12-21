@@ -178,9 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 0
-  _currentHp: 0
-  _speed: 0
+  _maxHp: 4
+  _currentHp: 4
+  _speed: 4
   _maxXp: 0
   _currentXp: 0
   _fovRange: 0

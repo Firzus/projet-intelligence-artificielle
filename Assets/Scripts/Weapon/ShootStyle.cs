@@ -55,7 +55,6 @@ public class ShootStyle : MonoBehaviour
         {
             if (_waiting == false)
             {
-                Debug.Log("shoot");
                 Shoot();
                 StartCoroutine(CooldownTime());
             }
@@ -82,25 +81,21 @@ public class ShootStyle : MonoBehaviour
 
         if (_canShootCooldown == true)
         {
-            Debug.Log(_gunInv.ActualWeapon.Type);
             _audioSource.clip = _gunInv.ActualWeapon.audio;
             switch (_gunInv.ActualWeapon.Type)
             {
                 case "pistolet":
-                    Debug.Log("a");
                     _shootBullet.HandGunShooting(_mediumBullet);
                     _audioSource.Play();
                     _shootCooldown = 0.6f;
                     break;
 
                 case "rafale":
-                    Debug.Log("b");
                     _shootCooldown = 1.2f;
                     StartCoroutine(Rafale(3, 0.1f));
                     break;
 
                 case "rocket":
-                    Debug.Log("c");
                     _shootBullet.HandGunShooting(_rocketBullet);
                     _audioSource.Play();
                     _shootCooldown = 3f;
