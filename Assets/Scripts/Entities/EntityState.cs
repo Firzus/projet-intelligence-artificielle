@@ -13,7 +13,7 @@ public class EntityState : Entities
     void Start()
     {
         _killCount = 0;
-        if(_playerState != null)
+        if (_playerState != null)
         {
             GameObject p = GameObject.Find("Player");
             _playerState = p.GetComponent<EntityState>();
@@ -43,14 +43,14 @@ public class EntityState : Entities
     private void Dead()
     {
         Debug.Log("dead");
-        if(gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
+        if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
         {
             _playerState.KillCount++;
             Debug.Log(_playerState.KillCount);
             Destroy(gameObject);
 
         }
-        if(gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
