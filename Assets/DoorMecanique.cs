@@ -9,6 +9,9 @@ public class DoorMecanique : MonoBehaviour
     [SerializeField] EntityState _playerState;
     [SerializeField] GameObject _openedDoor;
 
+    [SerializeField] int _roomNumbers;
+    public int RoomNumbers {  get { return _roomNumbers; } set {  _roomNumbers = value; } }
+
     void Start()
     {
         _collider.enabled = true;
@@ -27,6 +30,4 @@ public class DoorMecanique : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-
 }
