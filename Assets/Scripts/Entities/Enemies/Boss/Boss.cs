@@ -20,8 +20,8 @@ public class Boss : EntityState
     {
         canShield = true;
         canDash = true;
-        FovRange = 3f;
-        EnemyStart(100, 1.5f);
+        FovRange = 5f;
+        EnemyStart(100, 1f);
         CurrentHp = MaxHp;
     }
 

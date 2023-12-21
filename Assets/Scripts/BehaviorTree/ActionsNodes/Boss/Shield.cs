@@ -21,7 +21,7 @@ public class Shield : ActionNode
 
     protected override State OnUpdate()
     {
-        if (agent.CurrentHp <= (agent.CurrentHp/agent.MaxHp) * 100) 
+        if (agent.CurrentHp <= (agent.CurrentHp/agent.MaxHp) * 100 && _boss.canShield == true) 
         {
             if (!_boss.isShieldHandler)
             {

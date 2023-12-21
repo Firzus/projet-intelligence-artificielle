@@ -49,7 +49,7 @@ public class BulletBehavior : MonoBehaviour
         }
         else
         {
-            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet"))
+            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet") && !collision.gameObject.CompareTag("Shield"))
             {
                 if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
                 {
