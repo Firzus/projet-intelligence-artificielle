@@ -5,12 +5,8 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Attack Mode");
-
         enemy.agent.ResetPath();
         enemy.agent.velocity = Vector2.zero;
-
-        
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
