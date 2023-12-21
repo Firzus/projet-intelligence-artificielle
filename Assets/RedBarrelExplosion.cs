@@ -15,6 +15,7 @@ public class RedBarrelExplosion : MonoBehaviour
             GameObject a = Instantiate(_explosion, gameObject.transform.position, gameObject.transform.rotation);
             a.transform.localScale = new Vector3(4,4,0);
             animator.SetBool("isDestroyed", true);
+            CineMachineShake.Instance.ShakeCamera(10f, 0.5f);
             Destroy(gameObject);
         }
     }
