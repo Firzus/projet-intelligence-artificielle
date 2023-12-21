@@ -8,7 +8,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyLoadingState loading = new EnemyLoadingState();
     public EnemyChaseState chase = new EnemyChaseState();
     public EnemyAttackState attack = new EnemyAttackState();
-    public EnemyDeathState death = new EnemyDeathState();
+    public EnemyWaitState wait = new EnemyWaitState();
 
     //other class
     public GameObject player;
@@ -16,7 +16,7 @@ public class EnemyStateManager : MonoBehaviour
     public EntityState entity;
     // Variable
     public Animator animator;
-    public bool CheckDeath = false;
+    public bool? CheckrayCast = null;
     // Start is called before the first frame update
 
     private void Start()
