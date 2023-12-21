@@ -8,6 +8,7 @@ public class ShootStyle : MonoBehaviour
     [SerializeField] GameObject _mediumBullet;
     [SerializeField] GameObject _rocketBullet;
     [SerializeField] float _waitingMultiplicator = 1;
+    [SerializeField] RayCastTeste _viewTest;
 
     private bool _waiting = false;
 
@@ -38,14 +39,18 @@ public class ShootStyle : MonoBehaviour
             }
         }
 
-        else if(_parent.tag == "Enemy")
+        else if(_viewTest != null)
         {
-            if (_waiting == false)
+            if (_parent.tag == "Enemy" && _viewTest.RayCast())
             {
-                Shoot();
-                StartCoroutine(CooldownTime());
+                if (_waiting == false)
+                {
+                    Shoot();
+                    StartCoroutine(CooldownTime());
+                }
             }
         }
+
 
         else if (_parent.tag == "Boss")
         {
