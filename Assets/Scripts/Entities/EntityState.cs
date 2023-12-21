@@ -12,6 +12,8 @@ public class EntityState : Entities
 
     void Start()
     {
+        Debug.Log("max xp : " + MaxXp);
+
         _killCount = 0;
         if (_playerState != null)
         {
@@ -31,8 +33,6 @@ public class EntityState : Entities
             _canMove = false;
             Dead();
         }
-
-        Debug.Log("max xp : " + MaxXp);
     }
 
     public virtual void EnemyStart(int maxHp, float speed)
@@ -43,10 +43,8 @@ public class EntityState : Entities
 
     private void Dead()
     {
-        // Obtenez la r�f�rence � l'�tat du joueur si n�cessaire
         _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
-        // V�rifiez si l'objet est un ennemi ou un boss
         if (gameObject.CompareTag("Enemy"))
         {
             AddXP(200);
@@ -67,7 +65,6 @@ public class EntityState : Entities
             }
             Destroy(gameObject);
         }
-        // Sinon, v�rifiez si l'objet est le joueur
         else if (gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
@@ -87,6 +84,6 @@ public class EntityState : Entities
             CurrentXp = MaxXp;
         }
 
-        Debug.Log($"Current XP: {CurrentXp} / Max XP: {MaxXp}");
+        //Debug.Log($"Current XP: {CurrentXp} / Max XP: {MaxXp}");
     }
 }
