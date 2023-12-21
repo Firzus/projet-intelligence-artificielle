@@ -50,6 +50,33 @@ MonoBehaviour:
   - {fileID: 6470514375787912226}
   - {fileID: 7215586892888733767}
   current: 0
+--- !u!114 &-2293256391491283129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebe068aceaada048859e3c281b9bbf5, type: 3}
+  m_Name: Minigun
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 500e501fe50a1de4185008753e3cc5ae
+  position: {x: -622, y: 390}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  _fovRange: 0
+  _actualSprite: {fileID: 0}
+  _actualType: 
+  _actualAudio: {fileID: 0}
+  _index: 0
+  _bossInv: {fileID: 0}
 --- !u!114 &-1024956492862057076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,8 +122,7 @@ MonoBehaviour:
   description: If boss hp is under 50%
   children:
   - {fileID: 5920164788474862457}
-  - {fileID: 9212439233648148306}
-  - {fileID: 2083886595720731197}
+  - {fileID: 4090254824084336529}
   current: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -129,11 +155,12 @@ MonoBehaviour:
   - {fileID: -733183618133243506}
   - {fileID: 5920164788474862457}
   - {fileID: 7215586892888733767}
-  - {fileID: 6894202361591319954}
   - {fileID: 281624615871561872}
   - {fileID: 1776560035607605247}
   - {fileID: 9212439233648148306}
   - {fileID: 2083886595720731197}
+  - {fileID: 4090254824084336529}
+  - {fileID: -2293256391491283129}
 --- !u!114 &184863977899215549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,13 +197,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 663caeda8daf0aa4da307de10c4c7335
-  position: {x: 48.99999, y: 383}
+  position: {x: 49.000023, y: 383}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
   agent: {fileID: 0}
   description: 
-  fovRange: 0
+  _fovRange: 0
   _actualSprite: {fileID: 0}
   _actualType: 
   _actualAudio: {fileID: 0}
@@ -197,7 +224,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fcc43d08cbcc72e41afaf0c533aa5cb7
-  position: {x: 669, y: 383}
+  position: {x: 659.0001, y: 516.6775}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -218,7 +245,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 16c1415caac0c9c4e9d18878f26f2390
-  position: {x: 669, y: 247}
+  position: {x: 659, y: 389.99997}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -274,6 +301,31 @@ MonoBehaviour:
   - {fileID: 2813049233085929614}
   - {fileID: 4105362834322752645}
   - {fileID: 7136914294651563874}
+  current: 0
+--- !u!114 &4090254824084336529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3774e829b2769439767a4a9e6728ae, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1b9a660e2ed0c4b47a835bfd8c69ecae
+  position: {x: 581.99994, y: 247}
+  blackBoard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    movetoObject: {fileID: 0}
+  agent: {fileID: 0}
+  description: 
+  children:
+  - {fileID: 9212439233648148306}
+  - {fileID: 2083886595720731197}
   current: 0
 --- !u!114 &4105362834322752645
 MonoBehaviour:
@@ -355,7 +407,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: fb31536aca068b54b859afc6e4502b4d
-  position: {x: 339.20676, y: 247.00006}
+  position: {x: 431, y: 247}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}
@@ -383,33 +435,6 @@ MonoBehaviour:
   agent: {fileID: 0}
   description: 
   inRange: 0
---- !u!114 &6894202361591319954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d91a1d5cb2841d4fb2a4ff4d86245fe, type: 3}
-  m_Name: Shotgun
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: b3830fb6c8ba9ff45a2cd3e735d77ec7
-  position: {x: -639.9025, y: 383}
-  blackBoard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-    movetoObject: {fileID: 0}
-  agent: {fileID: 0}
-  description: 
-  fovRange: 0
-  _actualSprite: {fileID: 0}
-  _actualType: 
-  _actualAudio: {fileID: 0}
-  _index: 0
-  _bossInv: {fileID: 0}
 --- !u!114 &7136914294651563874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +481,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   description: 
   children:
-  - {fileID: 6894202361591319954}
+  - {fileID: -2293256391491283129}
 --- !u!114 &9212439233648148306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +497,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 384520ebc11ac034c83b3227ce791dcb
-  position: {x: 508.0002, y: 247}
+  position: {x: 507.99994, y: 389.99997}
   blackBoard:
     moveToPosition: {x: 0, y: 0, z: 0}
     movetoObject: {fileID: 0}

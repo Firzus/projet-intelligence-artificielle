@@ -36,7 +36,7 @@ public class DashOnPlayer : ActionNode
             }
             if (_boss.isDashing) 
             {
-                _enemyTransform.position = Vector2.MoveTowards(_enemyTransform.position, jumpPos, Time.deltaTime * agent.Speed * 5);
+                _enemyTransform.position = Vector2.MoveTowards(_enemyTransform.position, jumpPos, Time.deltaTime * agent.Speed * 8);
                 return State.Success;
             }
         }

@@ -18,6 +18,8 @@ TagManager:
   - DeathIcon
   - UI
   - Door
+  - Shield
+  - RangeDetection
   layers:
   - Default
   - TransparentFX

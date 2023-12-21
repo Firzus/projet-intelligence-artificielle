@@ -4,6 +4,7 @@ public class EntityState : Entities
 {
     [SerializeField] bool _canMove = true;
     [SerializeField] EntityState _playerState;
+    //EnemyStateManager enemy;
     private int _killCount;
 
     public int KillCount { get => _killCount; set => _killCount = value; }
@@ -14,10 +15,9 @@ public class EntityState : Entities
         _killCount = 0;
         if (_playerState != null)
         {
-            GameObject p = GameObject.Find("Player");
-            _playerState = p.GetComponent<EntityState>();
+            _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
         }
-        if(MaxHp == 0)
+        if (MaxHp == 0)
         {
             MaxHp = 1;
         }
@@ -31,6 +31,8 @@ public class EntityState : Entities
             _canMove = false;
             Dead();
         }
+
+        Debug.Log("max xp : " + MaxXp);
     }
 
     public virtual void EnemyStart(int maxHp, float speed)
@@ -41,15 +43,32 @@ public class EntityState : Entities
 
     private void Dead()
     {
-        Debug.Log("dead");
-        if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
-        {
-            _playerState.KillCount++;
-            Debug.Log(_playerState.KillCount);
-            Destroy(gameObject);
+        // Obtenez la référence à l'état du joueur si nécessaire
+        _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
+        // Vérifiez si l'objet est un ennemi ou un boss
+        if (gameObject.CompareTag("Enemy"))
+        {
+            AddXP(200);
+
+            if (_playerState != null)
+            {
+                _playerState.KillCount++;
+            }
+            Destroy(gameObject);
         }
-        if (gameObject.CompareTag("Player"))
+        else if (gameObject.CompareTag("Boss"))
+        {
+            //AddXP(500);
+
+            if (_playerState != null)
+            {
+                _playerState.KillCount++;
+            }
+            Destroy(gameObject);
+        }
+        // Sinon, vérifiez si l'objet est le joueur
+        else if (gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
@@ -58,5 +77,16 @@ public class EntityState : Entities
     public void Gethit()
     {
         CurrentHp--;
+    }
+
+    public void AddXP(int amount)
+    {
+        CurrentXp += amount;
+        if (CurrentXp > MaxXp)
+        {
+            CurrentXp = MaxXp;
+        }
+
+        Debug.Log($"Current XP: {CurrentXp} / Max XP: {MaxXp}");
     }
 }
