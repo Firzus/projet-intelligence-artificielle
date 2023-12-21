@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EntityState : Entities
 {
@@ -53,9 +54,8 @@ public class EntityState : Entities
         }
         if (gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
-
     }
 
     public void Gethit()
