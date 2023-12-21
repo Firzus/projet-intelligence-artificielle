@@ -4,7 +4,6 @@ public class EnemyLoadingState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Enter Loading mode");
         if (BoolCreateWeapon(enemy))
             enemy.SwitchState(enemy.chase);
     }

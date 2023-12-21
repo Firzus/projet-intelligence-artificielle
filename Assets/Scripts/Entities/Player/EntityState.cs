@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EntityState : Entities
 {
-
     [SerializeField] bool _canMove = true;
     [SerializeField] EntityState _playerState;
     private int _killCount;
@@ -48,7 +47,6 @@ public class EntityState : Entities
         {
             Destroy(gameObject);
         }
-
     }
 
     public void Gethit()

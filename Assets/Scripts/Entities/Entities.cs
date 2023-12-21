@@ -19,5 +19,4 @@ public abstract class Entities : MonoBehaviour
     public CapsuleCollider2D _capsuleCollider2D { get => CapsuleCollider2D; set => CapsuleCollider2D = value; }
     public BoxCollider2D _boxCollider2D { get => BoxCollider2D; set => BoxCollider2D = value; }
     public CircleCollider2D _circleCollider2D { get => CircleCollider2D; set => CircleCollider2D = value; }
-
 }

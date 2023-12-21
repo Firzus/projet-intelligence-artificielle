@@ -444,6 +444,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce464923c915706429ca5b7fa2250963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 3
+  background: {fileID: 1138524276}
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &301265725
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1177,7 +1180,6 @@ GameObject:
   - component: {fileID: 1138524275}
   - component: {fileID: 1138524277}
   - component: {fileID: 1138524276}
-  - component: {fileID: 1138524278}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1242,20 +1244,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138524274}
   m_CullTransparentMesh: 1
---- !u!114 &1138524278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138524274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea70cf045b57d74db4c863c446443ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  background: {fileID: 1138524276}
-  duration: 3
 --- !u!1001 &1185204449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2121,8 +2109,8 @@ AudioSource:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1210845842}
   - {fileID: 1493103589}
+  - {fileID: 1210845842}
   - {fileID: 549363450}
   - {fileID: 301265723}
   - {fileID: 28439482}
