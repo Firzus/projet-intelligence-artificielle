@@ -180,6 +180,8 @@ MonoBehaviour:
   _maxHp: 0
   _currentHp: 0
   _speed: 0
+  _maxXp: 0
+  _currentXp: 0
   _fovRange: 0
   _enemyTransform: {fileID: 0}
   _capsuleCollider2D: {fileID: 0}
@@ -187,6 +189,7 @@ MonoBehaviour:
   _circleCollider2D: {fileID: 0}
   _canMove: 1
   _playerState: {fileID: 698425739878137748, guid: 06f147cd559af114e8a3236653468379, type: 3}
+  _hitParticle: {fileID: 3666008273831958437, guid: 1bbef9d3fcb731b4ea6e9035a470ac26, type: 3}
 --- !u!114 &2432533804391385851
 MonoBehaviour:
   m_ObjectHideFlags: 0

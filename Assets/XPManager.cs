@@ -13,8 +13,8 @@ public class XPManager : MonoBehaviour
         {
             playerState = player.GetComponent<EntityState>();
 
-            xpSlider.maxValue = playerState.MaxXp;
-            xpSlider.value = playerState.CurrentXp;
+            //xpSlider.maxValue = playerState.MaxXp;
+            //xpSlider.value = playerState.CurrentXp;
         }
         else
         {
@@ -24,6 +24,6 @@ public class XPManager : MonoBehaviour
 
     private void Update()
     {
-        xpSlider.value = playerState.CurrentXp;
+        //xpSlider.value = playerState.CurrentXp;
     }
 }
