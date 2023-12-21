@@ -2,21 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : ActionNode
+public class Minigun : ActionNode
 {
-    [SerializeField] private ShootBullet shoot;
-    [SerializeField] private GameObject bullet;
     [HideInInspector] private GameObject _target;
-    [HideInInspector] private GameObject _enemy;
-    [HideInInspector] private Transform _enemyTransform;
+    [SerializeField] private float _fovRange;
+    [SerializeField] private Sprite _actualSprite;
+    [SerializeField] private string _actualType;
+    [SerializeField] private AudioClip _actualAudio;
+    [SerializeField] private int _index;
+    [SerializeField] private WeaponInventory _bossInv;
 
 
     protected override void OnStart()
     {
+        _fovRange = agent.FovRange;
         _target = GameObject.FindWithTag("Player");
-        _enemy = agent.gameObject;
-        _enemyTransform = _enemy.transform;
-        shoot = agent.gameObject.GetComponentInChildren<ShootBullet>();
+        _bossInv = agent.GetComponent<WeaponInventory>();
+        _actualSprite = _bossInv._list[_index].sp;
+        _actualType = _bossInv._list[_index].Type;
+        _actualAudio = _bossInv._list[_index].audio;
+        _bossInv.ActualWeapon = _bossInv._list[_index];
+        _bossInv._EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
+        _bossInv.UpdateWeapon();
     }
     protected override void OnStop()
     {
@@ -25,15 +32,24 @@ public class Attack : ActionNode
 
     protected override State OnUpdate()
     {
-        float dist = Vector2.Distance(_enemyTransform.position, _target.transform.position);
+        float dist = Vector2.Distance(agent.transform.position, _target.transform.position);
 
-        if (dist <= agent.fovRange) 
+        if (dist >= _fovRange)
         {
-            shoot.HandGunShooting(bullet);
+            _index = 1;
+            _actualSprite = _bossInv._list[_index].sp;
+            _actualType = _bossInv._list[_index].Type;
+            _actualAudio = _bossInv._list[_index].audio;
+            _bossInv.UpdateWeapon();
             return State.Success;
         }
-        else if (dist >= agent.fovRange)
+        else if (dist <= _fovRange)
         {
+            _index = 0;
+            _actualSprite = _bossInv._list[_index].sp;
+            _actualType = _bossInv._list[_index].Type;
+            _actualAudio = _bossInv._list[_index].audio;
+            _bossInv.UpdateWeapon();
             return State.Failure;
         }
         return State.Running;
