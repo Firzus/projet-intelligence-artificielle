@@ -65,7 +65,8 @@ public class BulletBehavior : MonoBehaviour
     {
         if (gameObject.CompareTag("ExplosifBullet"))
         {
-            Instantiate(_RpgExplosion, gameObject.transform.position, Quaternion.identity, _parentType);
+            GameObject explosion = Instantiate(_RpgExplosion, gameObject.transform.position, Quaternion.identity, _parentType);
+            explosion.transform.localScale = new Vector3(5, 5, 0);
         }
         Destroy(gameObject);       
     }
