@@ -18,7 +18,7 @@ public class EnemyLoadingState : EnemyBaseState
 
         if (BoolCreateWeapon(enemy))
         {
-            enemy.SwitchState(enemy.chase);
+            enemy.SwitchState(enemy.wait);
         }
     }
     public override void UpdateState(EnemyStateManager enemy)

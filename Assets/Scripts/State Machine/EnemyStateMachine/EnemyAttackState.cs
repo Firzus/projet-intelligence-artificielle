@@ -14,8 +14,7 @@ public class EnemyAttackState : EnemyBaseState
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
-        if (enemy.CheckDeath)
-            enemy.SwitchState(enemy.death);
+
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
