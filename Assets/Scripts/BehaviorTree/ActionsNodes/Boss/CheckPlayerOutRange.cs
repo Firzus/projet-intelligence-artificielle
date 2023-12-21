@@ -5,12 +5,14 @@ using UnityEngine;
 public class CheckPlayerOutRange : ActionNode
 {
     [HideInInspector] private GameObject _target;
-    private float fovRange;
-    [SerializeField] public float dist;
+    private float _fovRange;
+    [SerializeField] private float dist;
+
+    public bool outRange;
     protected override void OnStart()
     {
         _target = GameObject.FindWithTag("Player");
-        fovRange = agent.fovRange;
+        _fovRange = agent.FovRange;
     }
 
     protected override void OnStop()
@@ -22,13 +24,15 @@ public class CheckPlayerOutRange : ActionNode
     {
         dist = Vector2.Distance(agent.transform.position, _target.transform.position);
 
-        if (dist >= fovRange)
+        if (dist >= _fovRange)
         {
-            Debug.Log($"Out of Range. {dist}");
+            //Debug.Log($"Out of Range. {dist}");
+            outRange = true;
             return State.Success;
         }
-        else if (dist <= fovRange)
+        else if (dist <= _fovRange)
         {
+            outRange = false;
             return State.Failure;
         }
 

@@ -1,12 +1,25 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyLoadingState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Enter Loading mode");
-        if (BoolCreateWeapon(enemy))
+        enemy.player = GameObject.FindGameObjectWithTag("Player");
+
+        enemy.entity = enemy.GetComponent<EntityState>();
+
+        enemy.agent = enemy.GetComponent<NavMeshAgent>();
+        enemy.agent.updateRotation = false;
+        enemy.agent.updateUpAxis = false;
+        enemy.agent.velocity = new Vector2(enemy.entity.Speed, enemy.entity.Speed);
+
+        enemy.animator = enemy.GetComponent<Animator>();
+
+        if (BoolCreateWeapon(enemy)){
             enemy.SwitchState(enemy.chase);
+        }
+
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
@@ -23,8 +36,11 @@ public class EnemyLoadingState : EnemyBaseState
         CreateWeapon weapon = enemy.GetComponent<CreateWeapon>();
         if (weapon != null)
         {
-            weapon.Init();
-            weapon.SetWeapon(enemy);
+            if (enemy.name != "Kamikaze")
+            {
+                weapon.Init();
+                weapon.SetWeapon(enemy);
+            }
             return true;
         }
         else

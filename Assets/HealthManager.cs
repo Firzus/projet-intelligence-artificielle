@@ -3,32 +3,27 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    public Slider healthSlider;
-    private int currentHealth = 100;
-    private int maxHealth = 100;
+    [SerializeField] Slider healthSlider;
+    [SerializeField] GameObject player;
+    private EntityState playerState;
 
     void Start()
     {
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth;
+        if(player != null)
+        {
+            playerState = player.GetComponent<EntityState>();
+
+            healthSlider.maxValue = playerState.MaxHp;
+            healthSlider.value = playerState.CurrentHp;
+        }
+        else
+        {
+            Debug.Log("Player GameObject Not Assigned");
+        }
     }
 
-    public void TakeDamage(int damage)
+    private void Update()
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Max(currentHealth, 0);
-        UpdateHealthBar();
-    }
-
-    public void Heal(int amount)
-    {
-        currentHealth += amount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
-        UpdateHealthBar();
-    }
-
-    private void UpdateHealthBar()
-    {
-        healthSlider.value = currentHealth;
+        //healthSlider.value = playerState.CurrentHp;
     }
 }

@@ -23,7 +23,7 @@ public class ShootStyle : MonoBehaviour
         _parent = this.gameObject.transform.parent;
         _gunInv = _parent.GetComponent<WeaponInventory>();
         _shootBullet = GetComponent<ShootBullet>();
-        _canShootCooldown = false;
+        _canShootCooldown = true;
         _shootCooldown = 0f;
         _audioSource = GetComponent<AudioSource>();
     }
@@ -51,12 +51,24 @@ public class ShootStyle : MonoBehaviour
             }
         }
 
+        else if (_viewTest == null && _parent.tag == "Enemy")
+        {
+            if (_waiting == false)
+            {
+                Debug.Log("shoot");
+                Shoot();
+                StartCoroutine(CooldownTime());
+            }
+        }
 
         else if (_parent.tag == "Boss")
         {
-            //Paterne du boss
+            if (_waiting == false)
+            {
+                Shoot();
+                StartCoroutine(CooldownTime());
+            }
         }
-
     }
     public IEnumerator CooldownTime()
     {
@@ -67,23 +79,28 @@ public class ShootStyle : MonoBehaviour
     }
     public void Shoot()
     {
-        if (_canShootCooldown==true)
+
+        if (_canShootCooldown == true)
         {
+            Debug.Log(_gunInv.ActualWeapon.Type);
             _audioSource.clip = _gunInv.ActualWeapon.audio;
             switch (_gunInv.ActualWeapon.Type)
-            {        
+            {
                 case "pistolet":
+                    Debug.Log("a");
                     _shootBullet.HandGunShooting(_mediumBullet);
                     _audioSource.Play();
                     _shootCooldown = 0.6f;
                     break;
 
                 case "rafale":
+                    Debug.Log("b");
                     _shootCooldown = 1.2f;
                     StartCoroutine(Rafale(3, 0.1f));
                     break;
 
                 case "rocket":
+                    Debug.Log("c");
                     _shootBullet.HandGunShooting(_rocketBullet);
                     _audioSource.Play();
                     _shootCooldown = 3f;
@@ -129,11 +146,11 @@ public class ShootStyle : MonoBehaviour
     {
         _audioSource.Play();
         yield return new WaitForSeconds(1f);
-        for (int i = 0;i < 65;i++)
+        for (int i = 0; i < 65; i++)
         {
             yield return new WaitForSeconds(0.05f);
             _shootBullet.HandGunShooting(_simpleBullet);
         }
-        
+
     }
 }

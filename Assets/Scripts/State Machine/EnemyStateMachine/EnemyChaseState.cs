@@ -1,60 +1,78 @@
 using UnityEngine;
 
+
 public class EnemyChaseState : EnemyBaseState
 {
-    //LayerMask IgnoreLayer = LayerMask.GetMask("Default");
+    public bool? CheckrayCast = null;
+    private const string RUN_LEFT = "Man_Bandana_Run_Left";
+    private const string RUN_RIGHT = "Man_Bandana_Run_Right";
+    private const string IDLE_LEFT = "Man_Bandana_Idle_Left";
+    private const string IDLE_RIGHT = "Man_Bandana_Idle_Right";
     public override void EnterState(EnemyStateManager enemy)
     {
+
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
+        // if(enemy.CheckDeath)
+        //     enemy.SwitchState(enemy.death);
         Chase(enemy);
         RayCast(enemy);
-        Debug.Log(RayCast(enemy));
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
-        //Debug.Log("Trigger " + col.tag);
-        //switch state if trigger
-        if (col.CompareTag("Player") && enemy.name == "Simple Bullet")
+        if (col.CompareTag("Player"))
         {
+            enemy.animator.Play(IDLE_LEFT);
             enemy.SwitchState(enemy.attack);
         }
-        else if (col.CompareTag("Player") && enemy.name == "Elite Bullet")
-        {
-            enemy.SwitchState(enemy.moving);
-        }
+        // else if (col.CompareTag("Player") && enemy.name == "Elite Bullet")
+        // {
+        //     enemy.SwitchState(enemy.moving);
+        // }
     }
-
     public override void OnTriggerExit2D(EnemyStateManager enemy, Collider2D col)
     {
     }
 
     private void Chase(EnemyStateManager enemy)
     {
-        float speed = 2.0f;
-        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, enemy.player.transform.position, speed * Time.deltaTime);
+        enemy.agent.SetDestination(enemy.player.transform.position);
+        TestDirection(enemy);
     }
 
-    private bool RayCast(EnemyStateManager enemy)
+    private void RayCast(EnemyStateManager enemy)
     {
-        Vector3 orbitCenter = enemy.GetComponent<CircleCollider2D>().bounds.center;
+        Vector3 orbitCenter = enemy.transform.GetChild(0).GetComponent<CircleCollider2D>().bounds.center;
         Vector3 destination = enemy.player.transform.position;
 
         Vector3 normal = (destination - orbitCenter).normalized;
 
-        Vector3 origin = orbitCenter + normal * (enemy.GetComponent<CircleCollider2D>().radius + 0.1f);
+        Vector3 origin = orbitCenter + normal * (enemy.transform.GetChild(0).GetComponent<CircleCollider2D>().radius + 0.1f);
 
         RaycastHit2D hit = Physics2D.Raycast(origin, destination - origin);
         Debug.DrawRay(origin, destination - origin, Color.red);
 
         if (hit.collider.tag == "Player")
         {
-            return true;
+            CheckrayCast = true;
         }
         else
         {
-            return false;
+            CheckrayCast = false;
+        }
+    }
+
+    private void TestDirection(EnemyStateManager enemy)
+    {
+        float x = enemy.player.transform.position.x;
+        if(x > enemy.transform.position.x)
+        {
+            enemy.animator.Play(RUN_RIGHT);
+        }
+        else
+        {
+            enemy.animator.Play(RUN_LEFT);
         }
     }
 }

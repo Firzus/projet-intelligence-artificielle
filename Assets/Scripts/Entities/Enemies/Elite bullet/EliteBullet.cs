@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EliteBullet : Enemy
+public class EliteBullet : EntityState
 {
 
     // Start is called before the first frame update
