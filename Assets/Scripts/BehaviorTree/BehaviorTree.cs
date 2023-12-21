@@ -158,7 +158,7 @@ public class BehaviorTree : ScriptableObject
         return tree;
     }
 
-    public void Bind(Enemy enemy)
+    public void Bind(EntityState enemy)
     {
         Traverse(rootNode, node =>
         {

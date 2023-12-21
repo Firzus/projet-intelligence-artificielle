@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (state.CanMove)
         {
-            MovePlayer(state._speed);
+            MovePlayer(state.Speed);
         }
     }
 

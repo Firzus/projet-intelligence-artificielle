@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class WeaponInventory : MonoBehaviour
 {
-    [System.Serializable] public struct Weapon
+
+    [System.Serializable] 
+    public struct Weapon
     {
         public Sprite sp;
         [SerializeField] string type;
@@ -20,6 +22,7 @@ public class WeaponInventory : MonoBehaviour
     private string _actualType;
     private AudioClip _actualAudio;
     private int _index;
+    public int Index { get => _index; set => _index = value; }
 
     void Start()
     {
@@ -46,7 +49,8 @@ public class WeaponInventory : MonoBehaviour
         {
             Debug.Log("Weapon List null");
         }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && this.gameObject.tag == "Player") // forward
         {
             if(_index == _list.Count - 1)
             {
@@ -65,7 +69,7 @@ public class WeaponInventory : MonoBehaviour
 
             return true;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f && this.gameObject.tag == "Player") // backwards
         {
             if (_index == 0)
             {
@@ -86,7 +90,7 @@ public class WeaponInventory : MonoBehaviour
         return false;
     }
 
-    private void UpdateWeapon()
+    public void UpdateWeapon()
     {
         _actualWeapon.sp = _actualSprite;
         _actualWeapon.Type = _actualType;

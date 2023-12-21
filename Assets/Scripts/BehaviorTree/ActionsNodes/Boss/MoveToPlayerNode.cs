@@ -24,17 +24,17 @@ public class MoveToPlayerNode : ActionNode
     {
         float dist = Vector3.Distance(_enemyTransform.position, _target.transform.position);
 
-        if (dist >= agent.fovRange)
+        if (dist >= agent.FovRange)
         {
             _enemyTransform.position =Vector2.MoveTowards(
             _enemyTransform.position, 
             _target.transform.position, 
-            agent._speed * Time.deltaTime);
-            Debug.Log($"Moving from {_enemyTransform.position} to {_target.transform.position}");
+            agent.Speed * Time.deltaTime);
+            //Debug.Log($"Moving from {_enemyTransform.position} to {_target.transform.position}");
 
             return State.Success;
         }
-        else if (dist <= agent.fovRange) 
+        else if (dist <= agent.FovRange) 
         { 
             return State.Failure;
         }

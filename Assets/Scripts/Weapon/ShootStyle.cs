@@ -49,9 +49,12 @@ public class ShootStyle : MonoBehaviour
 
         else if (_parent.tag == "Boss")
         {
-            //Paterne du boss
+            if (_waiting == false)
+            {
+                Shoot();
+                StartCoroutine(CooldownTime());
+            }
         }
-
     }
     public IEnumerator CooldownTime()
     {
