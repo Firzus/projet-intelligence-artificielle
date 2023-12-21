@@ -24,6 +24,6 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-        healthSlider.value = playerState.CurrentHp;
+        //healthSlider.value = playerState.CurrentHp;
     }
 }

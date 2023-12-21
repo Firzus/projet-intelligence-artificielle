@@ -27,8 +27,7 @@ public class WeaponManageur : MonoBehaviour
 
     public Weapon ChooseWeapon()
     {
-        int a = Random.Range(0, _weaponList.Count-1);
-        Debug.Log(a);
+        int a = Random.Range(0, _weaponList.Count);
         Weapon w = _weaponList[a];
         return w;
     }
