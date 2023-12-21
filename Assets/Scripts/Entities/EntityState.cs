@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EntityState : Entities
 {
     [SerializeField] bool _canMove = true;
     [SerializeField] EntityState _playerState;
-    //EnemyStateManager enemy;
+    [SerializeField] ParticleSystem _hitParticle;
     private int _killCount;
-
+    
     public int KillCount { get => _killCount; set => _killCount = value; }
     public bool CanMove { get => _canMove; set => _canMove = value; }
 
@@ -69,5 +70,7 @@ public class EntityState : Entities
     public void Gethit()
     {
         CurrentHp--;
+        Instantiate(_hitParticle, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+        _hitParticle.Play();
     }
 }
