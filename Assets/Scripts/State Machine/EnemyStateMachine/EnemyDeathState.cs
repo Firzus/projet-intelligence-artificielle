@@ -6,7 +6,7 @@ public class EnemyDeathState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         Debug.Log("Death mode");
-        MonoBehaviour.Destroy(enemy.gameObject);
+        //launch death animation
     }
     public override void UpdateState(EnemyStateManager enemy)
     {

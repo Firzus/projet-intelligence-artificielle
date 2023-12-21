@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,13 @@ public class WeaponInventory : MonoBehaviour
         [SerializeField] string type;
         public AudioClip audio;
         public string Type { get => type; set => type = value; }
+        public Weapon addW(Sprite sprite, string wType, AudioClip wAudio)
+        {
+            sp = sprite;
+            type = wType;
+            audio = wAudio;
+            return this;
+        }
     }
 
     public List<Weapon> _list;// = new List<Weapon>();
@@ -26,13 +34,28 @@ public class WeaponInventory : MonoBehaviour
 
     void Start()
     {
-        _index = 0;
-        _actualSprite = _list[_index].sp;
-        _actualType = _list[_index].Type;
-        _actualAudio = _list[_index].audio;
-        _actualWeapon = _list[_index];
-        _EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
-        UpdateWeapon();
+        if(_list == null)
+        {
+            _index = 0;
+            Debug.Log("g mal");
+            _actualSprite = _list[_index].sp;
+            _actualType = _list[_index].Type;
+            _actualAudio = _list[_index].audio;
+            _actualWeapon = _list[_index];
+            _EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
+            UpdateWeapon();
+        }
+        else
+        {
+            _index = 0;
+            Debug.Log("g mal");
+            _actualSprite = _list[_index].sp;
+            _actualType = _list[_index].Type;
+            _actualAudio = _list[_index].audio;
+            _actualWeapon = _list[_index];
+            _EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
+            UpdateWeapon();
+        }
     }
 
     void Update()
@@ -98,4 +121,9 @@ public class WeaponInventory : MonoBehaviour
         _EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualWeapon.sp;
     }
 
+    public void AddWeapon(Sprite sp, String st, AudioClip audio)
+    {
+        Weapon w = new Weapon().addW(sp, st, audio);
+        _list.Add(w);
+    }
 }

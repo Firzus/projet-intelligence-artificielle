@@ -18,7 +18,7 @@ public class BulletBehavior : MonoBehaviour
     {
         _lifeTime -= Time.deltaTime;
         TestDestroy();
-        
+
     }
 
     private void SetStraingVelocity()
@@ -28,7 +28,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void TestDestroy()
     {
-        if(_lifeTime < 0 )
+        if (_lifeTime < 0)
         {
             Destroy(gameObject);
         }
@@ -36,28 +36,32 @@ public class BulletBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string entityShooter = _parentType.tag;
-        if (entityShooter == "EnemyManager")
+        if (!collision.gameObject.CompareTag("RangeDetection"))
         {
-            if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Bullet"))
+            if (entityShooter == "EnemyManager")
             {
-                if(collision.CompareTag("Player"))
+                if (!collision.gameObject.CompareTag("Enemy") && !collision.gameObject.CompareTag("Bullet") && !collision.gameObject.CompareTag("RangeDetection"))
                 {
-                    collision.GetComponent<EntityState>().Gethit();
+                    if (collision.CompareTag("Player"))
+                    {
+                        collision.GetComponent<EntityState>().Gethit();
+                    }
+                    BulletExplosion();
                 }
-                BulletExplosion();
+            }
+            else
+            {
+                if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet") && !collision.gameObject.CompareTag("Shield"))
+                {
+                    if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
+                    {
+                        collision.GetComponent<EntityState>().Gethit();
+                    }
+                    BulletExplosion();
+                }
             }
         }
-        else
-        {
-            if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet") && !collision.gameObject.CompareTag("Shield"))
-            {
-                if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
-                {
-                    collision.GetComponent<EntityState>().Gethit();
-                }
-                BulletExplosion();
-            }
-        }
+
     }
 
 
@@ -68,6 +72,6 @@ public class BulletBehavior : MonoBehaviour
             GameObject explosion = Instantiate(_RpgExplosion, gameObject.transform.position, Quaternion.identity, _parentType);
             explosion.transform.localScale = new Vector3(5, 5, 0);
         }
-        Destroy(gameObject);       
+        Destroy(gameObject);
     }
 }

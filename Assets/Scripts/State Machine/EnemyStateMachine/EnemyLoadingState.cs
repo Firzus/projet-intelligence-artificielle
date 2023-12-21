@@ -5,13 +5,20 @@ public class EnemyLoadingState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
     {
-        Debug.Log("Enter Loading mode");
+        //enemy is dead
         if (BoolCreateWeapon(enemy))
             enemy.SwitchState(enemy.chase);
+
         enemy.player = GameObject.FindGameObjectWithTag("Player");
+
+        enemy.entity = enemy.GetComponent<EntityState>();
+
+        enemy.shoot = enemy.GetComponent<ShootStyle>();
+
         enemy.agent = enemy.GetComponent<NavMeshAgent>();
         enemy.agent.updateRotation = false;
         enemy.agent.updateUpAxis = false;
+        enemy.agent.velocity = new Vector2(enemy.entity.Speed, enemy.entity.Speed);
 
     }
     public override void UpdateState(EnemyStateManager enemy)
