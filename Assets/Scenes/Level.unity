@@ -15545,6 +15545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356273787}
   - component: {fileID: 356273786}
+  - component: {fileID: 356273788}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -15583,6 +15584,18 @@ Transform:
   - {fileID: 940168076}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356273788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356273785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccc5343b7adb3643b7144a61c99c162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357614147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6522569684546697181, guid: 6b3b01c09780d204cafeb928b7a5bd10, type: 3}
@@ -18242,9 +18255,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 0.999865
+    y: 0.055555556
+    width: 0.33333334
+    height: 0.3333333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
