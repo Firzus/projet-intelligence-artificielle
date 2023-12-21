@@ -34,7 +34,7 @@ public class WeaponInventory : MonoBehaviour
 
     void Start()
     {
-        if(_list == null)
+        if(_list.Count != 0)
         {
             _index = 0;
             _actualSprite = _list[_index].sp;
@@ -44,16 +44,7 @@ public class WeaponInventory : MonoBehaviour
             _EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
             UpdateWeapon();
         }
-        else
-        {
-            _index = 0;
-            _actualSprite = _list[_index].sp;
-            _actualType = _list[_index].Type;
-            _actualAudio = _list[_index].audio;
-            _actualWeapon = _list[_index];
-            _EntitieWeapon.GetComponent<SpriteRenderer>().sprite = _actualSprite;
-            UpdateWeapon();
-        }
+    
     }
 
     void Update()
