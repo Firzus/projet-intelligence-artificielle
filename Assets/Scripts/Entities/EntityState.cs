@@ -43,10 +43,10 @@ public class EntityState : Entities
 
     private void Dead()
     {
-        // Obtenez la référence à l'état du joueur si nécessaire
+        // Obtenez la rï¿½fï¿½rence ï¿½ l'ï¿½tat du joueur si nï¿½cessaire
         _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
-        // Vérifiez si l'objet est un ennemi ou un boss
+        // Vï¿½rifiez si l'objet est un ennemi ou un boss
         if (gameObject.CompareTag("Enemy"))
         {
             AddXP(200);
@@ -67,7 +67,7 @@ public class EntityState : Entities
             }
             Destroy(gameObject);
         }
-        // Sinon, vérifiez si l'objet est le joueur
+        // Sinon, vï¿½rifiez si l'objet est le joueur
         else if (gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
