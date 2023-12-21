@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyLoadingState : EnemyBaseState
 {
@@ -7,6 +8,10 @@ public class EnemyLoadingState : EnemyBaseState
         Debug.Log("Enter Loading mode");
         if (BoolCreateWeapon(enemy))
             enemy.SwitchState(enemy.chase);
+        enemy.player = GameObject.FindGameObjectWithTag("Player");
+        enemy.agent = enemy.GetComponent<NavMeshAgent>();
+        enemy.agent.updateRotation = false;
+        enemy.agent.updateUpAxis = false;
 
     }
     public override void UpdateState(EnemyStateManager enemy)
