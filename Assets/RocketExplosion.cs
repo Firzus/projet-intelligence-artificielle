@@ -9,17 +9,19 @@ public class RocketExplosion : MonoBehaviour
 
     void Start()
     {
+        CineMachineShake.Instance.ShakeCamera(10f, 0.7f);
+        Debug.Log(CineMachineShake.Instance);
         StartCoroutine(PlayAnimationAndDestroy());
     }
 
     IEnumerator PlayAnimationAndDestroy()
     {
-        animator.Play("Rocket_Explosion");
 
+        animator.Play("Rocket_Explosion");
 
         // Attendre pendant un certain temps
         yield return new WaitForSeconds(delay);
-
+        
         // Détruire l'objet
         Destroy(gameObject);
     }

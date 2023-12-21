@@ -175,14 +175,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 3
-  CurrentHp: 0
-  Speed: 0
-  EnemyTransform: {fileID: 0}
-  FovRange: 0
-  CapsuleCollider2D: {fileID: 0}
-  BoxCollider2D: {fileID: 0}
-  CircleCollider2D: {fileID: 0}
+  _maxHp: 6
+  _currentHp: 6
+  _speed: 5
+  _xp: 0
+  _xpForKill: 0
+  _maxXp: 1000
+  _fovRange: 0
+  _enemyTransform: {fileID: 0}
+  _capsuleCollider2D: {fileID: 0}
+  _boxCollider2D: {fileID: 0}
+  _circleCollider2D: {fileID: 0}
   _canMove: 1
   _playerState: {fileID: 0}
 --- !u!114 &191379424559252364

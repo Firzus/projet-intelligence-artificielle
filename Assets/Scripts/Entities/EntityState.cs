@@ -1,19 +1,20 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EntityState : Entities
 {
-
     [SerializeField] bool _canMove = true;
     [SerializeField] EntityState _playerState;
-    //EnemyStateManager enemy;
+    [SerializeField] ParticleSystem _hitParticle;
     private int _killCount;
-
+    
     public int KillCount { get => _killCount; set => _killCount = value; }
     public bool CanMove { get => _canMove; set => _canMove = value; }
 
     void Start()
     {
         _killCount = 0;
+
         if (_playerState != null)
         {
             _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
@@ -42,23 +43,34 @@ public class EntityState : Entities
 
     private void Dead()
     {
-        Debug.Log("dead");
-        if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
-        {
-            _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
-            _playerState.KillCount++;
-            Destroy(gameObject);
+        _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
-        }
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Enemy"))
         {
+            if (_playerState != null)
+            {
+                _playerState.KillCount++;
+            }
             Destroy(gameObject);
         }
-
+        else if (gameObject.CompareTag("Boss"))
+        {
+            if (_playerState != null)
+            {
+                _playerState.KillCount++;
+            }
+            Destroy(gameObject);
+        }
+        else if (gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Gethit()
     {
         CurrentHp--;
+        Instantiate(_hitParticle, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+        _hitParticle.Play();
     }
 }

@@ -5,6 +5,8 @@ public abstract class Entities : MonoBehaviour
     [SerializeField] float _maxHp;
     [SerializeField] float _currentHp;
     [SerializeField] float _speed;
+    [SerializeField] float _maxXp;
+    [SerializeField] float _currentXp;
     [SerializeField][HideInInspector] float _fovRange;
     [SerializeField][HideInInspector] Transform _enemyTransform;
     [SerializeField][HideInInspector] CapsuleCollider2D _capsuleCollider2D;
@@ -19,5 +21,6 @@ public abstract class Entities : MonoBehaviour
     public CapsuleCollider2D CapsuleCollider2D { get => _capsuleCollider2D; set => _capsuleCollider2D = value; }
     public BoxCollider2D BoxCollider2D { get => _boxCollider2D; set => _boxCollider2D = value; }
     public CircleCollider2D CircleCollider2D { get => _circleCollider2D; set => _circleCollider2D = value; }
-
+    public float MaxXp { get => _maxXp; set => _maxXp = value; }
+    public float CurrentXp { get => _currentXp; set => _currentXp = value; }
 }
