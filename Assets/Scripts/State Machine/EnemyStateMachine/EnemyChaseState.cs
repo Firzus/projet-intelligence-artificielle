@@ -3,15 +3,13 @@ using UnityEngine;
 
 public class EnemyChaseState : EnemyBaseState
 {
-    public bool? CheckrayCast = null;
+    
     public override void EnterState(EnemyStateManager enemy)
     {
 
     }
     public override void UpdateState(EnemyStateManager enemy)
     {
-        // if(enemy.CheckDeath)
-        //     enemy.SwitchState(enemy.death);
         Chase(enemy);
         RayCast(enemy);
     }
@@ -50,11 +48,11 @@ public class EnemyChaseState : EnemyBaseState
 
         if (hit.collider.tag == "Player")
         {
-            CheckrayCast = true;
+            enemy.CheckrayCast = true;
         }
         else
         {
-            CheckrayCast = false;
+            enemy.CheckrayCast = false;
         }
     }
 
