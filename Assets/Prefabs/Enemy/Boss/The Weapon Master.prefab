@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5228814642653393199}
   - component: {fileID: 8833533821021643821}
   - component: {fileID: 172948765738031254}
+  - component: {fileID: -6598998770764718048}
+  - component: {fileID: 7924450469286568983}
   m_Layer: 0
   m_Name: The Weapon Master
   m_TagString: Boss
@@ -180,6 +182,50 @@ MonoBehaviour:
     type: minigun
     audio: {fileID: 8300000, guid: cb8b65718c4f3a14e8925cfb61d0e404, type: 3}
   _EntitieWeapon: {fileID: 523234698644652637}
+--- !u!114 &-6598998770764718048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077407692986967613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c83a4ae0a756b4684f14fb73526c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 478ca6264e3129a42a18c643af32e94e, type: 2}
+--- !u!114 &7924450469286568983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077407692986967613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbf81be161642745af8a88a9554c670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 0
+  _currentHp: 0
+  _speed: 0
+  _fovRange: 0
+  _enemyTransform: {fileID: 0}
+  _capsuleCollider2D: {fileID: 0}
+  _boxCollider2D: {fileID: 0}
+  _circleCollider2D: {fileID: 0}
+  _canMove: 1
+  _playerState: {fileID: 0}
+  _hitParticle: {fileID: 3666008273831958437, guid: 1bbef9d3fcb731b4ea6e9035a470ac26, type: 3}
+  isDashing: 0
+  canDash: 0
+  isDashHandler: 0
+  canShield: 0
+  shieldOn: 0
+  isShieldHandler: 0
+  _shield: {fileID: 6223443481956042368, guid: 8281cbb1bef0ff349a05c55234cee8bf, type: 3}
+  jumpPos: {x: 0, y: 0}
 --- !u!1001 &7625341589839391425
 PrefabInstance:
   m_ObjectHideFlags: 0
