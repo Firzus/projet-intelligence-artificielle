@@ -5,6 +5,7 @@ public class EntityState : Entities
 
     [SerializeField] bool _canMove = true;
     [SerializeField] EntityState _playerState;
+    //EnemyStateManager enemy;
     private int _killCount;
 
     public int KillCount { get => _killCount; set => _killCount = value; }
@@ -15,10 +16,9 @@ public class EntityState : Entities
         _killCount = 0;
         if (_playerState != null)
         {
-            GameObject p = GameObject.Find("Player");
-            _playerState = p.GetComponent<EntityState>();
+            _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
         }
-        if(MaxHp == 0)
+        if (MaxHp == 0)
         {
             MaxHp = 1;
         }
@@ -45,8 +45,8 @@ public class EntityState : Entities
         Debug.Log("dead");
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Boss"))
         {
+            _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
             _playerState.KillCount++;
-            Debug.Log(_playerState.KillCount);
             Destroy(gameObject);
 
         }
