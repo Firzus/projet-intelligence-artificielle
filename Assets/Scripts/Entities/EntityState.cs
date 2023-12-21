@@ -18,16 +18,16 @@ public class EntityState : Entities
             GameObject p = GameObject.Find("Player");
             _playerState = p.GetComponent<EntityState>();
         }
-        if(_maxHp == 0)
+        if(MaxHp == 0)
         {
-            _maxHp = 1;
+            MaxHp = 1;
         }
-        _currentHp = _maxHp;
+        CurrentHp = MaxHp;
     }
 
     void Update()
     {
-        if (_currentHp <= 0)
+        if (CurrentHp <= 0)
         {
             _canMove = false;
             Dead();
@@ -36,8 +36,8 @@ public class EntityState : Entities
 
     public virtual void EnemyStart(int maxHp, float speed)
     {
-        _maxHp = maxHp;
-        _speed = speed;
+        MaxHp = maxHp;
+        Speed = speed;
     }
 
     private void Dead()
@@ -59,6 +59,6 @@ public class EntityState : Entities
 
     public void Gethit()
     {
-        _currentHp--;
+        CurrentHp--;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Minigun : ActionNode
 {
     [HideInInspector] private GameObject _target;
-    [SerializeField] private float fovRange;
+    [SerializeField] private float _fovRange;
     [SerializeField] private Sprite _actualSprite;
     [SerializeField] private string _actualType;
     [SerializeField] private AudioClip _actualAudio;
@@ -15,10 +15,9 @@ public class Minigun : ActionNode
 
     protected override void OnStart()
     {
-        fovRange = agent.fovRange;
+        _fovRange = agent.FovRange;
         _target = GameObject.FindWithTag("Player");
         _bossInv = agent.GetComponent<WeaponInventory>();
-        _index = _bossInv.Index;
         _actualSprite = _bossInv._list[_index].sp;
         _actualType = _bossInv._list[_index].Type;
         _actualAudio = _bossInv._list[_index].audio;
@@ -35,7 +34,7 @@ public class Minigun : ActionNode
     {
         float dist = Vector2.Distance(agent.transform.position, _target.transform.position);
 
-        if (dist >= fovRange)
+        if (dist >= _fovRange)
         {
             _index = 1;
             _actualSprite = _bossInv._list[_index].sp;
@@ -44,7 +43,7 @@ public class Minigun : ActionNode
             _bossInv.UpdateWeapon();
             return State.Success;
         }
-        else if (dist <= fovRange)
+        else if (dist <= _fovRange)
         {
             _index = 0;
             _actualSprite = _bossInv._list[_index].sp;

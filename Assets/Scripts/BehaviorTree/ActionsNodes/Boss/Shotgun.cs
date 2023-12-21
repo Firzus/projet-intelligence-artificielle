@@ -14,7 +14,7 @@ public class Shotgun : ActionNode
 
     protected override void OnStart()
     {
-        fovRange = agent.fovRange;
+        fovRange = agent.FovRange;
         _target = GameObject.FindWithTag("Player");
         _bossInv = agent.GetComponent<WeaponInventory>();
         _index = _bossInv.Index;
