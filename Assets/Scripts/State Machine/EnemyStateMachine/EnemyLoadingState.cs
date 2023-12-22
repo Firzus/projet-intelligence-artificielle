@@ -16,9 +16,13 @@ public class EnemyLoadingState : EnemyBaseState
 
         enemy.animator = enemy.GetComponent<Animator>();
 
-        if (BoolCreateWeapon(enemy))
+        if (BoolCreateWeapon(enemy) && enemy.door != null)
         {
             enemy.SwitchState(enemy.wait);
+        }
+        else
+        {
+            enemy.SwitchState(enemy.chase);
         }
     }
     public override void UpdateState(EnemyStateManager enemy)
@@ -36,11 +40,12 @@ public class EnemyLoadingState : EnemyBaseState
         CreateWeapon weapon = enemy.GetComponent<CreateWeapon>();
         if (weapon != null)
         {
-            if (enemy.name != "DynamiteMan")
-            {
-                weapon.Init();
-                weapon.SetWeapon(enemy);
-            }
+            weapon.Init();
+            weapon.SetWeapon(enemy);
+            return true;
+        }
+        else if(enemy.name == "Dynamite_Man")
+        {
             return true;
         }
         else
