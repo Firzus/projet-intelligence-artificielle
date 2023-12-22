@@ -9,7 +9,6 @@ public class CreateWeapon : MonoBehaviour
     {
         //Debug
         //set path for local prefab
-        string weaponPath = "Assets/Prefabs/Weapons/weapon.prefab";
         GameObject weapon = GameObject.FindWithTag("WeaponManager").GetComponent<WeaponManageur>().weaponObject;
 
         //Instantiate game object
