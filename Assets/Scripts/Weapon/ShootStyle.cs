@@ -103,12 +103,18 @@ public class ShootStyle : MonoBehaviour
 
                 case "shotgun":
                     StartCoroutine(Shotgun());
-                    _shootCooldown = 2f;
+                    _shootCooldown = 1f;
                     break;
 
                 case "minigun":
                     StartCoroutine(Minigun());
                     _shootCooldown = 10f;
+                    break;
+
+                case "sniper":
+                    _shootBullet.HandGunShooting(_mediumBullet, 0f, 1.8f);
+                    _audioSource.Play();
+                    _shootCooldown = 4f;
                     break;
                 default:
                     break;

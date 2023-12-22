@@ -6,6 +6,8 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField] float _speed = 15f;
     [SerializeField] float _lifeTime = 2f;
     [SerializeField] GameObject _RpgExplosion;
+    private float _speedMultiplicator = 1f;
+    public float SpeedMultiplicator { get => _speedMultiplicator; set => _speedMultiplicator = value; }
 
     private Transform _parentType;
     void Start()
@@ -23,7 +25,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void SetStraingVelocity()
     {
-        _rb.velocity = transform.right * _speed;
+        _rb.velocity = transform.right * (_speed * _speedMultiplicator);
     }
 
     private void TestDestroy()
