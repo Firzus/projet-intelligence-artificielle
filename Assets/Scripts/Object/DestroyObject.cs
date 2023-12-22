@@ -8,7 +8,7 @@ public class DestroyObject : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Explosion"))
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Explosion") || collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
             animator.SetBool("isDestroyed", true);
             _boxIsTrigger.enabled = false;

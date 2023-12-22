@@ -7,6 +7,10 @@ public class WeaponAim : MonoBehaviour
     private SpriteRenderer _sp;
     void Start()
     {
+        if(_target == null)
+        {
+            _target = GameObject.FindWithTag("Player").gameObject;
+        }
         _sp = GetComponent<SpriteRenderer>();
         if (_FlipRight == false)
         {

@@ -18,7 +18,7 @@ public class RageMode : ActionNode
 
     protected override State OnUpdate()
     {
-        if (_currentBossHp < (_currentBossHp/agent.MaxHp) * 100) 
+        if (_currentBossHp <= (_currentBossHp/agent.MaxHp) * 100) 
         {
             agent.Speed = 2f;
             return State.Success;

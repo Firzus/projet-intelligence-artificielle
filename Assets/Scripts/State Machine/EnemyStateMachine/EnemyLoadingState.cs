@@ -36,7 +36,7 @@ public class EnemyLoadingState : EnemyBaseState
         CreateWeapon weapon = enemy.GetComponent<CreateWeapon>();
         if (weapon != null)
         {
-            if (enemy.name != "Kamikaze")
+            if (enemy.name != "DynamiteMan")
             {
                 weapon.Init();
                 weapon.SetWeapon(enemy);
