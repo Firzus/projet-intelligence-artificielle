@@ -28,7 +28,7 @@ public class Boss : EntityState
         canShield = true;
         canDash = true;
         FovRange = 5f;
-        EnemyStart(10, 1f);
+        EnemyStart(100, 1f);
         CurrentHp = MaxHp;
     }
 
@@ -55,15 +55,7 @@ public class Boss : EntityState
         {
             gameObject.GetComponent<Animator>().Play(IDLE_LEFT);
         }
-
-        if (y >= gameObject.transform.position.y)
-        {
-            gameObject.GetComponent<Animator>().Play(IDLE_TOP);
-        }
-        else
-        {
-            gameObject.GetComponent<Animator>().Play(IDLE_BOTTOM);
-        }
+       
     }
 
     public IEnumerator ShieldHandler()
