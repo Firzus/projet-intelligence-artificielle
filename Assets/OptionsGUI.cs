@@ -36,4 +36,9 @@ public class OptionsGUI : MonoBehaviour
         AudioManager.Instance.musicSource.Stop();
         GameManager.instance.LoadMenu();
     }
+
+    public void QuiGame()
+    {
+        GameManager.instance.QuitGame();
+    }
 }
