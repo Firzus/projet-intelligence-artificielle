@@ -2,36 +2,27 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public bool _canMove = true;
-    public float _speed = 10.0f;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] EntityState state;
 
-    private float _horizontal;
-    private float _vertical;
+    private Vector2 movementInput;
+    public Vector2 MovementInput { get => movementInput; }
 
-    [SerializeField] private Rigidbody2D _rb;
-
-
-    void Start()
+    public void Update()
     {
-
-    }
-
-    private void Update()
-    {
-        _horizontal = Input.GetAxisRaw("Horizontal");
-        _vertical = Input.GetAxisRaw("Vertical");
-    }
-
-    void FixedUpdate()
-    {
-        if(_canMove == true)
+        movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (movementInput.magnitude > 1)
         {
-            OnMove(_speed);
+            movementInput.Normalize();
+        }
+        if (state.CanMove)
+        {
+            MovePlayer(state.Speed);
         }
     }
 
-    public void OnMove(float speed)
+    public void MovePlayer(float speed)
     {
-        _rb.velocity = new Vector2(_horizontal * speed, _vertical * speed);
+        rb.velocity = movementInput * speed;
     }
 }

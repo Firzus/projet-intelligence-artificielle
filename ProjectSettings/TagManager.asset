@@ -3,7 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cursor
+  - Weapon
+  - Bullet
+  - Object
+  - Enemy
+  - Point
+  - Explosion
+  - ExplosifBullet
+  - EnemyManager
+  - PlayerManager
+  - Boss
+  - DeathIcon
+  - UI
+  - Door
+  - Shield
+  - RangeDetection
   layers:
   - Default
   - TransparentFX
@@ -11,7 +27,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

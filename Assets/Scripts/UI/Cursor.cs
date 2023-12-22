@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
-    public float _cooldownTime = 1f;
+    [SerializeField] float _cooldownTime = 1f;
 
     private SpriteRenderer _sp;
     private Time _time;
