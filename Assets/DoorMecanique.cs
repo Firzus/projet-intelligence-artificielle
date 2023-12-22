@@ -9,12 +9,13 @@ public class DoorMecanique : MonoBehaviour
     [SerializeField] EntityState _playerState;
     [SerializeField] GameObject _openedDoor;
 
-    [SerializeField] int _roomNumbers;
-    public int RoomNumbers {  get { return _roomNumbers; } set {  _roomNumbers = value; } }
+    private bool _isOpen;
+    public bool IsOpen {  get { return _isOpen; } set { _isOpen = value; } }
 
     void Start()
     {
         _collider.enabled = true;
+        _isOpen = false;
         if ( _playerState == null )
         {
             _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
@@ -26,6 +27,7 @@ public class DoorMecanique : MonoBehaviour
     {
         if (_playerState.KillCount >= _killRequest) 
         {
+            _isOpen = true;
             Instantiate(_openedDoor, gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

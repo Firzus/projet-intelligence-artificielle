@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -15,14 +16,15 @@ public class EnemyChaseState : EnemyBaseState
     }
     public override void OnTriggerEnter2D(EnemyStateManager enemy, Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Player") && enemy.name == "Dynamite_Man")
+        {
+            //enemy.StartCoroutine(Explode(enemy));
+            enemy.SwitchState(enemy.death);
+        }
+        else if(col.CompareTag("Player"))
         {
             enemy.SwitchState(enemy.attack);
         }
-        // else if (col.CompareTag("Player") && enemy.name == "Elite Bullet")
-        // {
-        //     enemy.SwitchState(enemy.moving);
-        // }
     }
     public override void OnTriggerExit2D(EnemyStateManager enemy, Collider2D col)
     {
@@ -74,5 +76,10 @@ public class EnemyChaseState : EnemyBaseState
         string name = enemy.name + "_" + action + "_" + side;
 
         return name;
+    }
+
+    IEnumerator Explode(EnemyStateManager enemy)
+    {
+        yield return new WaitForSeconds(1f);
     }
 }

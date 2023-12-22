@@ -10,7 +10,6 @@ public class RocketExplosion : MonoBehaviour
     void Start()
     {
         CineMachineShake.Instance.ShakeCamera(10f, 0.7f);
-        Debug.Log(CineMachineShake.Instance);
         StartCoroutine(PlayAnimationAndDestroy());
     }
 

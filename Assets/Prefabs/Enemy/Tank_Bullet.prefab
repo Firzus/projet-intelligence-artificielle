@@ -294,8 +294,8 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   entity: {fileID: 0}
+  door: {fileID: 0}
   animator: {fileID: 0}
-  CheckDeath: 0
 --- !u!114 &5160588827198685390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e408d7e44897054da4f76068da9e8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 12
+  _maxHp: 10
   _speed: 2
   _fovRange: 0
   _enemyTransform: {fileID: 0}

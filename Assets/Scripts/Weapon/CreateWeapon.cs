@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEditor;
+#if UNITY_EDITOR
 public class CreateWeapon : MonoBehaviour
 {
     private  GameObject _weaponManager;
     private WeaponManageur.Weapon actualWeapon;
-#if UNITY_EDITOR
     public void SetWeapon(EnemyStateManager enemy)
     {
         //Debug
         //set path for local prefab
         string weaponPath = "Assets/Prefabs/Weapons/weapon.prefab";
-        GameObject weapon = AssetDatabase.LoadAssetAtPath<GameObject>(weaponPath);
+        GameObject weapon = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(weaponPath);
         //Instantiate game object
         GameObject spawn = Instantiate(weapon);
         spawn.transform.SetParent(enemy.transform);
@@ -24,7 +23,6 @@ public class CreateWeapon : MonoBehaviour
         spawn.name = actualWeapon.Type;
         //Debug
     }
-#endif
     private void SetTarget(GameObject gameObject){
         GameObject target = GameObject.FindGameObjectWithTag("Player");
         gameObject.GetComponent<WeaponAim>()._target = target;
@@ -40,3 +38,4 @@ public class CreateWeapon : MonoBehaviour
         enemy.GetComponent<WeaponInventory>()._EntitieWeapon = gameObject;
     }
 }
+#endif
