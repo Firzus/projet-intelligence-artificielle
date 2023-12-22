@@ -22626,6 +22626,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3961291650133600223, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: m_TagString
+      value: WeaponManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
+      propertyPath: weaponObject
+      value: 
+      objectReference: {fileID: 7966939113976506524, guid: 769b7a5068059d74d960573d141348c1, type: 3}
     - target: {fileID: 6232527316590749277, guid: b3801d6bdeeefaa41932c6bd26cbb978, type: 3}
       propertyPath: _weaponList.Array.size
       value: 4

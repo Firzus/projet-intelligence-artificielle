@@ -39,6 +39,6 @@ public class OptionsGUI : MonoBehaviour
 
     public void QuiGame()
     {
-        GameManager.instance.QuitGame();
+        Application.Quit();
     }
 }

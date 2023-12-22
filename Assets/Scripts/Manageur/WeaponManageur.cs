@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WeaponManageur : MonoBehaviour
 {
+    public GameObject weaponObject;
     [System.Serializable] public struct Weapon
     {
         public Sprite sp;

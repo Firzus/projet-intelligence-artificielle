@@ -129,7 +129,7 @@ MonoBehaviour:
   _simpleBullet: {fileID: 5824602856664715808, guid: d036487acd9450a40b51e80b6b519793, type: 3}
   _mediumBullet: {fileID: 6138009970109609964, guid: 0060d20c2cf4f1149a836abff9e87872, type: 3}
   _rocketBullet: {fileID: 5581739771661749943, guid: d663f8e852e92f1448af5080b3bc4624, type: 3}
-  _waitingMultiplicator: 1
+  _waitingMultiplicator: 1.5
   _viewTest: {fileID: 0}
 --- !u!82 &8694185057625001588
 AudioSource:
