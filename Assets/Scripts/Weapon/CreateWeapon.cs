@@ -1,5 +1,4 @@
 using UnityEngine;
-#if UNITY_EDITOR
 public class CreateWeapon : MonoBehaviour
 {
     private  GameObject _weaponManager;
@@ -38,4 +37,3 @@ public class CreateWeapon : MonoBehaviour
         enemy.GetComponent<WeaponInventory>()._EntitieWeapon = gameObject;
     }
 }
-#endif
