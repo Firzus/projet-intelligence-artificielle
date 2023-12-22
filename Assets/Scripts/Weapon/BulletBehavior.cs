@@ -53,11 +53,16 @@ public class BulletBehavior : MonoBehaviour
             }
             else
             {
-                if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet") && !collision.gameObject.CompareTag("Shield"))
+                if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Bullet"))
                 {
                     if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
                     {
                         collision.GetComponent<EntityState>().Gethit();
+                    }
+
+                    if (collision.gameObject.CompareTag("Shield"))
+                    {
+                        Destroy(gameObject);
                     }
                     BulletExplosion();
                 }

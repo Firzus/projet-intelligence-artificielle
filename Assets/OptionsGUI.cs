@@ -33,6 +33,7 @@ public class OptionsGUI : MonoBehaviour
 
     public void ReturnMenu()
     {
+        AudioManager.Instance.musicSource.Stop();
         GameManager.instance.LoadMenu();
     }
 }

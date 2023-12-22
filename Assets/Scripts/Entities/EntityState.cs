@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EntityState : Entities
 {
@@ -41,7 +42,7 @@ public class EntityState : Entities
         Speed = speed;
     }
 
-    private void Dead()
+    public void Dead()
     {
         _playerState = GameObject.FindWithTag("Player").GetComponent<EntityState>();
 
@@ -63,7 +64,7 @@ public class EntityState : Entities
         }
         else if (gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

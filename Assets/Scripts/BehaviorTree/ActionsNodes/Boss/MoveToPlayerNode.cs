@@ -30,6 +30,8 @@ public class MoveToPlayerNode : ActionNode
             _enemyTransform.position, 
             _target.transform.position, 
             agent.Speed * Time.deltaTime);
+
+            _enemy.gameObject.GetComponent<Boss>().LookDirection(_target.GetComponent<EntityState>());
             //Debug.Log($"Moving from {_enemyTransform.position} to {_target.transform.position}");
 
             return State.Success;

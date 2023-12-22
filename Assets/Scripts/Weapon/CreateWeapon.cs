@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 public class CreateWeapon : MonoBehaviour
 {
     private  GameObject _weaponManager;
@@ -9,7 +10,7 @@ public class CreateWeapon : MonoBehaviour
         //Debug
         //set path for local prefab
         string weaponPath = "Assets/Prefabs/Weapons/weapon.prefab";
-        GameObject weapon = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>(weaponPath);
+        GameObject weapon = AssetDatabase.LoadAssetAtPath<GameObject>(weaponPath);
         //Instantiate game object
         GameObject spawn = Instantiate(weapon);
         spawn.transform.SetParent(enemy.transform);
