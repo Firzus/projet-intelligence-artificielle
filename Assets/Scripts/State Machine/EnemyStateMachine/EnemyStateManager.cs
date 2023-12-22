@@ -9,11 +9,13 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyChaseState chase = new EnemyChaseState();
     public EnemyAttackState attack = new EnemyAttackState();
     public EnemyWaitState wait = new EnemyWaitState();
+    public EnemyDeathState death = new EnemyDeathState();
 
     //other class
     public GameObject player;
     public NavMeshAgent agent;
     public EntityState entity;
+    public DoorMecanique door;
     // Variable
     public Animator animator;
     public bool? CheckrayCast = null;
